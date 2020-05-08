@@ -5,12 +5,46 @@
 - good morning
 - good evening
 - hey there
+- Hi bot
+- Hey bot
+- hello bot
+- hi again
+- hi folks
+- hi Mister
+- hi pal!
+- hi there
+- greetings
+- hello is anybody there
+- hello robot
+- hello hi
+- hey dude
+- hi can you speak?
+- hi friend
+- hola
+- wassup
+- whats up
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- bye bye
+- Bye!
+- catch you later
+- bye for now
+- Bye bot
+- Goodbye friend
+- gotta go
+- See you
+- goodnight
+- have a nice day
+- i'm off
+- see you later alligator
+- we'll speak soon
+- bye was nice talking to you
+- catch you later
+- ok bye
 
 ## intent:affirm
 - yes
@@ -18,6 +52,36 @@
 - of course
 - that sounds good
 - correct
+- I agree
+- I accept
+- Cool
+- Awesome
+- Great
+- I get it
+- ok
+- Nice
+- ofcourse
+- Oh yes
+- Oh, ok
+- okay
+- okay!
+- sure
+- yea
+- yup
+- yeah
+- yep
+- yup
+- fine
+- good
+- ok cool
+- ok friend
+- ok good
+- ok great
+- sure
+- thats fine
+- thats good
+- thats great
+- got it
 
 ## intent:deny
 - no
@@ -26,6 +90,19 @@
 - don't like that
 - no way
 - not really
+- I don't want to
+- nah
+- no thank you
+- no, not really
+- nope
+- nah
+- nah I'm good
+- i'm not sure
+- na
+- n
+- no sorry
+- no thanks
+- not yet
 
 ## intent:mood_great
 - perfect
@@ -54,3 +131,38 @@
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+- are you a chat bot?
+- are you a bot
+- are you a human
+- am I talking to a bot
+- am I talking to a human
+- are you a chat bot
+- bot?
+- you are chatbot
+- i guess you are a chatbot
+- who are you?
+
+## intent:get_support
+- [financial education](support_type)
+- I need support on [financial education](support_type)
+- Can you provide support on [financial education](support_type)
+- I want to [reload a prepaid card](support_type)
+- I want to [reload my prepaid card]{"entity": "support_type", "value":"reload a prepaid card"}
+- Help me to [reload a prepaid card](support_type)
+- Help me to [reload my prepaid card]{"entity": "support_type", "value":"reload a prepaid card"}
+- [reload a prepaid card](support_type)
+- How to [convert currency](support_type)
+- [convert currency](support_type)
+- I want to [convert my currency]{"entity": "support_type", "value":"convert currency"}
+- How to [pay taxes]{"entity": "support_type", "value":"pay tax"}
+- How to [pay tax](support_type)
+- I want to [pay tax](support_type)
+- [pay tax](support_type)
+- [cash back store locator](support_type)
+- [Get access to my cash]{"entity": "support_type", "value":"cash back store locator"}
+- I want to [get access to my cash]{"entity": "support_type", "value":"cash back store locator"}
+- [get cash when paying with Debit]{"entity": "support_type", "value":"cash back store locator"}
+- [report problem shopping](support_type)
+- [report a problem]{"entity": "support_type", "value":"report problem shopping"}
+- I want to [report a problem]{"entity": "support_type", "value":"report problem shopping"}
+- How to [report a problem]{"entity": "support_type", "value":"report problem shopping"}

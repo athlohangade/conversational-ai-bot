@@ -6,10 +6,17 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - get_support
+
+entities:
+  - support_type
+
+actions:
+  - action_get_support
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How can I help you?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
