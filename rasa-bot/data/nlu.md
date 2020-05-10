@@ -162,13 +162,13 @@
 - I want to [get access to my cash]{"entity": "support_type", "value": "cash back store locator"}
 - [get cash when paying with Debit]{"entity": "support_type", "value": "cash back store locator"}
 - [report problem shopping](support_type)
-- [report a problem]{"entity": "support_type", "value":"report problem shopping"}
-- I want to [report a problem]{"entity": "support_type", "value":"report problem shopping"}
-- How to [report a problem]{"entity": "support_type", "value":"report problem shopping"}
+- [report a problem]{"entity": "support_type", "value": "report problem shopping"}
+- I want to [report a problem]{"entity": "support_type", "value": "report problem shopping"}
+- How to [report a problem]{"entity": "support_type", "value": "report problem shopping"}
 - [support](support_type)
 - [find card](support_type)
 - [ways to pay](support_type)
-- [payment methods]{"entity": "support_type", "value":"ways to pay"}
+- [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
 - [mastercard contactless](support_type)
 - [bill payment service](support_type)
@@ -187,6 +187,7 @@
 - [global locations](support_type)
 - [career](support_type)
 - [click to pay](support_type)
+- i want to get [support](support_type)
 
 ## intent:get_pincode
 - [411014](pincode)
@@ -232,3 +233,26 @@
 - Show the atm locations in [Satara](location)
 - atms in [pune](location)
 - atms in Kolkata
+
+## intent:welcome
+- thank you
+
+## synonym:cash back store locator
+- Get access to my cash
+- get access to my cash
+- get cash when paying with Debit
+
+## synonym:convert currency
+- convert my currency
+
+## synonym:pay tax
+- pay taxes
+
+## synonym:reload a prepaid card
+- reload my prepaid card
+
+## synonym:report problem shopping
+- report a problem
+
+## synonym:ways to pay
+- payment methods

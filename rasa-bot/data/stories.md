@@ -57,3 +57,13 @@
   - action_get_atm_location
 * goodbye
   - utter_goodbye
+  
+## interactive_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "support"}
+    - action_get_support
+* welcome
+    - utter_did_that_help
+* stop
+    - utter_goodbye
