@@ -166,3 +166,25 @@
 - [report a problem]{"entity": "support_type", "value":"report problem shopping"}
 - I want to [report a problem]{"entity": "support_type", "value":"report problem shopping"}
 - How to [report a problem]{"entity": "support_type", "value":"report problem shopping"}
+- [support](support_type)
+- [find card](support_type)
+- [ways to pay](support_type)
+- [payment methods]{"entity": "support_type", "value":"ways to pay"}
+- [business overview](support_type)
+- [mastercard contactless](support_type)
+- [bill payment service](support_type)
+- [business cards](support_type)
+- [start accepting](support_type)
+- [business support](support_type)
+- [merchant safety and security](support_type)
+- [grow your business](support_type)
+- [manage employee expenses](support_type)
+- [authentication services](support_type)
+- [manage customer needs](support_type)
+- [business payments](support_type)
+- [issuer safety and security](support_type)
+- [issuer support](support_type)
+- [government support](support_type)
+- [global locations](support_type)
+- [career](support_type)
+- [click to pay](support_type)
