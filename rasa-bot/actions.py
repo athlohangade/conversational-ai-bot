@@ -13,7 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from rasa_sdk.forms import FormAction
-
+from utils.RetrieveLocation import RetrieveLocation
 
 # class ActionHelloWorld(Action):
 #
@@ -69,5 +69,34 @@ class ActionGetSupport(Action):
                 break
 
         dispatcher.utter_message(text=message, attachment=link)
+
+        return []
+
+class ActionGetATMLocation(Action):
+
+    def name(self) -> Text:
+        return "action_get_atm_location"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]] :
+
+        toFind = {}
+        toFind['location'] = tracker.get_slot('location')
+
+        entities = tracker.latest_message['entities']
+        for entity in entities :
+            if entity['entity'] == 'pincode' :
+                toFind['postalCode'] = entity['value']
+                break
+
+        locationsData = RetrieveLocation.requestData()
+        locationsData = RetrieveLocation.parseXML(locationsData.text)
+
+        addresses = RetrieveLocation.getAddress(locationsData, toFind)
+
+        for number, address in enumerate(addresses, 1) :
+            message = str(number) + ") " + ", ".join(address)
+            dispatcher.utter_message(text = message)
 
         return []
