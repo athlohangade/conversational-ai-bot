@@ -19,7 +19,7 @@ intents:
 - stop
 - get_support
 - greet
-- welcome
+- thanks
 - goodbye
 - affirm
 - deny
@@ -39,7 +39,7 @@ responses:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
   utter_did_that_help:
-  - text: You are welcome. Did that help you?
+  - text: Did that help you?
   utter_goodbye:
   - text: Bye
   utter_greet:
@@ -48,9 +48,13 @@ responses:
   - text: Great, carry on!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_welcome:
+  - text: You are welcome
+  
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
+  
 slots:
   location:
     type: text

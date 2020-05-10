@@ -63,7 +63,16 @@
     - utter_greet
 * get_support{"support_type": "support"}
     - action_get_support
-* welcome
+* thanks
     - utter_did_that_help
 * stop
     - utter_goodbye
+
+## business_overview_story
+* greet
+    - utter_greet
+* get_support{"support_type":"business overview"}
+    - action_get_support
+    - utter_did_that_help
+* thanks
+    - utter_welcome

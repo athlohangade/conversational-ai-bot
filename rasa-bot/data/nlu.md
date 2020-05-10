@@ -170,10 +170,10 @@
 - [ways to pay](support_type)
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
+- [start accepting]{"entity": "support_type", "value": "business overview"}
 - [mastercard contactless](support_type)
 - [bill payment service](support_type)
 - [business cards](support_type)
-- [start accepting](support_type)
 - [business support](support_type)
 - [merchant safety and security](support_type)
 - [grow your business](support_type)
@@ -186,8 +186,116 @@
 - [government support](support_type)
 - [global locations](support_type)
 - [career](support_type)
+- I want to [Apply for job]{"entity": "support_type", "value": "career"}
 - [click to pay](support_type)
 - i want to get [support](support_type)
+
+## intent:thanks
+- thank you
+- thanks
+- that helped
+- ty
+- thankie
+
+## synonym:business overview
+- grow business with mastercard
+- enable customers to pay anywhere
+- business solution
+- help your business
+- start accepting
+- increase sales and efficiency
+
+## synonym:support
+- get support
+- help
+- lost card
+- stolen card
+- card benefits
+- theft alert
+
+## synonym:cash back store locator
+- Get access to my cash
+- get access to my cash
+- get cash when paying with Debit
+- get cash
+
+## synonym:convert currency
+- convert my currency
+- convert transaction currency to card currency
+- convert currency for cross-border purchases
+
+## synonym:pay tax
+- pay taxes
+- pay income tax
+- tax payment
+
+## synonym:reload a prepaid card
+- reload my prepaid card
+
+## synonym:report problem shopping
+- report a problem
+- report merchant
+- report retailer
+- report incident
+
+## synonym:ways to pay
+- payment methods
+- pay your way
+- pay
+- tap and go
+- contactless
+- everyday spend
+- speedier subway payment
+- pay MTA
+- connected commerce
+- beyond the wallet
+
+## synonym:career
+- apply for job
+- join company
+- job
+- work
+- explore jobs
+- benefits of working at Mastercard
+- life at mastercard
+- hire
+- relaunch your career
+- internship
+- full-time opportunities
+- opportunity
+- search for job
+
+## synonym:find card
+- get mastercard
+- get card
+- personal card
+- card for everyday purchases
+- standard mastercard
+- world mastercard
+- world elite mastercard
+- standard credit card
+- debit mastercard
+- prepaid travel card
+- prepaid gift card
+- mastercard prepaid
+- world debit mastercard
+- enhanced debit mastercard
+- credit card
+- debit card
+- prepaid card
+- all cards
+
+## synonym:business cards
+- business debit
+- business prepaid
+- Mastercard business prepaid card
+- card for business
+- debit mastercard business card
+- business credit cards
+- world elite business
+- world elite mastercard for business
+- business card
+- payment solution for business
 
 ## intent:get_pincode
 - [411014](pincode)
@@ -232,27 +340,4 @@
 - Get some ATM locations near [Viman Nagar](location)
 - Show the atm locations in [Satara](location)
 - atms in [pune](location)
-- atms in Kolkata
-
-## intent:welcome
-- thank you
-
-## synonym:cash back store locator
-- Get access to my cash
-- get access to my cash
-- get cash when paying with Debit
-
-## synonym:convert currency
-- convert my currency
-
-## synonym:pay tax
-- pay taxes
-
-## synonym:reload a prepaid card
-- reload my prepaid card
-
-## synonym:report problem shopping
-- report a problem
-
-## synonym:ways to pay
-- payment methods
+- atms in [Kolkata](location)
