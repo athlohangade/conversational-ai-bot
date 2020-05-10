@@ -23,6 +23,7 @@
 - hola
 - wassup
 - whats up
+- Hello
 
 ## intent:goodbye
 - bye
@@ -43,8 +44,8 @@
 - see you later alligator
 - we'll speak soon
 - bye was nice talking to you
-- catch you later
 - ok bye
+- Yo bro
 
 ## intent:affirm
 - yes
@@ -70,14 +71,12 @@
 - yup
 - yeah
 - yep
-- yup
 - fine
 - good
 - ok cool
 - ok friend
 - ok good
 - ok great
-- sure
 - thats fine
 - thats good
 - thats great
@@ -95,7 +94,6 @@
 - no thank you
 - no, not really
 - nope
-- nah
 - nah I'm good
 - i'm not sure
 - na
@@ -103,6 +101,7 @@
 - no sorry
 - no thanks
 - not yet
+- oh no
 
 ## intent:mood_great
 - perfect
@@ -147,21 +146,21 @@
 - I need support on [financial education](support_type)
 - Can you provide support on [financial education](support_type)
 - I want to [reload a prepaid card](support_type)
-- I want to [reload my prepaid card]{"entity": "support_type", "value":"reload a prepaid card"}
+- I want to [reload my prepaid card]{"entity": "support_type", "value": "reload a prepaid card"}
 - Help me to [reload a prepaid card](support_type)
-- Help me to [reload my prepaid card]{"entity": "support_type", "value":"reload a prepaid card"}
+- Help me to [reload my prepaid card]{"entity": "support_type", "value": "reload a prepaid card"}
 - [reload a prepaid card](support_type)
 - How to [convert currency](support_type)
 - [convert currency](support_type)
-- I want to [convert my currency]{"entity": "support_type", "value":"convert currency"}
-- How to [pay taxes]{"entity": "support_type", "value":"pay tax"}
+- I want to [convert my currency]{"entity": "support_type", "value": "convert currency"}
+- How to [pay taxes]{"entity": "support_type", "value": "pay tax"}
 - How to [pay tax](support_type)
 - I want to [pay tax](support_type)
 - [pay tax](support_type)
 - [cash back store locator](support_type)
-- [Get access to my cash]{"entity": "support_type", "value":"cash back store locator"}
-- I want to [get access to my cash]{"entity": "support_type", "value":"cash back store locator"}
-- [get cash when paying with Debit]{"entity": "support_type", "value":"cash back store locator"}
+- [Get access to my cash]{"entity": "support_type", "value": "cash back store locator"}
+- I want to [get access to my cash]{"entity": "support_type", "value": "cash back store locator"}
+- [get cash when paying with Debit]{"entity": "support_type", "value": "cash back store locator"}
 - [report problem shopping](support_type)
 - [report a problem]{"entity": "support_type", "value":"report problem shopping"}
 - I want to [report a problem]{"entity": "support_type", "value":"report problem shopping"}
@@ -188,3 +187,48 @@
 - [global locations](support_type)
 - [career](support_type)
 - [click to pay](support_type)
+
+## intent:get_pincode
+- [411014](pincode)
+- [510011](pincode)
+- [411009](pincode)
+- [411044](pincode)
+- [411035](pincode)
+- [510987](pincode)
+- [787182](pincode)
+
+## intent:get_location
+- [Pune](location)
+- [Shivajinagar](location)
+- [Hadapsar](location)
+- [Pimpri](location)
+- [Katraj](location)
+- [Viman Nagar](location)
+- [Akurdi](location)
+
+## intent:get_atm_location
+- atm location
+- atm locations
+- ATM location
+- ATM locations
+- Any atm locations
+- I need an atm
+- I need an ATM
+- I am looking for an atm
+- atm locations in [Kalyan](location)
+- Any atm locations in [Vasai](location)
+- Get the atm locations near [Pune](location)
+- Get me some atm locations near [Katraj](location)
+- Find the atms in [Sangvi](location)
+- Will you please get the atms in [Solarpur](location)
+- I need some atm location near [Pimpri](location)
+- Get some atm locations near [Viman Nagar](location)
+- Show me some atm locations near [Shivajinagar](location)
+- I want atm locators in [Pune](location)
+- I am looking for some atms in [Dapodi](location)
+- Need some information of atms in [Kothrud](location)
+- Find me some atms in [Shivajinagar](location)
+- Get some ATM locations near [Viman Nagar](location)
+- Show the atm locations in [Satara](location)
+- atms in [pune](location)
+- atms in Kolkata
