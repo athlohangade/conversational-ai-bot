@@ -30,6 +30,30 @@
 * bot_challenge
   - utter_iamabot
 
-# support path
+## support path
 * get_support
   - action_get_support
+
+## locate atm given no data
+* get_atm_location
+  - utter_ask_location
+* get_location{"location" : "Pune"}
+  - utter_ask_pincode
+* get_pincode{"pincode" : "411014"}
+  - action_get_atm_location
+* goodbye
+  - utter_goodbye
+
+## locate atm given location 
+* get_atm_location{"location" : "Pune" }
+  - utter_ask_pincode
+* get_pincode{"pincode" : "411014"}
+  - action_get_atm_location
+* goodbye
+  - utter_goodbye
+
+## locate atm given location + pincode
+* get_atm_location{"location" : "Pune", "pincode" : "411014" }
+  - action_get_atm_location
+* goodbye
+  - utter_goodbye
