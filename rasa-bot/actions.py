@@ -62,6 +62,7 @@ class ActionGetATMLocation(Action):
 
         toFind = {}
         toFind['location'] = tracker.get_slot('location')
+        toFind['postalCode'] = None
 
         entities = tracker.latest_message['entities']
         for entity in entities :
@@ -73,9 +74,11 @@ class ActionGetATMLocation(Action):
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
         addresses = RetrieveLocation.getAddress(locationsData, toFind)
-
-        for number, address in enumerate(addresses, 1) :
-            message = str(number) + ") " + ", ".join(address)
-            dispatcher.utter_message(text = message)
+        if not addresses :
+            dispatcher.utter_message(text = "Sorry, I didn't find any atm locations")
+        else :
+            for number, address in enumerate(addresses, 1) :
+                message = str(number) + ") " + ", ".join(address)
+                dispatcher.utter_message(text = message)
 
         return []

@@ -39,6 +39,8 @@
   - utter_ask_location
 * get_location{"location" : "Pune"}
   - utter_ask_pincode
+* deny
+  - action_get_atm_location
 * get_pincode{"pincode" : "411014"}
   - action_get_atm_location
 * goodbye
@@ -47,6 +49,8 @@
 ## locate atm given location 
 * get_atm_location{"location" : "Pune" }
   - utter_ask_pincode
+* deny
+  - action_get_atm_location
 * get_pincode{"pincode" : "411014"}
   - action_get_atm_location
 * goodbye
