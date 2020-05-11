@@ -34,3 +34,11 @@ policies:
     max_history: 5
     epochs: 100
   - name: MappingPolicy
+ # - name: EmbeddingPolicy
+ #   epochs: 100  #2000
+ #   attn_shift_range: 5
+  - name: FallbackPolicy
+    nlu_threshold: 0.3
+    ambiguity_threshold: 0.1
+    core_threshold: 0.3
+    fallback_action_name: 'action_default_fallback'
