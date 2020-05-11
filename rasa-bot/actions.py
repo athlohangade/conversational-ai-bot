@@ -42,10 +42,16 @@ class ActionGetSupport(Action):
         entities = tracker.latest_message['entities']
         print(entities)
 
-        with open('keywords-urls.csv') as csv_file:
+        link = None
+        message = "Sorry, I didn't get that"
+
+        if not entities:
+            dispatcher.utter_message(text=message, attachment=link)
+            return []
+
+        with open('lookup-files/keywords-urls.csv') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0
-            link = None
             for row in csv_reader:
                 if line_count != 0:
                     if entities[0]['value'] == row[0]:
