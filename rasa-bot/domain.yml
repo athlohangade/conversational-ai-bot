@@ -9,27 +9,25 @@ actions:
 - utter_greet
 - utter_happy
 - utter_iamabot
-
+- utter_welcome
 entities:
 - location
 - pincode
 - support_type
-
 intents:
-- stop
-- get_support
-- greet
+- get_pincode
 - thanks
-- goodbye
+- greet
+- get_atm_location
+- stop
 - affirm
+- get_support
+- goodbye
 - deny
 - mood_great
 - mood_unhappy
 - bot_challenge
-- get_atm_location
 - get_location
-- get_pincode
-
 responses:
   utter_ask_location:
   - text: What's your location?
@@ -50,11 +48,9 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_welcome:
   - text: You are welcome
-  
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
-  
 slots:
   location:
     type: text

@@ -76,3 +76,22 @@
     - utter_did_that_help
 * thanks
     - utter_welcome
+## interactive_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "report problem shopping"}
+    - action_get_support
+    - utter_did_that_help
+* affirm
+    - utter_happy
+
+## interactive_story_1
+* greet
+    - utter_greet
+* get_atm_location{"location": "akola"}
+    - slot{"location": "akola"}
+    - utter_ask_pincode
+* get_pincode{"pincode": "444002"}
+    - action_get_atm_location
+* thanks
+    - utter_welcome
