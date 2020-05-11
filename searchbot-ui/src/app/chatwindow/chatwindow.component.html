@@ -6,13 +6,13 @@
 		<div *ngFor="let message of messages.messages">
 			<div class="{{message.mtype}}" >
 				<img src="{{message.source}}">
-				<p> {{message.body}} </p>
+				<pre> {{message.body}} </pre>
 			</div>
 		</div>
 	</div>
 	<div class="sendbox">
-		<textarea #messagebody> </textarea>
-		<button class="btn btn-primary" (click)="sendMessage(messagebody.value)"> Send </button>
+		<textarea [(ngModel)]="textboxval" (keyup.enter)="sendMessage()"> </textarea>
+		<button class="btn btn-primary" (click)="sendMessage()"> Send </button>
 	</div>
 </div>
 	
