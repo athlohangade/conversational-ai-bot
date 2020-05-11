@@ -13,8 +13,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from rasa_sdk.forms import FormAction
-from utils.OtherSupport import OtherSupport
 from utils.RetrieveLocation import RetrieveLocation
+
+import csv
 
 # class ActionHelloWorld(Action):
 #
@@ -41,13 +42,19 @@ class ActionGetSupport(Action):
         entities = tracker.latest_message['entities']
         print(entities)
 
-        for e in entities:
-            if e['entity'] == 'support_type':
-                name = e['value']
-                res = OtherSupport.getResponse(name)
-                break
+        with open('keywords-urls.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            link = None
+            for row in csv_reader:
+                if line_count != 0:
+                    if entities[0]['value'] == row[0]:
+                        link = row[1]
+                        break
+                line_count += 1
 
-        dispatcher.utter_message(text=res[0], attachment=res[1])
+        message = "To know about " + entities[0]['value'] + " please checkout following link:"
+        dispatcher.utter_message(text=message, attachment=link)
 
         return []
 
