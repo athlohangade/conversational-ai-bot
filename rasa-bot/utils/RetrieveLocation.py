@@ -1,25 +1,36 @@
 import requests
 import xml.etree.ElementTree as ET
 from difflib import get_close_matches
+from geopy.geocoders import Nominatim
+
+URL = "https://www.mastercard.us/locator/NearestLocationsService/" 
+QUERYSTRING = { 
+    "latitude" : "",
+    "longitude" : "", 
+    "radius" : "5",
+    "distanceUnit" : "",
+    "locationType" : "atm",
+    "maxLocations" : "100"
+}
+PAYLOAD = ""
+HEADERS = {
+    'content-type': "application/x-www-form-urlencoded",
+}
 
 class RetrieveLocation :
 
-    url = "https://www.mastercard.us/locator/NearestLocationsService/" 
-    querystring = {"latitude":"18.5679146","longitude":"73.91434319999999", 
-        "radius":"5","distanceUnit":"","locationType":"atm","maxLocations":"100", 
-        "MERCH_ATTR_1":"","instName":"","supportEMV":"","customAttr1":"","locatonTypeId":""}
-    payload = ""
-    headers = {
-    'content-type': "application/x-www-form-urlencoded",
-    }
+    url = URL
+    querystring = QUERYSTRING
+    payload = PAYLOAD 
+    headers = HEADERS
 
     @classmethod
-    def requestData(cls) :
-        return requests.request("GET", cls.url, data = cls.payload, headers = cls.headers, params = cls.querystring)
+    def __setLatitudeAndLongitude(cls, location) :
 
-    @classmethod
-    def parseXML(cls, string) :
-        return ET.fromstring(string)
+        geolocator = Nominatim(user_agent = 'RasaChatBot')
+        geocode = geolocator.geocode(location)
+        cls.querystring['latitude'] = str(geocode.latitude)
+        cls.querystring['longitude'] = str(geocode.longitude)
 
     @staticmethod
     def __store_values(location) :
@@ -33,6 +44,17 @@ class RetrieveLocation :
         address['country'] = location.find('address/country').text if location.find('address/country') is not None else None
 
         return address
+
+    @classmethod
+    def requestData(cls, location) :
+
+        cls.__setLatitudeAndLongitude(location)
+        return requests.request("GET", cls.url, data = cls.payload, headers = cls.headers, params = cls.querystring)
+
+    @classmethod
+    def parseXML(cls, string) :
+
+        return ET.fromstring(string)
 
     @classmethod
     def getAddress(cls, data, toFind) :
