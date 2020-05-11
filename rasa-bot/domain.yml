@@ -48,6 +48,8 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_welcome:
   - text: You are welcome
+  utter_default:
+  - text: 'I did not get that.Will you reframe the query?'
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
