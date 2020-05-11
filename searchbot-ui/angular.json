@@ -70,7 +70,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "searchbot-ui:build:production"
+              "browserTarget": "searchbot-ui:build:production",
+			  "proxyConfig": "proxy.conf.json"
             }
           }
         },
