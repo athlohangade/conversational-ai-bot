@@ -167,6 +167,7 @@
 - How to [report a problem]{"entity": "support_type", "value": "report problem shopping"}
 - [support](support_type)
 - [find card](support_type)
+- I want [mastercard]{"entity": "support_type", "value": "find card"}
 - [ways to pay](support_type)
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
@@ -185,11 +186,133 @@
 - [issuer support](support_type)
 - [government support](support_type)
 - [global locations](support_type)
+- [where is mastercard]{"entity": "support_type", "value": "global locations"}
+- [where is mastercard located]{"entity": "support_type", "value": "global locations"}
+- [where is mastercard situated]{"entity": "support_type", "value": "global locations"}
+- [mastercard office]{"entity": "support_type", "value": "global locations"}
 - [career](support_type)
 - I want to [Apply for job]{"entity": "support_type", "value": "career"}
+- I want to [work in mastercard]{"entity": "support_type", "value": "career"}
+- I want to [relaunch my career]{"entity": "support_type", "value": "career"}
+- how to [join mastercard]{"entity": "support_type", "value": "career"}
+- how is [life at mastercard]{"entity": "support_type", "value": "career"}
+- i am in search of [job]{"entity": "support_type", "value": "career"}
+- i am searching for [job]{"entity": "support_type", "value": "career"}
+- i am looking for [job]{"entity": "support_type", "value": "career"}
+- help me to get [job]{"entity": "support_type", "value": "career"}
+- help me to get [job opportunities]{"entity": "support_type", "value": "career"} at mastercard
+- how to apply for [job]{"entity": "support_type", "value": "career"} in mastercard
+- [job opportunities]{"entity": "support_type", "value": "career"} at mastercard
+- [internship]{"entity": "support_type", "value": "career"} at mastercard
+- what are the benefits of [working at Mastercard]{"entity": "support_type", "value": "career"}
 - [click to pay](support_type)
 - i want to get [support](support_type)
+- i [lost my card]{"entity": "support_type", "value": "support"}
+- someone has [stolen my card]{"entity": "support_type", "value": "support"}
 - I want to [report merchant]{"entity": "support_type", "value": "report problem shopping"}
+
+## synonym:business cards
+- business debit
+- business prepaid
+- Mastercard business prepaid card
+- card for business
+- debit mastercard business card
+- business credit cards
+- world elite business
+- world elite mastercard for business
+- business card
+- payment solution for business
+- payment solutions for business
+
+## synonym:business overview
+- start accepting
+- grow business with mastercard
+- enable customers to pay anywhere
+- business solution
+- help your business
+- increase sales and efficiency
+
+## synonym:career
+- join company
+- job
+- work
+- work at mastercard
+- explore jobs
+- working at Mastercard
+- life at mastercard
+- hire
+- relaunch your career
+- relaunch my career
+- internship
+- full-time opportunities
+- opportunity
+- search for job
+
+## synonym:cash back store locator
+- Get access to my cash
+- get access to my cash
+- get cash when paying with Debit
+- get cash
+
+## synonym:convert currency
+- convert my currency
+- convert transaction currency to card currency
+- convert currency for cross-border purchases
+
+## synonym:find card
+- get mastercard
+- get card
+- personal card
+- card for everyday purchases
+- standard mastercard
+- world mastercard
+- world elite mastercard
+- standard credit card
+- debit mastercard
+- prepaid travel card
+- prepaid gift card
+- mastercard prepaid
+- world debit mastercard
+- enhanced debit mastercard
+- credit card
+- debit card
+- prepaid card
+- all cards
+
+## synonym:pay tax
+- pay taxes
+- pay income tax
+- tax payment
+
+## synonym:reload a prepaid card
+- reload my prepaid card
+
+## synonym:report problem shopping
+- report a problem
+- report merchant
+- report retailer
+- report incident
+
+## synonym:support
+- get support
+- help
+- lost card
+- lost my card
+- stolen card
+- card benefits
+- theft alert
+
+## synonym:ways to pay
+- payment methods
+- pay your way
+- pay
+- tap and go
+- contactless
+- everyday spend
+- speedier subway payment
+- pay MTA
+- connected commerce
+- beyond the wallet
 
 ## intent:thanks
 - thank you
@@ -245,104 +368,3 @@
 - atms in [pune](location)
 - atms in [Kolkata](location)
 - atms in [akola](location)
-
-## synonym:business cards
-- business debit
-- business prepaid
-- Mastercard business prepaid card
-- card for business
-- debit mastercard business card
-- business credit cards
-- world elite business
-- world elite mastercard for business
-- business card
-- payment solution for business
-
-## synonym:business overview
-- start accepting
-- grow business with mastercard
-- enable customers to pay anywhere
-- business solution
-- help your business
-- increase sales and efficiency
-
-## synonym:career
-- Apply for job
-- apply for job
-- join company
-- job
-- work
-- explore jobs
-- benefits of working at Mastercard
-- life at mastercard
-- hire
-- relaunch your career
-- internship
-- full-time opportunities
-- opportunity
-- search for job
-
-## synonym:cash back store locator
-- Get access to my cash
-- get access to my cash
-- get cash when paying with Debit
-- get cash
-
-## synonym:convert currency
-- convert my currency
-- convert transaction currency to card currency
-- convert currency for cross-border purchases
-
-## synonym:find card
-- get mastercard
-- get card
-- personal card
-- card for everyday purchases
-- standard mastercard
-- world mastercard
-- world elite mastercard
-- standard credit card
-- debit mastercard
-- prepaid travel card
-- prepaid gift card
-- mastercard prepaid
-- world debit mastercard
-- enhanced debit mastercard
-- credit card
-- debit card
-- prepaid card
-- all cards
-
-## synonym:pay tax
-- pay taxes
-- pay income tax
-- tax payment
-
-## synonym:reload a prepaid card
-- reload my prepaid card
-
-## synonym:report problem shopping
-- report a problem
-- report merchant
-- report retailer
-- report incident
-
-## synonym:support
-- get support
-- help
-- lost card
-- stolen card
-- card benefits
-- theft alert
-
-## synonym:ways to pay
-- payment methods
-- pay your way
-- pay
-- tap and go
-- contactless
-- everyday spend
-- speedier subway payment
-- pay MTA
-- connected commerce
-- beyond the wallet
