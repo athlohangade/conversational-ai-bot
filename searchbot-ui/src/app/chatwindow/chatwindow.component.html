@@ -3,15 +3,16 @@
 		<p> Chat with out Bot </p>
 	</div>
 	<div class="topdiv" height="70%">
-		<div *ngFor="let message of messages.messages">
+		<!-- <div *ngFor="let message of messages.messages">
 			<div class="{{message.mtype}}" >
 				<img src="{{message.source}}">
 				<pre> {{message.body}} </pre>
 			</div>
-		</div>
+		</div> -->
+		<app-messagebox *ngFor="let message of messages.messages" [isbot]="message.isbot" [body]="message.body"></app-messagebox>
 	</div>
 	<div class="sendbox">
-		<textarea [(ngModel)]="textboxval" (keyup.enter)="sendMessage()"> </textarea>
+		<textarea [(ngModel)]="textboxval" (keydown.enter)="sendMessage()" (keyup.enter)="resetTextArea()"> </textarea>
 		<button class="btn btn-primary" (click)="sendMessage()"> Send </button>
 	</div>
 </div>
