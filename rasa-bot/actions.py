@@ -11,7 +11,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, AllSlotsReset
 from rasa_sdk.forms import FormAction
 from utils.RetrieveLocation import RetrieveLocation
 
@@ -82,10 +82,16 @@ class ActionGetATMLocation(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]] :
 
+        addresses = []
         toFind = {}
         toFind['location'] = tracker.get_slot('location')
-        toFind['postalCode'] = None
+        if toFind['location'] is None :
+            message = "Location cannot be None"
+            print(message)
+            dispatcher.utter_message(text = message)
+            return [AllSlotsReset()]
 
+        toFind['postalCode'] = None
         entities = tracker.latest_message['entities']
         for entity in entities :
             if entity['entity'] == 'pincode' :
@@ -93,6 +99,12 @@ class ActionGetATMLocation(Action):
                 break
 
         locationsData = RetrieveLocation.requestData(toFind['location'])
+        if locationsData is None :
+            message = "Location not found"
+            print(message)
+            dispatcher.utter_message(text = message)
+            return [AllSlotsReset()]
+
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
         addresses = RetrieveLocation.getAddress(locationsData, toFind)
@@ -103,4 +115,4 @@ class ActionGetATMLocation(Action):
                 message = str(number) + ") " + ", ".join(address)
                 dispatcher.utter_message(text = message)
 
-        return []
+        return [AllSlotsReset()]
