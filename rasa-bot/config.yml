@@ -4,6 +4,7 @@ language: en
 pipeline:
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
+  - name: CRFEntityExtractor
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
@@ -16,7 +17,7 @@ pipeline:
   - name: ResponseSelector
     epochs: 100
 
-#  pipeline:
+#pipeline:
 #  - name: "SpacyNLP"
 #  - name: "SpacyTokenizer"
 #  - name: "SpacyFeaturizer"
