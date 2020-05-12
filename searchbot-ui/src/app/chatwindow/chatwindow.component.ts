@@ -9,13 +9,21 @@ import { GetRasaResponceService } from '../get-rasa-responce.service';
 })
 export class ChatwindowComponent implements OnInit {
 
+	textboxval: string = "";
+
 	constructor(public messages: AllmessagesService, private rasaResponceService: GetRasaResponceService) { }
 
-	sendMessage(m: string): void {
+	sendMessage(): void {
+		var messageToShow: string = "";
+		var strings: string[];
+		var m: string = this.textboxval;
+		this.textboxval = "";
 		this.messages.addMessage("usermessage", "user.jpg", m)
 		this.rasaResponceService.sendMessage(m).subscribe(data => {
 			console.log(data);
-			this.messages.addMessage("botmessage", "bot.jpg", data[0].text);
+			strings = data.map(obj => obj.text);
+			messageToShow = strings.join("\n");
+			this.messages.addMessage("botmessage", "bot.jpg", messageToShow);
 		})
 	}
 
