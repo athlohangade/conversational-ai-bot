@@ -83,7 +83,7 @@ class ActionGetATMLocation(Action):
                 toFind['postalCode'] = entity['value']
                 break
 
-        locationsData = RetrieveLocation.requestData()
+        locationsData = RetrieveLocation.requestData(toFind['location'])
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
         addresses = RetrieveLocation.getAddress(locationsData, toFind)
