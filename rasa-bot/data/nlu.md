@@ -174,8 +174,12 @@
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
 - [start accepting]{"entity": "support_type", "value": "business overview"}
-- [bill] payment service(support_type)
-- pay [bills] using mastercard
+- [bill](support_type) payment service
+- Which cards can I use to pay [bills]{"entity": "support_type", "value": "bill"}?
+- pay [bills]{"entity": "support_type", "value": "bill"} using mastercard
+- How do I pay a [bill](support_type) with a Mastercard?
+- Can I pay my [billers]{"entity": "support_type", "value": "bill"} who accept Mastercard directly from this site?
+- What are the benefits of [bill](support_type) payment using a Mastercard?
 - [business cards](support_type)
 - [authentication](support_type) services at mastercard
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
@@ -238,6 +242,7 @@ lookup-files/search-lookup.txt
 
 ## synonym:bill
 - bills
+- billers
 
 ## synonym:cash
 - money
