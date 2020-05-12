@@ -44,6 +44,7 @@ class ActionGetSupport(Action):
 
         link = None
         message = "Sorry, I didn't get that"
+        found = False
 
         if not entities:
             dispatcher.utter_message(text=message, attachment=link)
@@ -54,11 +55,19 @@ class ActionGetSupport(Action):
             line_count = 0
             for row in csv_reader:
                 if line_count != 0:
-                    if entities[0]['value'] == row[0]:
-                        link = row[1]
+                    for e in entities:
+                        if entities[0]['value'] == row[0]:
+                            link = row[1]
+                            found = True
+                            break
+                    if found:
                         break
                 line_count += 1
 
+        if not found:
+            dispatcher.utter_message(text=message, attachment=link)
+            return []
+        
         message = "To know about " + entities[0]['value'] + " please checkout following link:"
         dispatcher.utter_message(text=message, attachment=link)
 
@@ -83,7 +92,7 @@ class ActionGetATMLocation(Action):
                 toFind['postalCode'] = entity['value']
                 break
 
-        locationsData = RetrieveLocation.requestData()
+        locationsData = RetrieveLocation.requestData(toFind['location'])
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
         addresses = RetrieveLocation.getAddress(locationsData, toFind)

@@ -3,6 +3,10 @@
   - utter_greet
 * mood_great
   - utter_happy
+  
+## default fallback
+* bot_challenge
+  - action_default_fallback
 
 ## sad path 1
 * greet
@@ -88,6 +92,15 @@
     - utter_did_that_help
 * affirm
     - utter_happy
+    
+## interactive_story_X
+* greet
+    - utter_greet
+* get_support{"support_type": "report problem shopping"}
+    - action_get_support
+    - utter_did_that_help
+* deny
+    - action_default_fallback
 
 ## interactive_story_1
 * greet
