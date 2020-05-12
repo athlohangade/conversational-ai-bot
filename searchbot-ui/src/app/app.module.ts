@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatwindowComponent } from './chatwindow/chatwindow.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MessageboxComponent } from './messagebox/messagebox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatwindowComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    MessageboxComponent
   ],
   imports: [
     BrowserModule,

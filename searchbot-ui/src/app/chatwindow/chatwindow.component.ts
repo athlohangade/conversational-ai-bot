@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AllmessagesService } from '../allmessages.service';
 import { GetRasaResponceService } from '../get-rasa-responce.service';
+import { MessageboxComponent } from '../messagebox/messagebox.component';
 
 @Component({
   selector: 'app-chatwindow',
@@ -15,16 +16,21 @@ export class ChatwindowComponent implements OnInit {
 
 	sendMessage(): void {
 		var messageToShow: string = "";
+		var link: string = "";
 		var strings: string[];
-		var m: string = this.textboxval;
+		var m: string = this.textboxval.trim();
 		this.textboxval = "";
-		this.messages.addMessage("usermessage", "user.jpg", m)
+		if(m == "")
+			return;
+		this.messages.addMessage(false, m);
 		this.rasaResponceService.sendMessage(m).subscribe(data => {
 			console.log(data);
-			strings = data.map(obj => obj.text);
-			messageToShow = strings.join("\n");
-			this.messages.addMessage("botmessage", "bot.jpg", messageToShow);
+			this.messages.addMessage(true, data)
 		})
+	}
+
+	resetTextArea():void {
+		this.textboxval = "";
 	}
 
 	ngOnInit(): void {
