@@ -56,7 +56,7 @@ class ActionGetSupport(Action):
             for row in csv_reader:
                 if line_count != 0:
                     for e in entities:
-                        if entities[0]['value'] == row[0]:
+                        if e['value'] == row[0]:
                             link = row[1]
                             found = True
                             break
@@ -68,7 +68,7 @@ class ActionGetSupport(Action):
             dispatcher.utter_message(text=message, attachment=link)
             return []
         
-        message = "To know about " + entities[0]['value'] + " please checkout following link:"
+        message = "Please checkout following link. It might help you."
         dispatcher.utter_message(text=message, attachment=link)
 
         return []

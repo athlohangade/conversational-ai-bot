@@ -191,48 +191,31 @@
 - [where is mastercard situated]{"entity": "support_type", "value": "global locations"}
 - [mastercard office]{"entity": "support_type", "value": "global locations"}
 - [career](support_type)
-- I want to [Apply for job]{"entity": "support_type", "value": "career"}
-- I want to [work in mastercard]{"entity": "support_type", "value": "career"}
-- I want to [relaunch my career]{"entity": "support_type", "value": "career"}
-- how to [join mastercard]{"entity": "support_type", "value": "career"}
-- how is [life at mastercard]{"entity": "support_type", "value": "career"}
+- [career](support_type) opportunities at mastercard
+- I want to Apply for [job]{"entity": "support_type", "value": "career"}
+- I want to [work]{"entity": "support_type", "value": "career"} in mastercard
+- I want to relaunch my [career](support_type)
+- how to [join]{"entity": "support_type", "value": "career"} mastercard
+- how is [work]{"entity": "support_type", "value": "career"} at mastercard
 - i am in search of [job]{"entity": "support_type", "value": "career"}
 - i am searching for [job]{"entity": "support_type", "value": "career"}
 - i am looking for [job]{"entity": "support_type", "value": "career"}
 - help me to get [job]{"entity": "support_type", "value": "career"}
-- help me to get [job opportunities]{"entity": "support_type", "value": "career"} at mastercard
+- help me to get [job]{"entity": "support_type", "value": "career"} opportunities at mastercard
 - how to apply for [job]{"entity": "support_type", "value": "career"} in mastercard
-- [job opportunities]{"entity": "support_type", "value": "career"} at mastercard
+- [job]{"entity": "support_type", "value": "career"} opportunities at mastercard
 - [internship]{"entity": "support_type", "value": "career"} at mastercard
-- what are the benefits of [working at Mastercard]{"entity": "support_type", "value": "career"}
+- what are the benefits of [internship]{"entity": "support_type", "value": "career"} at Mastercard
 - [click to pay](support_type)
 - i want to get [support](support_type)
 - i [lost my card]{"entity": "support_type", "value": "support"}
 - someone has [stolen my card]{"entity": "support_type", "value": "support"}
 - I want to [report merchant]{"entity": "support_type", "value": "report problem shopping"}
+- find the nearest [cash back store]{"entity": "support_type", "value": "cash back store locator"}
+- [find a card] that's best for me
 
 ## lookup:support_type
-- cash back store locator
-- support
-- find card
-- ways to pay
-- business overview
-- mastercard contactless
-- bill payment service
-- business cards
-- business support
-- merchant safety and security
-- grow your business
-- manage employee expenses
-- authentication services
-- manage customer needs
-- business payments
-- issuer safety and security
-- issuer support
-- government support
-- global locations
-- career
-- click to pay
+lookup-files/search-lookup.txt
 
 ## synonym:business cards
 - business debit
@@ -256,26 +239,33 @@
 - increase sales and efficiency
 
 ## synonym:career
-- join company
+- join
+- joining
+- joins
 - job
 - work
-- work at mastercard
-- explore jobs
-- working at Mastercard
-- life at mastercard
+- works
+- jobs
+- working
+- life
+- lifes
 - hire
-- relaunch your career
-- relaunch my career
+- hiring
+- hires
+- career
+- careers
 - internship
-- full-time opportunities
+- opportunities
 - opportunity
-- search for job
+
 
 ## synonym:cash back store locator
 - Get access to my cash
 - get access to my cash
 - get cash when paying with Debit
 - get cash
+- cashback store
+- cash back sore
 
 ## synonym:convert currency
 - convert my currency
@@ -306,6 +296,8 @@
 - pay taxes
 - pay income tax
 - tax payment
+- paying tax
+- tax
 
 ## synonym:reload a prepaid card
 - reload my prepaid card
@@ -315,6 +307,11 @@
 - report merchant
 - report retailer
 - report incident
+- reporting incident
+- reporting problem
+- reporting retailer
+- reporting merchant
+- problem with merchant
 
 ## synonym:support
 - get support
