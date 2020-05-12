@@ -3,10 +3,10 @@ import xml.etree.ElementTree as ET
 from difflib import get_close_matches
 from geopy.geocoders import Nominatim
 
-URL = "https://www.mastercard.us/locator/NearestLocationsService/" 
-QUERYSTRING = { 
+URL = "https://www.mastercard.us/locator/NearestLocationsService/"
+QUERYSTRING = {
     "latitude" : "",
-    "longitude" : "", 
+    "longitude" : "",
     "radius" : "5",
     "distanceUnit" : "",
     "locationType" : "atm",
@@ -21,7 +21,7 @@ class RetrieveLocation :
 
     url = URL
     querystring = QUERYSTRING
-    payload = PAYLOAD 
+    payload = PAYLOAD
     headers = HEADERS
 
     @classmethod
@@ -65,7 +65,7 @@ class RetrieveLocation :
     @classmethod
     def getAddress(cls, data, toFind) :
 
-        allAddress = [] 
+        allAddress = []
         userLocation = toFind['location'].upper()
 
         # To match by pincode
@@ -95,7 +95,7 @@ class RetrieveLocation :
 
         if allAddress :
             return allAddress
-        
+
         # To match by location name which is somewhat similar to original location
         # Also for handling minor mistakes in spellings
         for location in data :
