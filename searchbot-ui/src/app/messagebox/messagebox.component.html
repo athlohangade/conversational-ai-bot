@@ -3,7 +3,7 @@
 	<div>
 		<div *ngFor="let data of body">
 			<p *ngIf='data.hasOwnProperty("text")'> {{data.text}} </p>
-			<a *ngIf='data.hasOwnProperty("attachment")' href="{{data.attachment}}"> {{data.attachment}} </a>
+			<a *ngIf='data.hasOwnProperty("attachment")' target="_blank" href="{{data.attachment}}"> {{data.attachment}} </a>
 		</div>
 	</div>
 </div>
