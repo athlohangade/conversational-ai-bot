@@ -1,5 +1,4 @@
 export interface MessageClass {
-	mtype: string;
-	source: string;
-	body: string;
+	isbot: boolean;
+	body: any;
 }

@@ -8,8 +8,8 @@ export class AllmessagesService {
 
 	messages: MessageClass[] = [];
 	
-	addMessage(t: string, s: string, b: string): void {
-		this.messages.push({mtype: t, source: s, body: b});
+	addMessage(t: boolean, b: any): void {
+		this.messages.push({isbot: t, body: b});
 	}
 
 	constructor() { }
