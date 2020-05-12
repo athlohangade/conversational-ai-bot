@@ -142,29 +142,31 @@
 - who are you?
 
 ## intent:get_support
-- [financial education](support_type)
-- I need support on [financial education](support_type)
-- Can you provide support on [financial education](support_type)
-- I want to [reload a prepaid card](support_type)
-- I want to [reload my prepaid card]{"entity": "support_type", "value": "reload a prepaid card"}
-- Help me to [reload a prepaid card](support_type)
-- Help me to [reload my prepaid card]{"entity": "support_type", "value": "reload a prepaid card"}
-- [reload a prepaid card](support_type)
-- How to [convert currency](support_type)
-- [convert currency](support_type)
-- I want to [convert my currency]{"entity": "support_type", "value": "convert currency"}
-- How to [pay taxes]{"entity": "support_type", "value": "pay tax"}
-- How to [pay tax](support_type)
-- I want to [pay tax](support_type)
-- [pay tax](support_type)
-- [cash back store locator](support_type)
-- [Get access to my cash]{"entity": "support_type", "value": "cash back store locator"}
-- I want to [get access to my cash]{"entity": "support_type", "value": "cash back store locator"}
-- [get cash when paying with Debit]{"entity": "support_type", "value": "cash back store locator"}
-- [report problem shopping](support_type)
-- [report a problem]{"entity": "support_type", "value": "report problem shopping"}
-- I want to [report a problem]{"entity": "support_type", "value": "report problem shopping"}
-- How to [report a problem]{"entity": "support_type", "value": "report problem shopping"}
+- I want to [reload](support_type) a prepaid card
+- I want to [reload](support_type) my prepaid card
+- Help me to [reload](support_type) a prepaid card
+- Help me to [reload](support_type) my prepaid card
+- [reload](support_type) a prepaid card
+- How to [convert](support_type) currency
+- [convert](support_type) currency
+- I want to [convert](support_type) my currency
+- Open mastercard currency [converter]{"entity": "support_type", "value": "convert"}
+- How to pay [taxes]{"entity": "support_type", "value": "tax"}
+- How to pay [tax](support_type)
+- I want to pay [tax](support_type)
+- pay [tax](support_type)
+- [cash] back store locator(support_type)
+- Get access to my [cash](support_type)
+- I want to get access to my [cash](support_type)
+- get [cash](support_type) when paying with Debit
+- find the nearest [cash](support_type) back store
+- find the nearest [cashback]{"entity": "support_type", "value": "cash"} store
+- [report](support_type) problem shopping
+- [report](support_type) a problem
+- I want to [report](support_type) a problem
+- How to [report](support_type) a problem
+- I want to [report](support_type) merchant
+- I have a [problem](support_type) with merchant
 - [support](support_type)
 - [find card](support_type)
 - I want [mastercard]{"entity": "support_type", "value": "find card"}
@@ -172,24 +174,15 @@
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
 - [start accepting]{"entity": "support_type", "value": "business overview"}
-- [mastercard contactless](support_type)
-- [bill payment service](support_type)
+- [bill] payment service(support_type)
+- pay [bills] using mastercard
 - [business cards](support_type)
-- [business support](support_type)
-- [merchant safety and security](support_type)
-- [grow your business](support_type)
-- [manage employee expenses](support_type)
-- [authentication services](support_type)
-- [manage customer needs](support_type)
-- [business payments](support_type)
-- [issuer safety and security](support_type)
-- [issuer support](support_type)
-- [government support](support_type)
-- [global locations](support_type)
-- [where is mastercard]{"entity": "support_type", "value": "global locations"}
-- [where is mastercard located]{"entity": "support_type", "value": "global locations"}
-- [where is mastercard situated]{"entity": "support_type", "value": "global locations"}
-- [mastercard office]{"entity": "support_type", "value": "global locations"}
+- [authentication](support_type) services at mastercard
+- how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
+- global [locations](support_type)
+- where is mastercard [located]{"entity": "support_type", "value": "locations"}
+- where is mastercard [situated]{"entity": "support_type", "value": "locations"}
+- mastercard [office]{"entity": "support_type", "value": "locations"}
 - [career](support_type)
 - [career](support_type) opportunities at mastercard
 - I want to Apply for [job]{"entity": "support_type", "value": "career"}
@@ -206,37 +199,22 @@
 - [job]{"entity": "support_type", "value": "career"} opportunities at mastercard
 - [internship]{"entity": "support_type", "value": "career"} at mastercard
 - what are the benefits of [internship]{"entity": "support_type", "value": "career"} at Mastercard
-- [click to pay](support_type)
 - i want to get [support](support_type)
-- i [lost my card]{"entity": "support_type", "value": "support"}
-- someone has [stolen my card]{"entity": "support_type", "value": "support"}
-- I want to [report merchant]{"entity": "support_type", "value": "report problem shopping"}
-- find the nearest [cash back store]{"entity": "support_type", "value": "cash back store locator"}
-- [find a card] that's best for me
+- i [lost]{"entity": "support_type", "value": "support"} my card
+- someone has [stolen]{"entity": "support_type", "value": "support"} my card
 
 ## lookup:support_type
 lookup-files/search-lookup.txt
 
-## synonym:business cards
-- business debit
-- business prepaid
-- Mastercard business prepaid card
-- card for business
-- debit mastercard business card
-- business credit cards
-- world elite business
-- world elite mastercard for business
-- business card
-- payment solution for business
-- payment solutions for business
+## synonym:authentication
+- authenticate
+- biometric
+- biometrics
 
-## synonym:business overview
-- start accepting
-- grow business with mastercard
-- enable customers to pay anywhere
-- business solution
-- help your business
-- increase sales and efficiency
+## synonym:locations
+- located
+- situated
+- office
 
 ## synonym:career
 - join
@@ -258,25 +236,22 @@ lookup-files/search-lookup.txt
 - opportunities
 - opportunity
 
+## synonym:bill
+- bills
 
-## synonym:cash back store locator
-- Get access to my cash
-- get access to my cash
-- get cash when paying with Debit
-- get cash
-- cashback store
-- cash back sore
+## synonym:cash
+- money
+- cashback
 
-## synonym:convert currency
-- convert my currency
-- convert transaction currency to card currency
-- convert currency for cross-border purchases
+## synonym:convert
+- convert
+- currency
+- converter
 
 ## synonym:find card
 - get mastercard
 - get card
 - personal card
-- card for everyday purchases
 - standard mastercard
 - world mastercard
 - world elite mastercard
@@ -292,47 +267,28 @@ lookup-files/search-lookup.txt
 - prepaid card
 - all cards
 
-## synonym:pay tax
-- pay taxes
-- pay income tax
-- tax payment
-- paying tax
-- tax
+## synonym:tax
+- taxes
 
-## synonym:reload a prepaid card
-- reload my prepaid card
+## synonym:reload
+- reloading
 
-## synonym:report problem shopping
-- report a problem
-- report merchant
-- report retailer
-- report incident
-- reporting incident
-- reporting problem
-- reporting retailer
-- reporting merchant
-- problem with merchant
+## synonym:report
+- problem
+- reported
+- reporting
 
 ## synonym:support
-- get support
 - help
-- lost card
-- lost my card
-- stolen card
-- card benefits
-- theft alert
+- lost
+- stolen
+- theft
 
 ## synonym:ways to pay
 - payment methods
 - pay your way
 - pay
-- tap and go
-- contactless
-- everyday spend
-- speedier subway payment
 - pay MTA
-- connected commerce
-- beyond the wallet
 
 ## intent:thanks
 - thank you
