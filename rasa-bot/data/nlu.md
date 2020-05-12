@@ -212,27 +212,7 @@
 - I want to [report merchant]{"entity": "support_type", "value": "report problem shopping"}
 
 ## lookup:support_type
-- cash back store locator
-- support
-- find card
-- ways to pay
-- business overview
-- mastercard contactless
-- bill payment service
-- business cards
-- business support
-- merchant safety and security
-- grow your business
-- manage employee expenses
-- authentication services
-- manage customer needs
-- business payments
-- issuer safety and security
-- issuer support
-- government support
-- global locations
-- career
-- click to pay
+lookup-files/search-lookup.txt
 
 ## synonym:business cards
 - business debit
