@@ -1,6 +1,8 @@
 actions:
 - action_get_atm_location
 - action_get_support
+- action_default_ask_affirmation
+- action_default_ask_rephrase
 - utter_ask_location
 - utter_ask_pincode
 - utter_cheer_up
@@ -28,6 +30,7 @@ intents:
 - mood_unhappy
 - bot_challenge
 - get_location
+- out_of_scope
 responses:
   utter_ask_location:
   - text: What's your location?
@@ -40,8 +43,12 @@ responses:
   - text: Did that help you?
   utter_goodbye:
   - text: Bye
+  - text: See you soon
+  - text: Have a nice day
   utter_greet:
   - text: Hey! How can I help you?
+  - text: Hi
+  - text: Hello
   utter_happy:
   - text: Great, carry on!
   utter_iamabot:
@@ -49,10 +56,12 @@ responses:
   utter_welcome:
   - text: You are welcome
   utter_default:
-  - text: 'I did not get that.Will you reframe the query?'
+  - text: I did not get that.
+  utter_ask_rephrase:
+  - text: Please reframe the query
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
 slots:
   location:
-    type: text
+    type: unfeaturized

@@ -6,7 +6,12 @@
   
 ## default fallback
 * bot_challenge
-  - action_default_fallback
+  - action_default_ask_affirmation
+  - action_default_ask_rephrase
+* bot_challenge
+  - utter_iamabot
+* out_of_scope
+  - utter_default
 
 ## sad path 1
 * greet
