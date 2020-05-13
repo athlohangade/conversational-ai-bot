@@ -82,6 +82,15 @@
     - utter_did_that_help
 * affirm
     - utter_happy
+
+## report_story_3
+    - utter_greet
+* get_support{"support_type": "report"}
+    - utter_ask_reporttype
+* get_support{"report_type": "theft"}
+    - action_get_support
+* thanks
+    - utter_welcome
     
 ## report_story_2
 * greet

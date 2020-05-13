@@ -11,6 +11,7 @@ actions:
 - utter_happy
 - utter_iamabot
 - utter_welcome
+- utter_ask_reporttype
 entities:
 - location
 - pincode
@@ -54,6 +55,15 @@ responses:
   - text: I did not get that.
   utter_ask_rephrase:
   - text: Please reframe the query
+  utter_ask_reporttype:
+  - text: What do you want to report about?
+    buttons:
+      - title: "Fraud"
+        payload: '/get_support{"report_type": "fraud"}'
+      - title: "Merchant"
+        payload: '/get_support{"report_type": "merchant"}'
+      - title: "Theft"
+        payload: '/get_support{"report_type": "theft"}'
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
