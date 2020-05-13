@@ -1,5 +1,35 @@
-.topdiv {
-	background-color: aqua;
-	border: 2px solid black;
+.heading {
+	background-color: darkblue;
+	height: 50px;
+	color: white;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
+.heading:hover {
+	background-color: blue;
+}
+
+.heading p {
+	margin-left: 20px;
+	margin-top: 20px;
+	color: white;
+	font-weight: bold;
+	text-align: left;
+}
+
+.topdiv {
+	background-color: lightgrey;
+	border: 2px solid black;
+	overflow-y: scroll;
+}
+
+.sendbox {
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.inputfield {
+	border: 2px solid black;
+	width: 100%;
+}

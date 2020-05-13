@@ -1,16 +1,17 @@
 /* message received from bot */
 .botmessage {
 	border: 2px solid black;
-	background-color: #f1f1f1;
+	background-color: lightblue;
 	border-radius: 10px;
 	padding: 5px;
 	margin: 4px;
+	text-align: left;
 }
 
 /* message sent by user */
 .usermessage {
 	border: 2px solid black;
-	background-color: #d0d0d0;
+	background-color: white;
 	border-radius: 10px;
 	padding: 5px;
 	margin: 4px;
