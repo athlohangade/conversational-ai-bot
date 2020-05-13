@@ -6,8 +6,6 @@ affirm,confirm?
 get_support,do you want to know more about us?
 goodbye,do you want to exit?
 deny,you didn't want that?
-mood_great,are you happy?
-mood_unhappy,are you unhappy?
 bot_challenge,I am bot. What would you like to know?
 get_location,do you want to give your location?
 out_of_scope,Sorry. I didn't understand that

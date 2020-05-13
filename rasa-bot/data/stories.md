@@ -156,8 +156,6 @@
     - utter_greet
 * get_atm_location{"location": "akola"}
     - slot{"location": "akola"}
-    - utter_ask_pincode
-* get_pincode{"pincode": "444002"}
     - action_get_atm_location
 * thanks
     - utter_welcome
