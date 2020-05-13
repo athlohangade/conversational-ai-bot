@@ -116,3 +116,47 @@ class ActionGetATMLocation(Action):
                 dispatcher.utter_message(text = message)
 
         return [AllSlotsReset()]
+
+class ActionDefaultAskAffirmation(Action):
+    
+    def name(self):
+        return "action_default_ask_affirmation"
+
+    def __init__(self):
+        self.intent_mappings = {}
+        # read the mapping from a csv and store it in a dictionary
+        with open('intent-fallback.csv') as file:
+            csv_reader = csv.reader(file, delimiter=',')
+            for row in csv_reader:
+                self.intent_mappings[row[0]] = row[1]
+
+    def run(self, dispatcher, tracker, domain):
+        # get the most likely intent
+        last_intent_name = tracker.latest_message['intent']['name']
+
+        # get the prompt for the intent
+        intent_prompt = self.intent_mappings[last_intent_name]
+
+        # Create the affirmation message and add two buttons to it.
+        # Use '/<intent_name>' as payload to directly trigger '<intent_name>'
+        # when the button is clicked.
+        message = "Did you mean '{}'?".format(intent_prompt)
+        buttons = [{'title': 'Yes',
+               'payload': '/get_atm_location'.format(last_intent_name)},
+              {'title': 'No',
+               'payload': '/out_of_scope'}]
+        dispatcher.utter_button_message(message, buttons=buttons)
+
+        return []
+    
+class ActionDefaultAskRephrase(Action):
+
+    def name(self) -> Text:
+        return "action_default_ask_rephrase"
+
+    def run(self, dispatcher: 'Dispatcher', tracker: 'DialogueStateTracker',
+        domain: 'Domain'):
+        dispatcher.utter_template("utter_ask_rephrase", tracker,
+                                        silent_fail=True)
+
+        return []
