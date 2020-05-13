@@ -65,19 +65,28 @@
     - utter_did_that_help
 * thanks
     - utter_welcome
-## interactive_story_1
+## report_story_1
 * greet
     - utter_greet
-* get_support{"support_type": "report problem shopping"}
+* get_support{"support_type": "report", "report_type": "theft"}
+    - action_get_support
+    - utter_did_that_help
+* affirm
+    - utter_happy
+
+## report_story_4
+* greet
+    - utter_greet
+* get_support{"support_type": "report", "report_type": "merchant"}
     - action_get_support
     - utter_did_that_help
 * affirm
     - utter_happy
     
-## interactive_story_X
+## report_story_2
 * greet
     - utter_greet
-* get_support{"support_type": "report problem shopping"}
+* get_support{"support_type": "report", "report_type": "fraud"}
     - action_get_support
     - utter_did_that_help
 * deny

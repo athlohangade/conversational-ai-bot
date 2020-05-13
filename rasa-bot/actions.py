@@ -14,6 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, AllSlotsReset
 from rasa_sdk.forms import FormAction
 from utils.RetrieveLocation import RetrieveLocation
+from utils.OtherSupport import OtherSupport
 
 import csv
 
@@ -44,48 +45,23 @@ class ActionGetSupport(Action):
 
         link = None
         message = "Sorry, I didn't get that. Can you please rephrase the query?"
-        found = False
 
-        if not entities:
+        report_type = tracker.get_slot('report_type')
+        print(report_type)
+        if report_type is not None:
+            # Report_type is set
+            print("report_type is set")
+            res = OtherSupport.getResponse([{'entity':'report_type', 'value': report_type}])
+        elif not entities:
+            # No entities found
             dispatcher.utter_message(text=message, attachment=link)
             return []
-
-        # Handling report queries (To do : add buttons for report_type)
-        for e in entities:
-            print(e['value'])
-            if e['value'] == "report":
-                report_type = tracker.get_slot('report_type')
-                print(report_type)
-                if report_type is None:
-                    dispatcher.utter_message(text="What do you want to report among the following?")
-                    dispatcher.utter_message("1. theft 2. merchant 3. fraud")
-                    return []
-                else:
-                    break
-
-
-        with open('lookup-files/keywords-urls.csv') as csv_file:
-            csv_reader = csv.reader(csv_file, delimiter=',')
-            line_count = 0
-            for row in csv_reader:
-                if line_count != 0:
-                    for e in entities:
-                        if e['value'] == row[0]:
-                            link = row[1]
-                            message = row[2]
-                            found = True
-                            break
-                    if found:
-                        break
-                line_count += 1
-
-        if not found:
-            dispatcher.utter_message(text=message, attachment=link)
-            return []
+        else:
+            res = OtherSupport.getResponse(entities)
         
-        dispatcher.utter_message(text=message, attachment=link)
+        dispatcher.utter_message(text=res[0], attachment=res[1])
 
-        return []
+        return [AllSlotsReset()]
 
 class ActionGetATMLocation(Action):
 
