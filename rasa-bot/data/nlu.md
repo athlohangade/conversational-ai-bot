@@ -214,8 +214,14 @@
 - find the nearest [cash back store]{"entity": "support_type", "value": "cash back store locator"}
 - [find a card] that's best for me
 
+## regex:pincode
+- [0-9]{6}
+
 ## lookup:support_type
 lookup-files/search-lookup.txt
+
+## lookup:location
+lookup-files/citynames.txt
 
 ## synonym:business cards
 - business debit
