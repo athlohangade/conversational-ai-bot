@@ -1,7 +1,3 @@
-## default fallback
-* out_of_scope
-  - utter_default
-
 ## say goodbye
 * goodbye
   - utter_goodbye

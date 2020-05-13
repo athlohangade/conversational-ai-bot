@@ -13,6 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, AllSlotsReset
 from rasa_sdk.forms import FormAction
+from rasa_sdk.events import UserUtteranceReverted
 from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
 
@@ -132,12 +133,12 @@ class ActionDefaultAskAffirmation(Action):
         # when the button is clicked.
         message = "Did you mean '{}'?".format(intent_prompt)
         buttons = [{'title': 'Yes',
-               'payload': '/get_atm_location'.format(last_intent_name)},
+               'payload': '/{}'.format(last_intent_name)},
               {'title': 'No',
                'payload': '/out_of_scope'}]
         dispatcher.utter_button_message(message, buttons=buttons)
 
-        return []
+        return [UserUtteranceReverted()]
     
 class ActionDefaultAskRephrase(Action):
 
@@ -149,4 +150,4 @@ class ActionDefaultAskRephrase(Action):
         dispatcher.utter_template("utter_ask_rephrase", tracker,
                                         silent_fail=True)
 
-        return []
+        return [UserUtteranceReverted()]

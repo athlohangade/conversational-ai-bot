@@ -46,7 +46,7 @@ responses:
   utter_happy:
   - text: Great, carry on!
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: I am a bot, I can help you with your query. What do you want to know about?
   utter_welcome:
   - text: You are welcome
   utter_default:

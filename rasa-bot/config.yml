@@ -38,8 +38,8 @@ policies:
     epochs: 100
   - name: MappingPolicy
   - name: TwoStageFallbackPolicy
-    nlu_threshold: 0.3
-    core_threshold: 0.3
+    nlu_threshold: 0.9
+    core_threshold: 0.9
     fallback_core_action_name: "action_default_ask_affirmation"
     fallback_nlu_action_name: "action_default_ask_rephrase"
     deny_suggestion_intent_name: "out_of_scope"
