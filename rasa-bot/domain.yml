@@ -72,7 +72,7 @@ responses:
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
-  
+
 slots:
   location:
     type: unfeaturized

@@ -180,6 +180,7 @@
 - where is mastercard [located]{"entity": "support_type", "value": "locations"}
 - where is mastercard [situated]{"entity": "support_type", "value": "locations"}
 - mastercard [office]{"entity": "support_type", "value": "locations"}
+- [locations](support_type) of mastercard
 
 - [career](support_type)
 - [career](support_type) opportunities at mastercard

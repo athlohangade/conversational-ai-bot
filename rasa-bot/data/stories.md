@@ -150,6 +150,13 @@
     - utter_did_that_help
 * thanks
     - utter_welcome
+
+## report_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "report"}
+    - action_get_support
+    - utter_ask_reporttype
     
 ## interactive_story_1
 * greet
