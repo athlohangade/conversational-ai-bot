@@ -203,10 +203,6 @@
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
 
-
-## regex:pincode
-- [0-9]{6}
-
 ## lookup:support_type
 lookup-files/search-lookup.txt
 
@@ -322,16 +318,6 @@ lookup-files/citynames.txt
 - ty
 - thankie
 - Thanks
-
-## intent:get_pincode
-- [411014](pincode)
-- [510011](pincode)
-- [411009](pincode)
-- [411044](pincode)
-- [411035](pincode)
-- [510987](pincode)
-- [787182](pincode)
-- [444002](pincode)
 
 ## intent:get_location
 - [Pune](location)

@@ -1,9 +1,4 @@
 ## default fallback
-* bot_challenge
-  - action_default_ask_affirmation
-  - action_default_ask_rephrase
-* bot_challenge
-  - utter_iamabot
 * out_of_scope
   - utter_default
 
@@ -23,30 +18,26 @@
 * get_atm_location
   - utter_ask_location
 * get_location{"location" : "Pune"}
-  - utter_ask_pincode
+  - action_get_atm_location
+  - utter_did_that_help
+* affirm
+  - utter_happy
 * deny
-  - action_get_atm_location
-* get_pincode{"pincode" : "411014"}
-  - action_get_atm_location
+  - utter_try_again
 * goodbye
   - utter_goodbye
 
 ## locate atm given location 
 * get_atm_location{"location" : "Pune" }
-  - utter_ask_pincode
+  - action_get_atm_location
+  - utter_did_that_help
+* affirm
+  - utter_happy
 * deny
-  - action_get_atm_location
-* get_pincode{"pincode" : "411014"}
-  - action_get_atm_location
+  - utter_try_again
 * goodbye
   - utter_goodbye
 
-## locate atm given location + pincode
-* get_atm_location{"location" : "Pune", "pincode" : "411014" }
-  - action_get_atm_location
-* goodbye
-  - utter_goodbye
-  
 ## interactive_story_1
 * greet
     - utter_greet
