@@ -204,8 +204,8 @@
 - [internship]{"entity": "support_type", "value": "career"} at mastercard
 - what are the benefits of [internship]{"entity": "support_type", "value": "career"} at Mastercard
 - i want to get [support](support_type)
-- i [lost]{"entity": "support_type", "value": "support"} my card
-- someone has [stolen]{"entity": "support_type", "value": "support"} my card
+- i [lost](support_type) my card
+- someone has [stolen]{"entity": "support_type", "value": "lost"} my card
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
 - Someone called to offer a lower rate on my Mastercard but it seems to be a [scam]{"entity": "support_type", "value": "fraud"}. What should I do?
@@ -224,6 +224,10 @@ lookup-files/search-lookup.txt
 ## synonym:fraud
 - fraudulent
 - scam
+
+## synonym:lost
+- stolen
+- theft
 
 ## synonym:locations
 - located
@@ -295,9 +299,6 @@ lookup-files/search-lookup.txt
 
 ## synonym:support
 - help
-- lost
-- stolen
-- theft
 
 ## synonym:ways to pay
 - payment methods

@@ -43,7 +43,7 @@ class ActionGetSupport(Action):
         print(entities)
 
         link = None
-        message = "Sorry, I didn't get that"
+        message = "Sorry, I didn't get that. Can you please rephrase the query?"
         found = False
 
         if not entities:
@@ -58,6 +58,7 @@ class ActionGetSupport(Action):
                     for e in entities:
                         if e['value'] == row[0]:
                             link = row[1]
+                            message = row[2]
                             found = True
                             break
                     if found:
@@ -68,7 +69,6 @@ class ActionGetSupport(Action):
             dispatcher.utter_message(text=message, attachment=link)
             return []
         
-        message = "Please checkout following link. It might help you."
         dispatcher.utter_message(text=message, attachment=link)
 
         return []

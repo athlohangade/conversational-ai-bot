@@ -1,28 +1,29 @@
-keywords,urls
-convert,https://www.mastercard.us/en-us/personal/get-support/convert-currency.html
-reload,https://www.mastercard.us/en-us/personal/get-support/reload-a-prepaid-card.html
-tax,https://www.mastercard.us/en-us/personal/get-support/pay-taxes.html
-report,https://www.mastercard.us/en-us/personal/get-support/report-problem-shopping.html
-cash,https://www.mastercard.us/en-us/personal/get-support/cash-back-store-locator.html
-support,https://www.mastercard.us/en-us/personal/get-support.html
-find card,https://www.mastercard.us/en-us/personal/find-a-card.html
-ways to pay,https://www.mastercard.us/en-us/personal/ways-to-pay.html
-business overview,https://www.mastercard.us/en-us/business/overview.html
-mastercard contactless,https://www.mastercard.us/en-us/business/overview/grow-your-business/improve-checkout/mastercard-contactless.html
-bill,https://www.mastercard.us/en-us/business/overview/grow-your-business/improve-checkout/bill-payment-services.html
-business cards,https://www.mastercard.us/en-us/business/overview/cards.html
-business support,https://www.mastercard.us/en-us/business/overview/support.html
-merchant safety and security,https://www.mastercard.us/en-us/business/overview/safety-and-security.html
-grow your business,https://www.mastercard.us/en-us/business/large-enterprise/grow-your-business.html
-manage employee expenses,https://www.mastercard.us/en-us/business/large-enterprise/manage-employee-expenses.html
-authentication,https://www.mastercard.us/en-us/business/large-enterprise/safety-security/authentication-services.html
-manage customer needs,https://www.mastercard.us/en-us/business/issuers/manage-your-consumer-needs.html
-business payments,https://www.mastercard.us/en-us/business/issuers/business-payments.html
-issuer safety and security,https://www.mastercard.us/en-us/business/issuers/safety-security.html
-issuer support,https://www.mastercard.us/en-us/business/issuers/get-support.html
-government support,https://www.mastercard.us/en-us/business/governments/get-support.html
-locations,https://www.mastercard.us/en-us/vision/who-we-are/global-locations.html
-career,https://www.mastercard.us/en-us/vision/who-we-are/careers.html
-click to pay,https://checkout.mastercard.com/clicktopay/en-us.html
-surcharge,https://www.mastercard.us//en-us/business/overview/support/merchant-surcharge-rules.html
-fraud,https://www.mastercard.us/en-us/business/overview/safety-and-security/suspect-fraud.html
+keywords,urls,message
+convert,https://www.mastercard.us/en-us/personal/get-support/convert-currency.html,"Please checkout following link. It might help you."
+reload,https://www.mastercard.us/en-us/personal/get-support/reload-a-prepaid-card.html,"Please checkout following link. It might help you."
+tax,https://www.mastercard.us/en-us/personal/get-support/pay-taxes.html,"Please checkout following link. It might help you."
+report,https://www.mastercard.us/en-us/personal/get-support/report-problem-shopping.html,"Please checkout following link. It might help you."
+cash,https://www.mastercard.us/en-us/personal/get-support/cash-back-store-locator.html,"Please checkout following link. It might help you."
+support,https://www.mastercard.us/en-us/personal/get-support.html,"Please checkout following link. It might help you."
+find card,https://www.mastercard.us/en-us/personal/find-a-card.html,"If you are looking for the perfect card for you, please checkout following link:"
+ways to pay,https://www.mastercard.us/en-us/personal/ways-to-pay.html,"Please checkout following link. It might help you."
+business overview,https://www.mastercard.us/en-us/business/overview.html,"Please checkout following link. It might help you."
+mastercard contactless,https://www.mastercard.us/en-us/business/overview/grow-your-business/improve-checkout/mastercard-contactless.html,"Please checkout following link. It might help you."
+bill,https://www.mastercard.us/en-us/business/overview/grow-your-business/improve-checkout/bill-payment-services.html,"Please checkout following link. It might help you."
+business cards,https://www.mastercard.us/en-us/business/overview/cards.html,"Please checkout following link. It might help you."
+business support,https://www.mastercard.us/en-us/business/overview/support.html,"Please checkout following link. It might help you."
+merchant safety and security,https://www.mastercard.us/en-us/business/overview/safety-and-security.html,"Please checkout following link. It might help you."
+grow your business,https://www.mastercard.us/en-us/business/large-enterprise/grow-your-business.html,"Please checkout following link. It might help you."
+manage employee expenses,https://www.mastercard.us/en-us/business/large-enterprise/manage-employee-expenses.html,"Please checkout following link. It might help you."
+authentication,https://www.mastercard.us/en-us/business/large-enterprise/safety-security/authentication-services.html,"Please checkout following link. It might help you."
+manage customer needs,https://www.mastercard.us/en-us/business/issuers/manage-your-consumer-needs.html,"Please checkout following link. It might help you."
+business payments,https://www.mastercard.us/en-us/business/issuers/business-payments.html,"Please checkout following link. It might help you."
+issuer safety and security,https://www.mastercard.us/en-us/business/issuers/safety-security.html,"Please checkout following link. It might help you."
+issuer support,https://www.mastercard.us/en-us/business/issuers/get-support.html,"Please checkout following link. It might help you."
+government support,https://www.mastercard.us/en-us/business/governments/get-support.html,"Please checkout following link. It might help you."
+locations,https://www.mastercard.us/en-us/vision/who-we-are/global-locations.html,"Please checkout following link. It might help you."
+career,https://www.mastercard.us/en-us/vision/who-we-are/careers.html,"Want to start working at Mastercard? Please checkout the following link to know more about the career oppotunities at Mastercard."
+click to pay,https://checkout.mastercard.com/clicktopay/en-us.html,"Please checkout following link. It might help you."
+surcharge,https://www.mastercard.us//en-us/business/overview/support/merchant-surcharge-rules.html,"Please checkout following link. It might help you."
+fraud,https://www.mastercard.us/en-us/business/overview/safety-and-security/suspect-fraud.html,"Please checkout following link. It might help you."
+lost,https://www.mastercard.us/content/dam/mccom/global/documents/global-services-phone-numbers.pdf,"If your card is lost or stolen, please contact the Mastercard Assistance Center. Here is the full list of emergency contact numbers:"
