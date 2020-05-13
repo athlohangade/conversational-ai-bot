@@ -2,9 +2,9 @@
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 pipeline:
-#  - name: WhitespaceTokenizer
-  - name: ConveRTTokenizer
-  - name: ConveRTFeaturizer
+#  - name: ConveRTTokenizer
+#  - name: ConveRTFeaturizer
+  - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
@@ -16,7 +16,6 @@ pipeline:
     epochs: 100
   - name: CRFEntityExtractor
   - name: EntitySynonymMapper
-  - name: "CRFEntityExtractor"
   - name: ResponseSelector
     epochs: 100
 

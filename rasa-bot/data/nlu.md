@@ -204,9 +204,27 @@
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
 
 
+## regex:pincode
+- [0-9]{6}
+
 ## lookup:support_type
 lookup-files/search-lookup.txt
 
+## lookup:location
+lookup-files/citynames.txt
+
+## synonym:business cards
+- business debit
+- business prepaid
+- Mastercard business prepaid card
+- card for business
+- debit mastercard business card
+- business credit cards
+- world elite business
+- world elite mastercard for business
+- business card
+- payment solution for business
+- payment solutions for business
 ## synonym:authentication
 - authenticate
 - biometric
