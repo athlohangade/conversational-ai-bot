@@ -4,7 +4,6 @@ actions:
 - action_default_ask_affirmation
 - action_default_ask_rephrase
 - utter_ask_location
-- utter_ask_pincode
 - utter_did_that_help
 - utter_goodbye
 - utter_greet
@@ -14,11 +13,9 @@ actions:
 - utter_ask_reporttype
 entities:
 - location
-- pincode
 - support_type
 - report_type
 intents:
-- get_pincode
 - thanks
 - greet
 - get_atm_location
@@ -33,8 +30,6 @@ intents:
 responses:
   utter_ask_location:
   - text: What's your location?
-  utter_ask_pincode:
-  - text: Can you provide pincode for better results?
   utter_did_that_help:
   - text: Did that help you?
   utter_goodbye:
@@ -55,6 +50,9 @@ responses:
   - text: I did not get that.
   utter_ask_rephrase:
   - text: Please reframe the query
+  utter_try_again:
+  - text: Ok, you can try again.
+  - text: Can you try again?
   utter_ask_reporttype:
   - text: What do you want to report about?
     buttons:
