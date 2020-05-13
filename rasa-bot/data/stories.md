@@ -65,42 +65,101 @@
     - utter_did_that_help
 * thanks
     - utter_welcome
-## report_story_1
+
+## career_story_1
 * greet
     - utter_greet
-* get_support{"support_type": "report", "report_type": "theft"}
+* get_support{"support_type": "career"}
     - action_get_support
     - utter_did_that_help
 * affirm
     - utter_happy
 
-## report_story_4
+## career_story_2
 * greet
     - utter_greet
-* get_support{"support_type": "report", "report_type": "merchant"}
-    - action_get_support
-    - utter_did_that_help
-* affirm
-    - utter_happy
-
-## report_story_3
-    - utter_greet
-* get_support{"support_type": "report"}
-    - utter_ask_reporttype
-* get_support{"report_type": "theft"}
-    - action_get_support
-* thanks
-    - utter_welcome
-    
-## report_story_2
-* greet
-    - utter_greet
-* get_support{"support_type": "report", "report_type": "fraud"}
+* get_support{"support_type": "career"}
     - action_get_support
     - utter_did_that_help
 * deny
-    - action_default_fallback
+    - utter_submit_query
 
+## tax_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "tax"}
+    - action_get_support
+* thanks
+    - utter_welcome
+
+## reload_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "reload"}
+    - action_get_support
+* thanks
+    - utter_welcome
+
+## convert_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "convert"}
+    - action_get_support
+* thanks
+    - utter_welcome
+
+## convert_story_2
+* greet
+    - utter_greet
+* get_support{"support_type": "convert"}
+    - action_get_support
+    - utter_did_that_help
+* deny
+    - utter_submit_query
+
+## cashback_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "cash"}
+    - action_get_support
+* thanks
+    - utter_welcome
+
+## bill_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "bill"}
+    - action_get_support
+* thanks
+    - utter_welcome
+
+## location_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "locations"}
+    - action_get_support
+    - utter_did_that_help
+* thanks
+    - utter_welcome
+
+## support_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "support"}
+    - action_get_support
+    - utter_did_that_help
+* thanks
+    - utter_welcome
+
+## surcharge_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "surcharge"}
+    - action_get_support
+    - utter_did_that_help
+* thanks
+    - utter_welcome
+    
 ## interactive_story_1
 * greet
     - utter_greet

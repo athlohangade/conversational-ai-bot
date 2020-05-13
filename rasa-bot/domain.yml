@@ -64,6 +64,9 @@ responses:
         payload: '/get_support{"report_type": "merchant"}'
       - title: "Theft"
         payload: '/get_support{"report_type": "theft"}'
+  utter_submit_query:
+  - text: If you still need assistance, you can submit your question on the following link and we will get back to you soon.
+    attachment: "https://www.mastercard.us//en-us/personal/get-support/ask-mastercard-webform.html"
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
@@ -76,4 +79,3 @@ slots:
       - merchant
       - fraud
       - theft
-    auto_fill: False

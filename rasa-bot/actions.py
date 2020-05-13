@@ -43,19 +43,16 @@ class ActionGetSupport(Action):
         entities = tracker.latest_message['entities']
         print(entities)
 
-        link = None
-        message = "Sorry, I didn't get that. Can you please rephrase the query?"
-
         report_type = tracker.get_slot('report_type')
         print(report_type)
         if report_type is not None:
             # Report_type is set
             print("report_type is set")
             res = OtherSupport.getResponse([{'entity':'report_type', 'value': report_type}])
-        elif not entities:
-            # No entities found
-            dispatcher.utter_message(text=message, attachment=link)
-            return []
+        elif OtherSupport.checkValue(entities, "report"):
+            print("wrong path")
+            dispatcher.utter_message(template="utter_ask_reporttype")
+            return [AllSlotsReset()]
         else:
             res = OtherSupport.getResponse(entities)
         
