@@ -1,19 +1,24 @@
 <div>
-	<div class="heading">
-		<p> Chat with out Bot </p>
+	<div style="width: {{width}}px" class="heading" (click)="hideChat()">
+		<p> Bot is online! </p>
 	</div>
-	<div class="topdiv" height="70%">
-		<!-- <div *ngFor="let message of messages.messages">
-			<div class="{{message.mtype}}" >
-				<img src="{{message.source}}">
-				<pre> {{message.body}} </pre>
-			</div>
-		</div> -->
-		<app-messagebox *ngFor="let message of messages.messages" [isbot]="message.isbot" [body]="message.body"></app-messagebox>
-	</div>
-	<div class="sendbox">
-		<textarea [(ngModel)]="textboxval" (keydown.enter)="sendMessage()" (keyup.enter)="resetTextArea()"> </textarea>
-		<button class="btn btn-primary" (click)="sendMessage()"> Send </button>
+	<div *ngIf="hide">
+		<div #mainchatscreen style="
+				height: {{height}}px;
+				width: {{width}}px;
+				max-height: {{height}}px;
+				max-width: {{width}}px;
+			" class="topdiv">
+			<app-messagebox *ngFor="let message of messages.messages" [isbot]="message.isbot" [body]="message.body"></app-messagebox>
+		</div>
+		<div style="width: {{width}}px; max-width: {{width}}px" class="sendbox">
+			<table>
+				<tr>
+					<td width="{{width}}px"> <textarea rows="3" [(ngModel)]="textboxval" (keydown.enter)="sendMessage()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield"> </textarea> </td>
+					<td> <button class="btn btn-primary" (click)="sendMessage(); scrollDown();"> Send </button> </td> 
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>
 	
