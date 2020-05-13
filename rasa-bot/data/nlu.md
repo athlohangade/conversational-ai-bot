@@ -206,6 +206,12 @@
 - i want to get [support](support_type)
 - i [lost]{"entity": "support_type", "value": "support"} my card
 - someone has [stolen]{"entity": "support_type", "value": "support"} my card
+- A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
+- What should I do if the merchant [surcharge](support_type) was higher than I expected?
+- Someone called to offer a lower rate on my Mastercard but it seems to be a [scam]{"entity": "support_type", "value": "fraud"}. What should I do?
+- I believe [fraudulent]{"entity": "support_type", "value": "fraud"} purchases were made on my Mastercard. How do I report it?
+- I know who committed [fraud](support_type) on my Mastercard credit or debit card. How do I report it?
+- How do I report potential [fraud]?
 
 ## lookup:support_type
 lookup-files/search-lookup.txt
@@ -214,6 +220,10 @@ lookup-files/search-lookup.txt
 - authenticate
 - biometric
 - biometrics
+
+## synonym:fraud
+- fraudulent
+- scam
 
 ## synonym:locations
 - located

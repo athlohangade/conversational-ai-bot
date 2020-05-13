@@ -40,8 +40,12 @@ responses:
   - text: Did that help you?
   utter_goodbye:
   - text: Bye
+  - text: See you soon
+  - text: Have a nice day
   utter_greet:
   - text: Hey! How can I help you?
+  - text: Hi
+  - text: Hello
   utter_happy:
   - text: Great, carry on!
   utter_iamabot:
