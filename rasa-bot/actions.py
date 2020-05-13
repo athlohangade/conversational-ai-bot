@@ -72,6 +72,9 @@ class ActionGetATMLocation(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]] :
 
+        entities = tracker.latest_message['entities']
+        print(entities)
+
         addresses = []
         toFind = {}
         toFind['location'] = tracker.get_slot('location')
@@ -81,12 +84,12 @@ class ActionGetATMLocation(Action):
             dispatcher.utter_message(text = message)
             return [AllSlotsReset()]
 
-        toFind['postalCode'] = None
-        entities = tracker.latest_message['entities']
-        for entity in entities :
-            if entity['entity'] == 'pincode' :
-                toFind['postalCode'] = entity['value']
-                break
+        # toFind['postalCode'] = None
+        # entities = tracker.latest_message['entities']
+        # for entity in entities :
+        #     if entity['entity'] == 'pincode' :
+        #         toFind['postalCode'] = entity['value']
+        #         break
 
         locationsData = RetrieveLocation.requestData(toFind['location'])
         if locationsData is None :

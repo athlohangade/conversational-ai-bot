@@ -14,7 +14,7 @@
 * get_support
   - action_get_support
 
-## locate atm given no data
+## locate atm given no data happy
 * get_atm_location
   - utter_ask_location
 * get_location{"location" : "Pune"}
@@ -22,17 +22,33 @@
   - utter_did_that_help
 * affirm
   - utter_happy
+* goodbye
+  - utter_goodbye
+
+## locate atm given no data sad 
+* get_atm_location
+  - utter_ask_location
+* get_location{"location" : "Pune"}
+  - action_get_atm_location
+  - utter_did_that_help
 * deny
   - utter_try_again
 * goodbye
   - utter_goodbye
 
-## locate atm given location 
+## locate atm given location happy
 * get_atm_location{"location" : "Pune" }
   - action_get_atm_location
   - utter_did_that_help
 * affirm
   - utter_happy
+* goodbye
+  - utter_goodbye
+
+## locate atm given location sad
+* get_atm_location{"location" : "Pune" }
+  - action_get_atm_location
+  - utter_did_that_help
 * deny
   - utter_try_again
 * goodbye
