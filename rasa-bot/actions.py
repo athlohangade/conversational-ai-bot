@@ -50,6 +50,20 @@ class ActionGetSupport(Action):
             dispatcher.utter_message(text=message, attachment=link)
             return []
 
+        # Handling report queries (To do : add buttons for report_type)
+        for e in entities:
+            print(e['value'])
+            if e['value'] == "report":
+                report_type = tracker.get_slot('report_type')
+                print(report_type)
+                if report_type is None:
+                    dispatcher.utter_message(text="What do you want to report among the following?")
+                    dispatcher.utter_message("1. theft 2. merchant 3. fraud")
+                    return []
+                else:
+                    break
+
+
         with open('lookup-files/keywords-urls.csv') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             line_count = 0

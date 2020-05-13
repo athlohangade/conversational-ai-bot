@@ -103,28 +103,6 @@
 - not yet
 - oh no
 
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
-
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
@@ -147,26 +125,38 @@
 - Help me to [reload](support_type) a prepaid card
 - Help me to [reload](support_type) my prepaid card
 - [reload](support_type) a prepaid card
+
 - How to [convert](support_type) currency
 - [convert](support_type) currency
 - I want to [convert](support_type) my currency
 - Open mastercard currency [converter]{"entity": "support_type", "value": "convert"}
+
 - How to pay [taxes]{"entity": "support_type", "value": "tax"}
 - How to pay [tax](support_type)
 - I want to pay [tax](support_type)
 - pay [tax](support_type)
+
 - [cash] back store locator(support_type)
 - Get access to my [cash](support_type)
 - I want to get access to my [cash](support_type)
 - get [cash](support_type) when paying with Debit
 - find the nearest [cash](support_type) back store
 - find the nearest [cashback]{"entity": "support_type", "value": "cash"} store
-- [report](support_type) problem shopping
+
+- [report](support_type) problem [shopping]{"entity": "report_type", "value": "merchant"}
 - [report](support_type) a problem
 - I want to [report](support_type) a problem
 - How to [report](support_type) a problem
-- I want to [report](support_type) merchant
-- I have a [problem](support_type) with merchant
+- I want to [report](support_type) [merchant](report_type)
+- I have a [problem]{"entity": "support_type", "value": "report"} with [merchant](report_type)
+- Someone called to offer a lower rate on my Mastercard but it seems to be a [scam]{"entity": "report_type", "value": "fraud"}. What should I do?
+- I believe [fraudulent]{"entity": "report_type", "value": "fraud"} purchases were made on my Mastercard. How do I [report](support_type) it?
+- I know who committed [fraud](report_type) on my Mastercard credit or debit card. How do I [report](support_type) it?
+- How do I [report](support_type) potential [fraud](report_type)?
+- i [lost]{"entity": "report_type", "value": "theft"} my card
+- someone has [stolen]{"entity": "report_type", "value": "theft"} my card
+- I want to [report](support_type) [theft](report_type)
+
 - [support](support_type)
 - [find card](support_type)
 - I want [mastercard]{"entity": "support_type", "value": "find card"}
@@ -174,19 +164,23 @@
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
 - [start accepting]{"entity": "support_type", "value": "business overview"}
+
 - [bill](support_type) payment service
 - Which cards can I use to pay [bills]{"entity": "support_type", "value": "bill"}?
 - pay [bills]{"entity": "support_type", "value": "bill"} using mastercard
 - How do I pay a [bill](support_type) with a Mastercard?
 - Can I pay my [billers]{"entity": "support_type", "value": "bill"} who accept Mastercard directly from this site?
 - What are the benefits of [bill](support_type) payment using a Mastercard?
+
 - [business cards](support_type)
 - [authentication](support_type) services at mastercard
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
+
 - global [locations](support_type)
 - where is mastercard [located]{"entity": "support_type", "value": "locations"}
 - where is mastercard [situated]{"entity": "support_type", "value": "locations"}
 - mastercard [office]{"entity": "support_type", "value": "locations"}
+
 - [career](support_type)
 - [career](support_type) opportunities at mastercard
 - I want to Apply for [job]{"entity": "support_type", "value": "career"}
@@ -203,15 +197,12 @@
 - [job]{"entity": "support_type", "value": "career"} opportunities at mastercard
 - [internship]{"entity": "support_type", "value": "career"} at mastercard
 - what are the benefits of [internship]{"entity": "support_type", "value": "career"} at Mastercard
+
 - i want to get [support](support_type)
-- i [lost](support_type) my card
-- someone has [stolen]{"entity": "support_type", "value": "lost"} my card
+
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
-- Someone called to offer a lower rate on my Mastercard but it seems to be a [scam]{"entity": "support_type", "value": "fraud"}. What should I do?
-- I believe [fraudulent]{"entity": "support_type", "value": "fraud"} purchases were made on my Mastercard. How do I report it?
-- I know who committed [fraud](support_type) on my Mastercard credit or debit card. How do I report it?
-- How do I report potential [fraud]?
+
 
 ## lookup:support_type
 lookup-files/search-lookup.txt
@@ -221,13 +212,18 @@ lookup-files/search-lookup.txt
 - biometric
 - biometrics
 
+## synonym:report
+- problem
+- reported
+- reporting
+
 ## synonym:fraud
 - fraudulent
 - scam
 
-## synonym:lost
+## synonym:theft
 - stolen
-- theft
+- lost
 
 ## synonym:locations
 - located
@@ -291,11 +287,6 @@ lookup-files/search-lookup.txt
 
 ## synonym:reload
 - reloading
-
-## synonym:report
-- problem
-- reported
-- reporting
 
 ## synonym:support
 - help

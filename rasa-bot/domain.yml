@@ -5,7 +5,6 @@ actions:
 - action_default_ask_rephrase
 - utter_ask_location
 - utter_ask_pincode
-- utter_cheer_up
 - utter_did_that_help
 - utter_goodbye
 - utter_greet
@@ -16,6 +15,7 @@ entities:
 - location
 - pincode
 - support_type
+- report_type
 intents:
 - get_pincode
 - thanks
@@ -26,8 +26,6 @@ intents:
 - get_support
 - goodbye
 - deny
-- mood_great
-- mood_unhappy
 - bot_challenge
 - get_location
 - out_of_scope
@@ -36,9 +34,6 @@ responses:
   - text: What's your location?
   utter_ask_pincode:
   - text: Can you provide pincode for better results?
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
   utter_did_that_help:
   - text: Did that help you?
   utter_goodbye:
@@ -65,3 +60,10 @@ session_config:
 slots:
   location:
     type: unfeaturized
+  report_type:
+    type: categorical
+    values:
+      - merchant
+      - fraud
+      - theft
+    auto_fill: False

@@ -13,5 +13,3 @@ report
 convert
 reload
 surcharge
-fraud
-lost
