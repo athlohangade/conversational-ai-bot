@@ -337,10 +337,16 @@ lookup-files/citynames.txt
 - [Pune](location)
 - [Shivajinagar](location)
 - [Hadapsar](location)
+- My location is [Shillong](location)
+- I live in [Bhubaneshwar](location)
 - [Pimpri](location)
 - [Katraj](location)
+- It is [Kanpur](location)
 - [Viman Nagar](location)
 - [Akurdi](location)
+- My location is [Wardha](location)
+- [Chandigarh](location) it is
+- [Ajmer](location)
 
 ## intent:get_atm_location
 - atm location
@@ -350,22 +356,40 @@ lookup-files/citynames.txt
 - Any atm locations
 - I need an atm
 - I need an ATM
+- ATMs please
+- ATM locations please
+- Need some atm locations
+- Would like to know atm locations
+- Get some atm locations
+- Find atms
 - I am looking for an atm
 - atm locations in [Kalyan](location)
 - Any atm locations in [Vasai](location)
 - Get the atm locations near [Pune](location)
 - Get me some atm locations near [Katraj](location)
 - Find the atms in [Sangvi](location)
-- Will you please get the atms in [Solarpur](location)
-- I need some atm location near [Pimpri](location)
+- atms in [Kolkata](location)
+- Will you please get the atms in [Solapur](location)
+- Tell me some places near [Hampi](location) that have atms
+- I need some atm locations near [Pimpri](location)
 - Get some atm locations near [Viman Nagar](location)
 - Show me some atm locations near [Shivajinagar](location)
 - I want atm locators in [Pune](location)
+- Would like know some ATMs near [Jodhpur](location)
 - I am looking for some atms in [Dapodi](location)
 - Need some information of atms in [Kothrud](location)
+- I require some places in [Mysore](location) that have atms
+- Please find atms nearest to [Shahapur](location)
+- Get me the list of atm locations near [Jalgaon](location)
+- Want to know ATMs in [Baroda](location)
 - Find me some atms in [Shivajinagar](location)
 - Get some ATM locations near [Viman Nagar](location)
 - Show the atm locations in [Satara](location)
-- atms in [pune](location)
-- atms in [Kolkata](location)
-- atms in [akola](location)
+- I would like to know some atms near [Gandhi Nagar](location)
+- atms in [Akola](location)
+- Please find me atms in [Rajkot](location)
+- Will you do me a favour of finding atm locations near [Gurgaon](location)
+- I require locations of ATMs near [Bangalore](location)
+- ATMs in [Dhule](location) please
+- Is there any atm [Lonavala](location)
+- Find atms in [Jaipur](location)
