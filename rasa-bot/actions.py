@@ -52,26 +52,29 @@ class ActionGetSupport(Action):
             # Report_type is set
             print("report_type is set")
             res = OtherSupport.getResponse([{'entity':'report_type', 'value': report_type}])
+            dispatcher.utter_message(text=res[0], attachment=res[1])
+            return [AllSlotsReset()]
         elif OtherSupport.checkValue(entities, "report"):
             print("wrong path")
             dispatcher.utter_message(template="utter_ask_reporttype")
-            return [AllSlotsReset()]
+            return []
 
         elif card_type:
             # Card_type is set
             print("card_type is set")
-            res = OtherSupport.getResponse([{'entity':'card_type', 'value': card_type}])
+            dispatcher.utter_message(text=res[0], attachment=res[1])
+            return [AllSlotsReset()]
         elif OtherSupport.checkValue(entities, "cards"):
             print("wrong path card")
             dispatcher.utter_message(template="utter_ask_cardtype")
-            return [AllSlotsReset()]
+            return []
             
         else:
             res = OtherSupport.getResponse(entities)
         
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
-        return [AllSlotsReset()]
+        return []
 
 class ActionGetATMLocation(Action):
 
