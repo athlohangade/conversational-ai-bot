@@ -1,4 +1,4 @@
-<div *ngIf="isbot" class="botmessage">
+<div *ngIf="isbot" class="botmessage message">
 	<img [src]="botDisplayPicture">
 	<p>
 		<ng-container *ngFor="let data of body">
@@ -7,7 +7,7 @@
 		</ng-container>
 	</p>
 </div>
-<div *ngIf="!isbot" class="usermessage">
+<div *ngIf="!isbot" class="usermessage message">
 	<img [src]="userDisplayPicture">
 	<pre> {{body}} </pre>
 </div>

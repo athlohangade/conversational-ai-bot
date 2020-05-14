@@ -1,21 +1,34 @@
-/* message received from bot */
-.botmessage {
+/* all messages */
+.message {
 	border: 2px solid black;
-	background-color: lightblue;
-	border-radius: 10px;
 	padding: 5px;
 	margin: 4px;
+}
+
+/* message received from bot */
+.botmessage {
+	background-color: lightblue;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 	text-align: left;
 }
 
 /* message sent by user */
 .usermessage {
-	border: 2px solid black;
 	background-color: white;
-	border-radius: 10px;
-	padding: 5px;
-	margin: 4px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 	text-align: right;
+}
+
+.botmessage:hover {
+	background-color: #c6f7f7;
+}
+
+.usermessage:hover {
+	background-color: #e1e1e3;
 }
 
 .botmessage img {
