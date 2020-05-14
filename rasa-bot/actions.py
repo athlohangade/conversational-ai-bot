@@ -43,6 +43,7 @@ class ActionGetSupport(Action):
 
         entities = tracker.latest_message['entities']
         print(entities)
+        print("In support action")
 
         report_type = tracker.get_slot('report_type')
         print(report_type)

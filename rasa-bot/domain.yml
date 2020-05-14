@@ -16,6 +16,7 @@ entities:
 - location
 - support_type
 - report_type
+- card_type
 
 intents:
 - thanks
@@ -41,8 +42,8 @@ responses:
   - text: Have a nice day
   utter_greet:
   - text: Hey! How can I help you?
-  - text: Hi
-  - text: Hello
+  - text: Hi, What can I do for you?
+  - text: Hello, How can I help you?
   utter_happy:
   - text: Great, carry on!
   utter_iamabot:
@@ -82,3 +83,8 @@ slots:
       - merchant
       - fraud
       - theft
+  card_type:
+    type: categorical
+    values:
+      - personal
+      - business

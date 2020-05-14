@@ -69,6 +69,14 @@
 * thanks
     - utter_welcome
 
+## card_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "cards"}
+    - action_get_support
+* thanks
+    - utter_welcome
+
 ## career_story_1
 * greet
     - utter_greet
