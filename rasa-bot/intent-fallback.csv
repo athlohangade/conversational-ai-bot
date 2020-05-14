@@ -1,11 +1,11 @@
-thanks,do you want to thank me?
-greet,do you want to start chatting?
-get_atm_location,do you want to give location of atm?
-stop,do you want to exit?
-affirm,confirm?
-get_support,do you want to know more about us?
-goodbye,do you want to exit?
-deny,you didn't want that?
-bot_challenge,I am bot. What would you like to know?
-get_location,do you want to give your location?
+thanks,you want to thank me
+greet,you want to start chatting
+get_atm_location,you want to give location of atm
+stop,you want to exit
+affirm,confirm
+get_support,you want to know more about us
+goodbye,you want to exit
+deny,you don't mean that
+bot_challenge,you want to know about me
+get_location,you want to give your location
 out_of_scope,Sorry. I didn't understand that
