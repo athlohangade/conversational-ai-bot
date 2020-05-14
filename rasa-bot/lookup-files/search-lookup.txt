@@ -1,10 +1,9 @@
 cash
 support
-find card
+cards
 ways to pay
 business overview
 bill
-business cards
 authentication
 locations
 career

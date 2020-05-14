@@ -170,6 +170,7 @@
 - How do I pay a [bill](support_type) with a Mastercard?
 - Can I pay my [billers]{"entity": "support_type", "value": "bill"} who accept Mastercard directly from this site?
 - What are the benefits of [bill](support_type) payment using a Mastercard?
+- I want to know about [bill](support_type) payment services at mastercard
 
 - [authentication](support_type) services at mastercard
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
@@ -202,11 +203,22 @@
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
 
-- find [card]{"entity": "support_type", "value": "find card"}
-- How many [cards]{"entity": "support_type", "value": "find card"} does mastercard provide ?
-- I want [mastercard]{"entity": "support_type", "value": "find card"}
-- I am looking for [business cards](support_type)
-- i am looking for the perfect [mastercard]{"entity": "support_type", "value": "find card"} for me
+- find [card]{"entity": "support_type", "value": "cards"}
+- How many [cards](support_type) does Mastercard provide ?
+- I am looking for a best suitable [card]{"entity": "support_type", "value": "cards"} for me
+- find a [card]{"entity": "support_type", "value": "cards"} that's best for me
+- I want [mastercard]{"entity": "support_type", "value": "cards"}
+- I am looking for [business](card_type) [cards](support_type)
+- I am looking for [personal](card_type) [cards](support_type)
+- i am looking for a [card]{"entity": "support_type", "value": "cards"} for me
+- i am looking for the perfect [mastercard]{"entity": "support_type", "value": "cards"} for me
+- Show me all [personal](card_type) [cards](support_type) that Mastercard provide
+- I am in search of a [card]{"entity": "support_type", "value": "cards"} that's best for me. Can you help me?
+- Help me in choosing the best [card]{"entity": "support_type", "value": "cards"} for me
+- Show me all types of [cards](support_type) that Mastercard provide
+- Show me all [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
+- Help me to get [mastercard]{"entity": "support_type", "value": "cards"}
+- Help me to get a [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 
 ## intent:thanks
 - thank you
@@ -345,10 +357,9 @@
 - currency
 - converter
 
-## synonym:find card
+## synonym:cards
 - mastercard
 - card
-- cards
 
 ## synonym:tax
 - taxes

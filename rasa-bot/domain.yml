@@ -16,6 +16,7 @@ entities:
 - location
 - support_type
 - report_type
+- card_type
 
 intents:
 - thanks
@@ -41,8 +42,8 @@ responses:
   - text: Have a nice day
   utter_greet:
   - text: Hey! How can I help you?
-  - text: Hi
-  - text: Hello
+  - text: Hi, What can I do for you?
+  - text: Hello, How can I help you?
   utter_happy:
   - text: Great, carry on!
   utter_iamabot:
@@ -65,6 +66,14 @@ responses:
         payload: '/get_support{"report_type": "merchant"}'
       - title: "Theft"
         payload: '/get_support{"report_type": "theft"}'
+  utter_ask_cardtype:
+  - text: Select the type of card you are looking for
+    buttons:
+      - title: "Personal"
+        payload: '/get_support{"card_type": "personal"}'
+      - title: "Business"
+        payload: '/get_support{"card_type": "business"}'
+
   utter_submit_query:
   - text: If you still need assistance, you can submit your question on the following link and we will get back to you soon.
     attachment: "https://www.mastercard.us//en-us/personal/get-support/ask-mastercard-webform.html"
@@ -82,3 +91,8 @@ slots:
       - merchant
       - fraud
       - theft
+  card_type:
+    type: categorical
+    values:
+      - personal
+      - business

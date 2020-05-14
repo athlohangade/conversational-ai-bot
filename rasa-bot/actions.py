@@ -43,10 +43,12 @@ class ActionGetSupport(Action):
 
         entities = tracker.latest_message['entities']
         print(entities)
+        print("In support action")
 
         report_type = tracker.get_slot('report_type')
-        print(report_type)
-        if report_type is not None:
+        card_type = tracker.get_slot('card_type')
+        print(report_type, card_type)
+        if report_type:
             # Report_type is set
             print("report_type is set")
             res = OtherSupport.getResponse([{'entity':'report_type', 'value': report_type}])
@@ -54,6 +56,16 @@ class ActionGetSupport(Action):
             print("wrong path")
             dispatcher.utter_message(template="utter_ask_reporttype")
             return [AllSlotsReset()]
+
+        elif card_type:
+            # Card_type is set
+            print("card_type is set")
+            res = OtherSupport.getResponse([{'entity':'card_type', 'value': card_type}])
+        elif OtherSupport.checkValue(entities, "cards"):
+            print("wrong path card")
+            dispatcher.utter_message(template="utter_ask_cardtype")
+            return [AllSlotsReset()]
+            
         else:
             res = OtherSupport.getResponse(entities)
         
