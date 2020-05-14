@@ -1,0 +1,11 @@
+ul {
+	overflow-x: scroll;
+}
+
+.horizontallist {
+	list-style: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 50px;
+}
+

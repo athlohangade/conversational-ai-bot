@@ -1,0 +1,5 @@
+<ul class="list-group list-group-horizontal">
+	<li *ngFor="let item of btn" (click)="sendMessage(item.payload, item.title)" class="horizontallist"> 
+		<button class="btn btn-info wider"> {{item.title}} </button>
+	</li>
+</ul>

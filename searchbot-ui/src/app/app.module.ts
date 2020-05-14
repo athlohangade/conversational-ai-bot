@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ChatwindowComponent } from './chatwindow/chatwindow.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MessageboxComponent } from './messagebox/messagebox.component';
+import { ButtonRepliesComponent } from './button-replies/button-replies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatwindowComponent,
     WelcomeComponent,
-    MessageboxComponent
+    MessageboxComponent,
+    ButtonRepliesComponent
   ],
   imports: [
     BrowserModule,

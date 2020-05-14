@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { AllmessagesService } from '../allmessages.service';
-import { GetRasaResponceService } from '../get-rasa-responce.service';
 import { MessageboxComponent } from '../messagebox/messagebox.component';
+import { ButtonManagerService } from '../button-manager.service';
+import { ButtonRepliesComponent } from '../button-replies/button-replies.component';
 
 @Component({
   selector: 'app-chatwindow',
@@ -23,25 +24,30 @@ export class ChatwindowComponent implements OnInit {
 
 	textboxval: string = "";
 
-	constructor(public messages: AllmessagesService, private rasaResponceService: GetRasaResponceService) { 
+	constructor(public messages: AllmessagesService, public btnManagerService: ButtonManagerService) { 
 		this.chatheight = this.height - 50;
 		this.chatwidth = this.width - 35;
 		this.textboxwidth = this.width - 40;
 	}
 
-	sendMessage(): void {
-		var messageToShow: string = "";
-		var link: string = "";
-		var strings: string[];
-		var m: string = this.textboxval.trim();
-		this.textboxval = "";
+	/* only use when testing, shows some messages at the start
+	 * session to check the look 
+	 */
+	async testMessages() {
+		this.sendMessage("hi");
+		this.sendMessage("how are you?");
+	}
+
+	sendMessage(m: string): void {
 		if(m == "")
 			return;
-		this.messages.addMessage(false, m);
-		this.rasaResponceService.sendMessage(m).subscribe(data => {
-			console.log(data);
-			this.messages.addMessage(true, data)
-		})
+		this.messages.addMessageByUser(m);
+	}
+
+	sendMessageInTextArea(): void {
+		var m: string = this.textboxval.trim();
+		this.textboxval = "";
+		this.sendMessage(m);
 	}
 
 	hideChat(): void {
