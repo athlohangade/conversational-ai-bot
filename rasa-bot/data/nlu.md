@@ -158,8 +158,7 @@
 - I want to [report](support_type) [theft](report_type)
 
 - [support](support_type)
-- [find card](support_type)
-- I want [mastercard]{"entity": "support_type", "value": "find card"}
+
 - [ways to pay](support_type)
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
@@ -172,7 +171,6 @@
 - Can I pay my [billers]{"entity": "support_type", "value": "bill"} who accept Mastercard directly from this site?
 - What are the benefits of [bill](support_type) payment using a Mastercard?
 
-- [business cards](support_type)
 - [authentication](support_type) services at mastercard
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
 
@@ -203,6 +201,12 @@
 
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
+
+- find [card]{"entity": "support_type", "value": "find card"}
+- How many [cards]{"entity": "support_type", "value": "find card"} does mastercard provide ?
+- I want [mastercard]{"entity": "support_type", "value": "find card"}
+- I am looking for [business cards](support_type)
+- i am looking for the perfect [mastercard]{"entity": "support_type", "value": "find card"} for me
 
 ## intent:thanks
 - thank you
@@ -342,23 +346,9 @@
 - converter
 
 ## synonym:find card
-- get mastercard
-- get card
-- personal card
-- standard mastercard
-- world mastercard
-- world elite mastercard
-- standard credit card
-- debit mastercard
-- prepaid travel card
-- prepaid gift card
-- mastercard prepaid
-- world debit mastercard
-- enhanced debit mastercard
-- credit card
-- debit card
-- prepaid card
-- all cards
+- mastercard
+- card
+- cards
 
 ## synonym:tax
 - taxes
