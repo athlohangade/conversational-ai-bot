@@ -74,8 +74,7 @@
     - utter_greet
 * get_support{"support_type": "cards"}
     - action_get_support
-* thanks
-    - utter_welcome
+    - utter_ask_cardtype
 
 ## career_story_1
 * greet
