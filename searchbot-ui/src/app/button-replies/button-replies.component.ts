@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ButtonManagerService } from '../button-manager.service';
+import { AllmessagesService } from '../allmessages.service';
 
 @Component({
   selector: 'app-button-replies',
@@ -10,7 +11,11 @@ export class ButtonRepliesComponent implements OnInit {
 
 	@Input() btn: object;
 
-	constructor(public btnManagerService: ButtonManagerService) { }
+	constructor(private messages: AllmessagesService) { }
+
+	sendMessage(): void {
+
+	}
 
 	ngOnInit(): void {
 	}

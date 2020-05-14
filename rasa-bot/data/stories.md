@@ -11,6 +11,8 @@
   - action_get_support
 
 ## locate atm given no data happy
+* greet
+  - utter_greet
 * get_atm_location
   - utter_ask_location
 * get_location{"location" : "Pune"}
@@ -22,6 +24,8 @@
   - utter_goodbye
 
 ## locate atm given no data sad 
+* greet
+  - utter_greet
 * get_atm_location
   - utter_ask_location
 * get_location{"location" : "Pune"}
@@ -33,6 +37,8 @@
   - utter_goodbye
 
 ## locate atm given location happy
+* greet
+  - utter_greet
 * get_atm_location{"location" : "Pune" }
   - action_get_atm_location
   - utter_did_that_help
@@ -42,6 +48,8 @@
   - utter_goodbye
 
 ## locate atm given location sad
+* greet
+  - utter_greet
 * get_atm_location{"location" : "Pune" }
   - action_get_atm_location
   - utter_did_that_help
@@ -68,6 +76,13 @@
     - utter_did_that_help
 * thanks
     - utter_welcome
+
+## card_story_1
+* greet
+    - utter_greet
+* get_support{"support_type": "cards"}
+    - action_get_support
+    - utter_ask_cardtype
 
 ## career_story_1
 * greet
@@ -174,7 +189,6 @@
 * greet
     - utter_greet
 * get_atm_location{"location": "akola"}
-    - slot{"location": "akola"}
     - action_get_atm_location
 * thanks
     - utter_welcome

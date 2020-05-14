@@ -12,7 +12,7 @@ class OtherSupport:
     def getResponse(cls, entities):
 
         link = None
-        message = "Sorry, I didn't get that. Can you please rephrase the query?"
+        message = "Sorry, I didn't get that. What can I do for you?"
         found = False
 
         if entities:

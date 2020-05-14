@@ -3,6 +3,7 @@ import { AllmessagesService } from '../allmessages.service';
 import { GetRasaResponceService } from '../get-rasa-responce.service';
 import { MessageboxComponent } from '../messagebox/messagebox.component';
 import { ButtonManagerService } from '../button-manager.service';
+import { ButtonRepliesComponent } from '../button-replies/button-replies.component';
 
 @Component({
   selector: 'app-chatwindow',
@@ -30,6 +31,9 @@ export class ChatwindowComponent implements OnInit {
 		this.textboxwidth = this.width - 40;
 	}
 
+	/* only use when testing, shows some messages at the start
+	 * session to check the look 
+	 */
 	async testMessages() {
 		this.textboxval = "hi";
 		this.sendMessage();
@@ -37,11 +41,7 @@ export class ChatwindowComponent implements OnInit {
 		this.sendMessage();
 	}
 
-	sendMessage(): void {
-		var messageToShow: string = "";
-		var link: string = "";
-		var strings: string[];
-		var m: string = this.textboxval.trim();
+	sendMessage(m: string): void {
 		if(this.btnManagerService.hasButtons())
 			this.btnManagerService.deactivateButton();
 		this.textboxval = "";
@@ -52,6 +52,11 @@ export class ChatwindowComponent implements OnInit {
 			console.log(data);
 			this.messages.addMessageByBot(data)
 		})
+	}
+
+	sendMessageInTextArea(): void {
+		var m: string = this.textboxval.trim();
+		this.sendMessage(m);
 	}
 
 	hideChat(): void {

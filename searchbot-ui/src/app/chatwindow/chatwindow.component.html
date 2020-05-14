@@ -10,6 +10,7 @@
 				max-width: {{width}}px;
 			" class="topdiv">
 			<app-messagebox *ngFor="let message of messages.messages" [isbot]="message.isbot" [body]="message.body"></app-messagebox>
+			<app-button-replies *ngIf="btnManagerService.hasButtons()" [btn]="btnManagerService.btn"></app-button-replies>
 		</div>
 		<div style="width: {{width}}px; max-width: {{width}}px" class="sendbox">
 			<table>
