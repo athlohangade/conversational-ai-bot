@@ -7,13 +7,13 @@ export class ButtonManagerService {
 
 	private isButtonActivated: boolean = false;
 
-	btn: object = null;
+	btn: any[] = null;
 
 	public hasButtons(): boolean {
 		return this.isButtonActivated;
 	}
 
-	public activateButton(btn: object): void {
+	public activateButton(btn: any[]): void {
 		this.isButtonActivated = true;
 		this.btn = btn;
 	}

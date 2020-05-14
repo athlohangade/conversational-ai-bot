@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ButtonManagerService } from '../button-manager.service';
 import { AllmessagesService } from '../allmessages.service';
 
 @Component({
@@ -13,8 +12,8 @@ export class ButtonRepliesComponent implements OnInit {
 
 	constructor(private messages: AllmessagesService) { }
 
-	sendMessage(): void {
-
+	sendMessage(message: string, mockMessage: string): void {
+		this.messages.addMockMessageByUser(message, mockMessage);
 	}
 
 	ngOnInit(): void {

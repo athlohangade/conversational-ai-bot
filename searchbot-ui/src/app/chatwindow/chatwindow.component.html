@@ -10,13 +10,13 @@
 				max-width: {{width}}px;
 			" class="topdiv">
 			<app-messagebox *ngFor="let message of messages.messages" [isbot]="message.isbot" [body]="message.body"></app-messagebox>
-			<app-button-replies *ngIf="btnManagerService.hasButtons()" [btn]="btnManagerService.btn"></app-button-replies>
+			<app-button-replies *ngIf="btnManagerService.hasButtons()" style="bottom: 0;" [btn]="btnManagerService.btn"></app-button-replies>
 		</div>
 		<div style="width: {{width}}px; max-width: {{width}}px" class="sendbox">
 			<table>
 				<tr>
-					<td width="{{width}}px"> <textarea rows="3" [(ngModel)]="textboxval" (keydown.enter)="sendMessage()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield form-control" placeholder="ask me something..."> </textarea> </td>
-					<td> <button class="btn btn-primary" (click)="sendMessage(); scrollDown();"> Send </button> </td> 
+					<td width="{{width}}px"> <textarea rows="3" [(ngModel)]="textboxval" (keydown.enter)="sendMessageInTextArea()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield form-control" placeholder="ask me something..."> </textarea> </td>
+					<td> <button class="btn btn-primary" (click)="sendMessageInTextArea(); scrollDown();"> Send </button> </td> 
 				</tr>
 			</table>
 		</div>
