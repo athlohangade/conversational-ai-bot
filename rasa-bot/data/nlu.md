@@ -219,6 +219,8 @@
 - Show me all [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 - Help me to get [mastercard]{"entity": "support_type", "value": "cards"}
 - Help me to get a [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
+- Apply for [mastercard]{"entity": "support_type", "value": "cards"}
+- How do I apply for [mastercard]{"entity": "support_type", "value": "cards"}
 
 ## intent:thanks
 - thank you
