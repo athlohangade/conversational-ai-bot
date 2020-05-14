@@ -158,8 +158,7 @@
 - I want to [report](support_type) [theft](report_type)
 
 - [support](support_type)
-- [find card](support_type)
-- I want [mastercard]{"entity": "support_type", "value": "find card"}
+
 - [ways to pay](support_type)
 - [payment methods]{"entity": "support_type", "value": "ways to pay"}
 - [business overview](support_type)
@@ -171,8 +170,8 @@
 - How do I pay a [bill](support_type) with a Mastercard?
 - Can I pay my [billers]{"entity": "support_type", "value": "bill"} who accept Mastercard directly from this site?
 - What are the benefits of [bill](support_type) payment using a Mastercard?
+- I want to know about [bill](support_type) payment services at mastercard
 
-- [business cards](support_type)
 - [authentication](support_type) services at mastercard
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
 
@@ -203,6 +202,23 @@
 
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
+
+- find [card]{"entity": "support_type", "value": "cards"}
+- How many [cards](support_type) does Mastercard provide ?
+- I am looking for a best suitable [card]{"entity": "support_type", "value": "cards"} for me
+- find a [card]{"entity": "support_type", "value": "cards"} that's best for me
+- I want [mastercard]{"entity": "support_type", "value": "cards"}
+- I am looking for [business](card_type) [cards](support_type)
+- I am looking for [personal](card_type) [cards](support_type)
+- i am looking for a [card]{"entity": "support_type", "value": "cards"} for me
+- i am looking for the perfect [mastercard]{"entity": "support_type", "value": "cards"} for me
+- Show me all [personal](card_type) [cards](support_type) that Mastercard provide
+- I am in search of a [card]{"entity": "support_type", "value": "cards"} that's best for me. Can you help me?
+- Help me in choosing the best [card]{"entity": "support_type", "value": "cards"} for me
+- Show me all types of [cards](support_type) that Mastercard provide
+- Show me all [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
+- Help me to get [mastercard]{"entity": "support_type", "value": "cards"}
+- Help me to get a [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 
 ## intent:thanks
 - thank you
@@ -341,24 +357,9 @@
 - currency
 - converter
 
-## synonym:find card
-- get mastercard
-- get card
-- personal card
-- standard mastercard
-- world mastercard
-- world elite mastercard
-- standard credit card
-- debit mastercard
-- prepaid travel card
-- prepaid gift card
-- mastercard prepaid
-- world debit mastercard
-- enhanced debit mastercard
-- credit card
-- debit card
-- prepaid card
-- all cards
+## synonym:cards
+- mastercard
+- card
 
 ## synonym:tax
 - taxes
