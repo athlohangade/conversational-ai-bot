@@ -97,7 +97,7 @@ class ActionGetATMLocation(Action):
             message = "Location cannot be None"
             print(message)
             dispatcher.utter_message(text = message)
-            return [AllSlotsReset()]
+            return []
 
         # toFind['postalCode'] = None
         # entities = tracker.latest_message['entities']
@@ -111,7 +111,7 @@ class ActionGetATMLocation(Action):
             message = "Location not found"
             print(message)
             dispatcher.utter_message(text = message)
-            return [AllSlotsReset()]
+            return []
 
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
@@ -123,7 +123,7 @@ class ActionGetATMLocation(Action):
                 message = str(number) + ") " + ", ".join(address)
                 dispatcher.utter_message(text = message)
 
-        return [AllSlotsReset()]
+        return []
 
 class ActionDefaultAskAffirmation(Action):
     
@@ -139,6 +139,12 @@ class ActionDefaultAskAffirmation(Action):
                 self.intent_mappings[row[0]] = row[1]
 
     def run(self, dispatcher, tracker, domain):
+
+        entities = tracker.latest_message['entities']
+        print(entities)
+
+        print(tracker.get_slot('location'))
+
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']
 
