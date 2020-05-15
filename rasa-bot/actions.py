@@ -14,6 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, AllSlotsReset
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk.events import FollowupAction
 from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
 
@@ -74,7 +75,7 @@ class ActionGetSupport(Action):
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
         if to_reset:
-            return [AllSlotsReset()]
+            return [AllSlotsReset(),FollowupAction('action_listen')]
 
         return []
 
