@@ -233,6 +233,7 @@
 ## intent:get_location
 - [Pune](location)
 - [Shivajinagar](location)
+- It is [Kanpur](location)
 - [Hadapsar](location)
 - My location is [Shillong](location)
 - I live in [Bhubaneshwar](location)
@@ -243,7 +244,11 @@
 - [Akurdi](location)
 - My location is [Wardha](location)
 - [Chandigarh](location) it is
+- I live in [Miami](location)
 - [Ajmer](location)
+- [Sydney](location)
+- My location is [London](location)
+- It is [Colombo](location)
 
 ## intent:get_atm_location
 - atm location

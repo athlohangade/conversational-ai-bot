@@ -14,6 +14,7 @@ actions:
 
 entities:
 - location
+- GPE
 - support_type
 - report_type
 - card_type
@@ -84,7 +85,9 @@ session_config:
 
 slots:
   location:
-    type: text
+    type: unfeaturized
+  GPE:
+    type: unfeaturized
   report_type:
     type: categorical
     values:

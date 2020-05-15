@@ -20,8 +20,6 @@
   - utter_did_that_help
 * affirm
   - utter_happy
-* goodbye
-  - utter_goodbye
 
 ## locate atm given no data sad 
 * greet
@@ -33,8 +31,6 @@
   - utter_did_that_help
 * deny
   - utter_try_again
-* goodbye
-  - utter_goodbye
 
 ## locate atm given location happy
 * greet
@@ -44,8 +40,6 @@
   - utter_did_that_help
 * affirm
   - utter_happy
-* goodbye
-  - utter_goodbye
 
 ## locate atm given location sad
 * greet
@@ -55,8 +49,6 @@
   - utter_did_that_help
 * deny
   - utter_try_again
-* goodbye
-  - utter_goodbye
 
 ## interactive_story_1
 * greet

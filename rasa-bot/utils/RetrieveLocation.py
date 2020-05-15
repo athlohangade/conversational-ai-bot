@@ -74,50 +74,9 @@ class RetrieveLocation :
         return ET.fromstring(string)
 
     @classmethod
-    def getAddress(cls, data, toFind) :
+    def getAddress(cls, data) :
 
         allAddress = []
-        # userLocation = toFind['location'].upper()
-
-        # # To match by pincode
-        # for location in data :
-        #     address = cls.__store_values(location)
-        #     if toFind['postalCode'] and address['postalCode'] :
-        #         if toFind['postalCode'] == address['postalCode'] :
-        #             address = list(address.values())
-        #             address = list(filter(None, address))
-        #             allAddress.append(address)
-        #             continue
-
-        # if allAddress :
-        #     return allAddress
-
-        # # To match by location name as substring
-        # for location in data :
-        #     address = cls.__store_values(location)
-        #     for key in address :
-        #         if address[key] and address[key].find(userLocation) != -1 :
-        #             address = list(address.values())
-        #             address = list(filter(None, address))
-        #             allAddress.append(address)
-        #             break
-
-        # if allAddress :
-        #     return allAddress
-
-        # # To match by location name which is somewhat similar to original location
-        # # Also for handling minor mistakes in spellings
-        # for location in data :
-        #     address = cls.__store_values(location)
-        #     address = list(address.values())
-        #     address = list(filter(None, address))
-
-        #     matches = get_close_matches(userLocation, address, cutoff=0.6)
-        #     if matches :
-        #         allAddress.append(address)
-
-        # if allAddress :
-        #     return allAddress
 
         # Return all locations retrieved
         for location in data :
