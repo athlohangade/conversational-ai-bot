@@ -53,7 +53,8 @@ responses:
   utter_default:
   - text: I did not get that.
   utter_ask_rephrase:
-  - text: Please reframe the query
+  - text: Sorry, I'm not sure I understand. Could you rephrase it?
+  - text: Could you please rephrase your message? I didn't quite get that.
   utter_try_again:
   - text: Ok, you can try again.
   - text: Can you try again?
