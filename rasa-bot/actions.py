@@ -77,7 +77,7 @@ class ActionGetSupport(Action):
         if to_reset:
             return [AllSlotsReset(),FollowupAction('action_listen')]
 
-        return []
+        return [FollowupAction('action_listen')]
 
 class ActionGetATMLocation(Action):
 
