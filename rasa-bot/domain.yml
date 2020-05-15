@@ -85,7 +85,7 @@ session_config:
 
 slots:
   location:
-    type: unfeaturized
+    type: text
   report_type:
     type: categorical
     values:
