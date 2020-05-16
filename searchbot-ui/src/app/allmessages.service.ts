@@ -64,5 +64,9 @@ export class AllmessagesService {
 		);
 	}
 
+	public totalMessages(): number {
+		return this.messages.length;
+	}
+
 	constructor(private rasaResponceService: GetRasaResponceService, private btnManagerService: ButtonManagerService) { }
 }

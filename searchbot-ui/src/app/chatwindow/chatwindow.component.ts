@@ -15,12 +15,18 @@ export class ChatwindowComponent implements OnInit {
 	@Input() width: number = 500;
 
 	@ViewChild('mainchatscreen') private mainchatscreen: ElementRef;
+	@ViewChild('inputfield') private inputfield: ElementRef;
 
 	public chatheight: number;
 	public chatwidth: number;
 	public textboxwidth: number;
 
-	public hide: boolean = true;
+	public hide: boolean = false;
+	public btnsign: string = "X";
+
+	private hasFocus: boolean = true;
+	private count: number = 0;
+	private notification: HTMLAudioElement;
 
 	textboxval: string = "";
 
@@ -28,6 +34,7 @@ export class ChatwindowComponent implements OnInit {
 		this.chatheight = this.height - 50;
 		this.chatwidth = this.width - 35;
 		this.textboxwidth = this.width - 40;
+		this.notification = new Audio('assets/sounds/notificationsound.mp3');
 	}
 
 	/* only use when testing, shows some messages at the start
@@ -41,7 +48,8 @@ export class ChatwindowComponent implements OnInit {
 	sendMessage(m: string): void {
 		if(m == "")
 			return;
-		this.messages.addMessageByUser(m);
+		this.count++;
+		this.messages.addMessageByUser(m);		
 	}
 
 	sendMessageInTextArea(): void {
@@ -52,6 +60,10 @@ export class ChatwindowComponent implements OnInit {
 
 	hideChat(): void {
 		this.hide = !this.hide;
+		if(this.hide)
+			this.btnsign = "O";
+		else
+			this.btnsign = "X";
 	}
 
 	scrollDown(): void {
@@ -63,6 +75,23 @@ export class ChatwindowComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		document.onblur = () => this.hasFocus = false;
+		document.onfocus = () => this.hasFocus = true;
+	}
+
+	ngAfterViewChecked(): void {
+		var num: number;
+		if(!this.hide) {
+			this.scrollDown();
+			this.inputfield.nativeElement.focus();
+		}
+		if(this.hasFocus) 
+			this.count = this.messages.totalMessages();
+		else {
+			num = this.messages.totalMessages();
+			if(this.count < num) 
+				this.notification.play();
+		}
 	}
 
 }

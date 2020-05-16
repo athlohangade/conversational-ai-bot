@@ -1,9 +1,9 @@
 <div class="alldiv">
 	<div style="width: {{width}}px" class="heading">
 		<span class="titleofheading"> Bot is online! </span>
-		<span> <button class="cross" (click)="hideChat()"> X </button> </span>
+		<span> <button class="cross" (click)="hideChat()"> {{btnsign}} </button> </span>
 	</div>
-	<div *ngIf="hide">
+	<div *ngIf="!hide">
 		<div #mainchatscreen style="
 				height: {{height}}px;
 				width: {{width}}px;
@@ -16,8 +16,8 @@
 		<div style="width: {{width}}px; max-width: {{width}}px" class="sendbox">
 			<table>
 				<tr>
-					<td width="{{width}}px"> <textarea rows="2" [(ngModel)]="textboxval" (keydown.enter)="sendMessageInTextArea()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield form-control" placeholder="ask me something..."> </textarea> </td>
-					<td> <button class="btn btn-primary" (click)="sendMessageInTextArea(); scrollDown();"> Send </button> </td> 
+					<td width="{{width}}px"> <textarea #inputfield rows="2" [(ngModel)]="textboxval" (keydown.enter)="sendMessageInTextArea()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield form-control" placeholder="ask me something..."> </textarea> </td>
+					<td> <button class="btn btn-primary" (click)="sendMessageInTextArea()"> Send </button> </td> 
 				</tr>
 			</table>
 		</div>
