@@ -118,14 +118,14 @@ class ActionGetATMLocation(Action):
             message = "Location cannot be None"
             print(message)
             dispatcher.utter_message(text = message)
-            return []
+            return [AllSlotsReset()]
 
         locationsData = RetrieveLocation.requestData(location)
         if locationsData is None :
             message = "Location not found"
             print(message)
             dispatcher.utter_message(text = message)
-            return []
+            return [AllSlotsReset()]
 
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
@@ -137,7 +137,7 @@ class ActionGetATMLocation(Action):
                 message = str(number) + ") " + ", ".join(address)
                 dispatcher.utter_message(text = message)
 
-        return []
+        return [AllSlotsReset()]
 
 class ActionDefaultAskAffirmation(Action):
     
