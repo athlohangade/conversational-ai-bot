@@ -1,6 +1,7 @@
-<div>
-	<div style="width: {{width}}px" class="heading" (click)="hideChat()">
-		<p> Bot is online! </p>
+<div class="alldiv">
+	<div style="width: {{width}}px" class="heading">
+		<span class="titleofheading"> Bot is online! </span>
+		<span> <button class="cross" (click)="hideChat()"> X </button> </span>
 	</div>
 	<div *ngIf="hide">
 		<div #mainchatscreen style="

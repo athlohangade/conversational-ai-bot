@@ -1,24 +1,48 @@
+.alldiv {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+}
+
+.cross {
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	opacity: 0.2	;
+	height: fit-content;
+	color: black;
+	border: 1px solid;
+	border-radius: 25px;
+	padding: 2px 5px;
+	margin-right: 20px;
+	width: 45px;
+	height: 40px;
+}
+
+.cross:hover {
+	background-color: rgb(168, 129, 57);
+}
+
 .heading {
-	background-color: red;
+	font-size: x-large;
+	background-color: #3a3a3a;
 	height: 50px;
 	color: white;
-	border: solid red;
+	border: solid #3a3a3a;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 	transition: all 0.5s ease-in-out;
 }
 
 .heading:hover {
-	background-color: orange;
-	border: unset;
+	background-color: rgb(180, 140, 66);
+	border: solid rgb(180, 140, 66);
 }
 
-.heading p {
-	margin-left: 20px;
-	margin-top: 10px;
+.titleofheading {
+	padding-left: 20px;
+	margin-top: 5px;
 	color: white;
 	font-weight: bold;
-	text-align: left;
+	float: left;
 }
 
 .topdiv {
@@ -27,16 +51,22 @@
 	overflow-y: scroll;
 }
 
+.topdiv::-webkit-scrollbar {
+	display: none;
+}
+
 .sendbox {
 	padding: 10px;
 	border: 1px solid black;
-	background-color: #3a3b39;
+	background-color: #3a3a3a;
 	border-top: 1px ridge darkgrey;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
 .inputfield {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
 	border: 2px solid black;
 	width: 100%;
 }

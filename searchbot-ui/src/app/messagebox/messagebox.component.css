@@ -1,13 +1,16 @@
 /* all messages */
 .message {
+	font-weight: 500;
+	font-size: large;
+	font-family: sans-serif;
 	border: 2px solid black;
-	padding: 5px;
+	padding: 0px;
 	margin: 4px;
 }
 
 /* message received from bot */
 .botmessage {
-	background-color: lightblue;
+	background-color: rgb(243, 46, 46);	
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -16,7 +19,7 @@
 
 /* message sent by user */
 .usermessage {
-	background-color: white;
+	background-color: #e6e205;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -24,11 +27,11 @@
 }
 
 .botmessage:hover {
-	background-color: #c6f7f7;
+	background-color: #dd0505;
 }
 
 .usermessage:hover {
-	background-color: #e1e1e3;
+	background-color: rgb(245, 150, 7);
 }
 
 .botmessage img {

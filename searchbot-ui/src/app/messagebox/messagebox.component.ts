@@ -11,7 +11,7 @@ export class MessageboxComponent implements OnInit {
 	@Input() body: object;
 
 	public userDisplayPicture = "assets/images/user.png";
-	public botDisplayPicture = "assets/images/bot.png";
+	public botDisplayPicture = "assets/images/mastercard-logo.jpg";
 
 	constructor() { }
 
