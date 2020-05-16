@@ -10,7 +10,7 @@
 
 /* message received from bot */
 .botmessage {
-	background-color: rgb(243, 46, 46);	
+	background-color: rgb(243, 95, 95);	
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -19,7 +19,7 @@
 
 /* message sent by user */
 .usermessage {
-	background-color: #e6e205;
+	background-color: #f8bc17;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
