@@ -14,6 +14,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, AllSlotsReset
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk.events import FollowupAction
 from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
 
@@ -74,39 +75,52 @@ class ActionGetSupport(Action):
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
         if to_reset:
-            return [AllSlotsReset()]
+            return [AllSlotsReset(),FollowupAction('action_listen')]
 
-        return []
+        return [FollowupAction('action_listen')]
 
 class ActionGetATMLocation(Action):
 
     def name(self) -> Text:
         return "action_get_atm_location"
 
+    def __setLocationValue(self, tracker) :
+
+        location = None
+        entities = tracker.latest_message['entities']
+        print(entities)
+
+        for element in entities :
+            if element['entity'] == 'location' or element['entity'] == 'GPE' :
+                location = element['value']
+                return location
+
+        location = tracker.get_slot('location')
+        if location is None : 
+            location = tracker.get_slot('GPE') 
+            print(location)
+
+        return location
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]] :
 
-        entities = tracker.latest_message['entities']
-        print(entities)
-
         addresses = []
-        toFind = {}
-        toFind['location'] = tracker.get_slot('location')
-        if toFind['location'] is None :
+        location = None
+        # toFind['location'] = None
+
+        print(tracker.get_slot('location'))
+        print(tracker.get_slot('GPE'))
+
+        location = self.__setLocationValue(tracker)
+        if location is None :
             message = "Location cannot be None"
             print(message)
             dispatcher.utter_message(text = message)
             return [AllSlotsReset()]
 
-        # toFind['postalCode'] = None
-        # entities = tracker.latest_message['entities']
-        # for entity in entities :
-        #     if entity['entity'] == 'pincode' :
-        #         toFind['postalCode'] = entity['value']
-        #         break
-
-        locationsData = RetrieveLocation.requestData(toFind['location'])
+        locationsData = RetrieveLocation.requestData(location)
         if locationsData is None :
             message = "Location not found"
             print(message)
@@ -115,7 +129,7 @@ class ActionGetATMLocation(Action):
 
         locationsData = RetrieveLocation.parseXML(locationsData.text)
 
-        addresses = RetrieveLocation.getAddress(locationsData, toFind)
+        addresses = RetrieveLocation.getAddress(locationsData)
         if not addresses :
             dispatcher.utter_message(text = "Sorry, I didn't find any atm locations")
         else :
@@ -139,6 +153,10 @@ class ActionDefaultAskAffirmation(Action):
                 self.intent_mappings[row[0]] = row[1]
 
     def run(self, dispatcher, tracker, domain):
+
+        entities = tracker.latest_message['entities']
+        print(entities)
+
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']
 
