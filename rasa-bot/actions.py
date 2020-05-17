@@ -42,9 +42,17 @@ class ActionGetSupport(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        msg = (tracker.latest_message)['text']
+        print(msg)
+
         entities = tracker.latest_message['entities']
         print(entities)
         print("In support action")
+
+        # Checking in faq
+        faq = OtherSupport.searchInFAQ(msg)
+        for f in faq:
+            dispatcher.utter_message(text=f)
 
         to_reset = False
 
