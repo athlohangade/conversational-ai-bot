@@ -1,0 +1,47 @@
+{
+  "CREDIT CARDS": {
+    "info": "\n\n\n\n\nGet the financial freedom you deserve. Credit cards offer exceptional benefits, rewards, services and spending power that can help make your financial and personal dreams come true.\n\n\n",
+    "types": {
+      "heading": [
+        "STANDARD MASTERCARD",
+        "WORLD MASTERCARD",
+        "WORLD ELITE MASTERCARD"
+      ],
+      "description": [
+        "For everyday purchases and beyond",
+        "Giving you the flexibility to explore the places and pursuits that matter most to you",
+        "Outstanding purchasing power and top-of-the-line features and benefits"
+      ]
+    }
+  },
+  "DEBIT CARDS": {
+    "info": "\n\n\n\nEnjoy the ultimate in convenience and financial control by combining the worldwide acceptance and benefits of Mastercard cards with direct deduction of funds from your checking account.\n\n\n",
+    "types": {
+      "heading": [
+        "STANDARD DEBIT MASTERCARD",
+        "ENHANCED DEBIT MASTERCARD",
+        "WORLD DEBIT MASTERCARD\u00ae"
+      ],
+      "description": [
+        "From buying groceries to enjoying the vacation of your dreams \u2014 elevate every purchase a step above cash or checks with control and convenience",
+        "Turn good deals into great ones by adding value to purchases large and small with convenience, protection and enhanced benefits ",
+        "Experience a higher level of convenience, security and control with a suite of premier benefits, first-rate customer service and access to exceptional travel experiences"
+      ]
+    }
+  },
+  "PREPAID CARDS": {
+    "info": "\n\n\n\nMastercard Prepaid Gift Cards are great for holidays, birthdays, graduations and anything in between. Simple, convenient and always well-received.\n\n\n",
+    "types": {
+      "heading": [
+        "PREPAID GIFT",
+        "EVERYDAY PREPAID",
+        "TRAVEL PREPAID"
+      ],
+      "description": [
+        "The perfect gift for everyone, every time",
+        "Make every day simpler and more secure",
+        "The perfect travel companion"
+      ]
+    }
+  }
+}
