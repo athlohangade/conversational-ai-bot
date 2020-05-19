@@ -39,7 +39,12 @@ class TextProcessorAndSearch :
     ### To be done
     @classmethod
     def __getPlainText(cls, originalData) :
-        pass
+        originalData = originalData.get("data")
+        extracted = []
+        if originalData:
+            for i in originalData:
+                extracted.append(i["para"])
+        return extracted
 
     ### To be done
     @classmethod
