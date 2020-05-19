@@ -1,5 +1,6 @@
 import csv
 import json
+from utils.TextProcessorAndSearch import TextProcessorAndSearch
 
 class OtherSupport:
     @classmethod
@@ -37,10 +38,20 @@ class OtherSupport:
 
     @classmethod
     def searchInFAQ(cls, msg):
+        # with open('scrapper/faq.json') as f:
+        #     faq = json.load(f)
+
+        # for f in faq:
+        #     if f['Q'].lower().find(msg.lower()) != -1:
+        #         return f['A']
+
         with open('scrapper/faq.json') as f:
             faq = json.load(f)
+        
+        msg = msg.lower()
+        msg = TextProcessorAndSearch.tokenize(msg)
+        msg = TextProcessorAndSearch.removeStopWords(msg)
 
-        for f in faq:
-            if f['Q'].lower().find(msg.lower()) != -1:
-                return f['A']
-        return []
+        answers = TextProcessorAndSearch.findAnswers(msg, faq)
+
+        return answers

@@ -17,8 +17,10 @@ from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.events import FollowupAction
 from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
+from utils.TextProcessorAndSearch import TextProcessorAndSearch
 
 import csv
+import json
 
 # class ActionHelloWorld(Action):
 #
@@ -49,10 +51,15 @@ class ActionGetSupport(Action):
         print(entities)
         print("In support action")
 
-        # Checking in faq
         faq = OtherSupport.searchInFAQ(msg)
         for f in faq:
-            dispatcher.utter_message(text=f)
+            if type(f) == type(list()) :
+                for individual in f :
+                    print(individual)
+                    dispatcher.utter_message(text=individual)
+            else :
+                print(f)
+                dispatcher.utter_message(text=f)
 
         to_reset = False
 
@@ -81,6 +88,27 @@ class ActionGetSupport(Action):
         res = OtherSupport.getResponse(entities)
         
         dispatcher.utter_message(text=res[0], attachment=res[1])
+
+#################### TO BE DONE, NOT COMPLETED YET #########################
+
+        # userInput = tracker.latest_message.get('text')
+        # print(userInput)
+        # userInput = userInput.lower()
+
+        # userInput = TextProcessorAndSearch.tokenize(userInput)
+        # userInput = TextProcessorAndSearch.removeStopWords(userInput)
+
+        # ## This condition is just for testing purpose, change it as required
+        # if card_type :
+        #     with open('./scrapper/' + card_type + ".json", 'r') as file :
+        #         data = json.load(file)
+        #     print(data)
+        # TextProcessorAndSearch.getSummary(userInput, data)
+       
+
+#############################################
+
+        # Checking in faq
 
         if to_reset:
             return [AllSlotsReset(),FollowupAction('action_listen')]
