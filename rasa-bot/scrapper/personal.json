@@ -3,6 +3,60 @@
   "description": "Compare different types of credit, debit and prepaid cards and choose the best card suited to your needs. Browse through the card offers & benefits.",
   "data": [
     {
+      "heading": "STANDARD MASTERCARD",
+      "para": [
+        "For everyday purchases and beyond"
+      ]
+    },
+    {
+      "heading": "WORLD MASTERCARD",
+      "para": [
+        "Giving you the flexibility to explore the places and pursuits that matter most to you"
+      ]
+    },
+    {
+      "heading": "WORLD ELITE MASTERCARD",
+      "para": [
+        "Outstanding purchasing power and top-of-the-line features and benefits"
+      ]
+    },
+    {
+      "heading": "STANDARD DEBIT MASTERCARD",
+      "para": [
+        "From buying groceries to enjoying the vacation of your dreams \u2014 elevate every purchase a step above cash or checks with control and convenience"
+      ]
+    },
+    {
+      "heading": "ENHANCED DEBIT MASTERCARD",
+      "para": [
+        "Turn good deals into great ones by adding value to purchases large and small with convenience, protection and enhanced benefits "
+      ]
+    },
+    {
+      "heading": "WORLD DEBIT MASTERCARD\u00ae",
+      "para": [
+        "Experience a higher level of convenience, security and control with a suite of premier benefits, first-rate customer service and access to exceptional travel experiences"
+      ]
+    },
+    {
+      "heading": "PREPAID GIFT",
+      "para": [
+        "The perfect gift for everyone, every time"
+      ]
+    },
+    {
+      "heading": "EVERYDAY PREPAID",
+      "para": [
+        "Make every day simpler and more secure"
+      ]
+    },
+    {
+      "heading": "TRAVEL PREPAID",
+      "para": [
+        "The perfect travel companion"
+      ]
+    },
+    {
       "heading": "Priceless Cities",
       "para": [
         "Unlock thousands of extraordinary experiences in the cities where you live and travel, curated exclusively for Mastercard cardholders."
