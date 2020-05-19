@@ -1,0 +1,34 @@
+{
+  "title": "Merchant Surcharge Rules & Fees | Mastercard",
+  "description": "Learn more about the extra checkout fee, also known as a surcharge, to customers who pay with Mastercard-branded credit cards",
+  "data": [
+    {
+      "heading": "Merchant registration with Mastercard and acquirer",
+      "para": [
+        "A summary of the rules changes required by the settlement that Mastercard acquirers will provide to their merchant can be accessed\u00a0here. The details regarding the terms under which merchants may impose a surcharge on Mastercard credit transactions can be found in the specific No Surcharge Rule modification that can be accessed via clicking here.\n",
+        "Below is a summary of key provisions of the no surcharge rule change. Merchants should review the actual rule change and complete the required notification process before implementing a surcharge on Mastercard credit cards.",
+        "\u00a0",
+        "A merchant's ability to apply a surcharge is conditioned on the merchant's satisfaction of certain disclosure requirements. These disclosure requirements include advance notice to both Mastercard and the merchant's acquirer of the merchant's intention to impose a surcharge no less than thirty days before the merchant implements a surcharge. A merchant can satisfy its disclosure obligation to Mastercard by clicking here and providing the following information:",
+        "Merchants should contact their acquirers with regard to the acquirer notification requirements.",
+        "\u00a0",
+        "Merchants are permitted to apply either a brand-level surcharge or a product-level surcharge to Mastercard credit cards. A brand level surcharge is one where the merchant charges the same percentage on all Mastercard credit cards. A product level surcharge is one where the merchant imposes a surcharge on a particular Mastercard credit product. In both circumstances, the level of the surcharge is subject to a cap.",
+        "\u00a0",
+        "The level of the fee that a merchant may charge a cardholder is capped in relation to the merchant's cost for Mastercard credit acceptance. For merchants who choose to impose a brand level surcharge, a merchant may only surcharge a Mastercard cardholder at the lesser of the merchant's average effective merchant discount rate that the merchant pays its acquirer for Mastercard credit acceptance or the Maximum Surcharge Cap, which can be found below. For merchants that impose a product level surcharge, the surcharge must not be more than the merchant's cost to accept the particular Mastercard credit product, minus the Durbin Amendment's cap on debit interchange fees.",
+        "\u00a0",
+        "A merchant must provide clear disclosure to the merchant's customers of the merchant's surcharging practices at the point of interaction which shall include the amount of the surcharge and the dollar amount of the surcharge on the transaction receipt provided by the merchant to its customers. Merchants should refer to the specific rule for additional consumer disclosure obligations.",
+        "Nothing in the Mastercard rules affects any obligation of a merchant to comply with applicable state or federal laws, including but not limited to state laws that may prohibit or restrict surcharging of credit transactions, and federal and state laws regarding deceptive or misleading disclosures.",
+        "\u00a0",
+        "For merchants that accept other brands of credit payment networks, such as American Express, Discover or PayPal, there are other requirements around the circumstances in which such a merchant could surcharge Mastercard cards that depend on the costs of those brands to the merchant and those brands' surcharging restrictions. A merchant should refer to the specific rules and/or contact their acquirer for greater detail concerning those requirements.",
+        "\u00a0",
+        "The Maximum Surcharge Cap - 4%"
+      ],
+      "list": [
+        "Merchant Name",
+        "Merchant Contact Information (address, phone and email)",
+        "Number of Locations Surcharging",
+        "Type of Channel (face-to-face, eCommerce, mail order or phone order",
+        "Type of Surcharge (brand or product)"
+      ]
+    }
+  ]
+}

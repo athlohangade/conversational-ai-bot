@@ -1,14 +1,75 @@
 {
-  "title": "Whether your business requires credit, debit or prepaid cards \u2013 or a mix of all three \u2013 Mastercard has payment solutions that work, and work hard, for you\n\n",
-  "Mastercard BusinessCard\u00ae": "Designed to improve your productivity, Mastercard BusinessCard delivers efficient digital expense tracking that puts you on top of your company\u2019s cash flow",
-  "World Elite Mastercard for Business\u00ae": "Powerful benefits at home and abroad, with productivity-boosting financial tools, added safety and security and an upgraded level of travel services",
-  "Debit Mastercard BusinessCard\u00ae": "Many of the same benefits of a credit card, with the ability to access your money directly from your banking account. You can use Debit Mastercard anywhere Mastercard is accepted \u2013 including when traveling or purchasing online.",
-  "Mastercard\u00ae Business Prepaid Card": "An ideal option for those just starting out in business, prepaid cards are safer and more convenient than cash and make it easy for small business owners to keep their business and personal expenses separate.",
-  "Contactless": "Enjoy fast, easy and more secure payments with a single tap at checkout.",
-  "Digital payments": "Pay anywhere, on any device, using your mobile wallet.",
-  "Nearby App": "Quickly and easily find places where you can access your funds via Mastercard.",
-  "Mastercard\u00ae Small Business Credit Cards": "Grow your business with built-in productivity and financial tools, and get an enhanced level of premium benefits with the World Elite Mastercard for Business\u00ae.",
-  "Priceless Cities": "Unlock thousands of extraordinary experiences in the cities where you live and travel, curated exclusively for Mastercard cardholders.",
-  "Priceless Causes": "Through cause marketing programs, Mastercard makes it easy to donate to the causes that matter the most to you.",
-  "Priceless Surprises": "Be surprised and delighted in big and small ways. Instant upgrades at events to once-in-a-lifetime moments like meeting your heroes, simply for being Mastercard cardholder."
+  "title": "Business Credit Cards | Best Mastercard Small Business Credit & Debit Cards",
+  "description": "Mastercard offers a wide range of business credit cards, debit cards and prepaid cards best suited to small business needs.",
+  "data": [
+    {
+      "heading": "Contactless",
+      "para": [
+        "Enjoy fast, easy and more secure payments with a single tap at checkout."
+      ]
+    },
+    {
+      "heading": "Digital payments",
+      "para": [
+        "Pay anywhere, on any device, using your mobile wallet."
+      ]
+    },
+    {
+      "heading": "Nearby App",
+      "para": [
+        "Quickly and easily find places where you can access your funds via Mastercard."
+      ]
+    },
+    {
+      "heading": "Priceless Cities",
+      "para": [
+        "Unlock thousands of extraordinary experiences in the cities where you live and travel, curated exclusively for Mastercard cardholders."
+      ]
+    },
+    {
+      "heading": "Priceless Causes",
+      "para": [
+        "Through cause marketing programs, Mastercard makes it easy to donate to the causes that matter the most to you."
+      ]
+    },
+    {
+      "heading": "Priceless Surprises",
+      "para": [
+        "Be surprised and delighted in big and small ways. Instant upgrades at events to once-in-a-lifetime moments like meeting your heroes, simply for being Mastercard cardholder."
+      ]
+    },
+    {
+      "heading": "Mastercard BusinessCard\u00ae",
+      "para": [
+        "Designed to improve your productivity, Mastercard BusinessCard delivers efficient digital expense tracking that puts you on top of your company\u2019s cash flow"
+      ]
+    },
+    {
+      "heading": "World Elite Mastercard for Business\u00ae",
+      "para": [
+        "Powerful benefits at home and abroad, with productivity-boosting financial tools, added safety and security and an upgraded level of travel services"
+      ]
+    },
+    {
+      "heading": "Debit Mastercard BusinessCard\u00ae",
+      "para": [
+        "Many of the same benefits of a credit card, with the ability to access your money directly from your banking account. You can use Debit Mastercard anywhere Mastercard is accepted \u2013 including when traveling or purchasing online."
+      ]
+    },
+    {
+      "heading": "Mastercard\u00ae Business Prepaid Card",
+      "para": [
+        "An ideal option for those just starting out in business, prepaid cards are safer and more convenient than cash and make it easy for small business owners to keep their business and personal expenses separate."
+      ]
+    },
+    {
+      "heading": "Mastercard\u00ae Small Business Credit Cards",
+      "para": [
+        "Grow your business with built-in productivity and financial tools, and get an enhanced level of premium benefits with the World Elite Mastercard for Business\u00ae."
+      ]
+    },
+    {
+      "heading": "Whether your business requires credit, debit or prepaid cards \u2013 or a mix of all three \u2013 Mastercard has payment solutions that work, and work hard, for you\n"
+    }
+  ]
 }

@@ -1,0 +1,50 @@
+{
+  "title": "Fraud Protection & Security | Report Card Fraud | Mastercard",
+  "description": "Learn how Mastercard merchant solutions can enable you to prevent credit card fraud. Mastercard provides several effective steps you can take to minimize or completely eliminate exposure to fraud",
+  "data": [
+    {
+      "heading": "Merchant resources",
+      "para": [
+        "Get the help you need, whether it's frequently asked questions or another resource."
+      ]
+    },
+    {
+      "heading": "Cyber security",
+      "para": [
+        "Take advantage of tips and resources designed to help protect your business today and tomorrow.\n"
+      ]
+    },
+    {
+      "heading": "Mastercard rules",
+      "para": [
+        "Understanding the Mastercard rules can help you make the most out of accepting payments.\n"
+      ]
+    },
+    {
+      "heading": "When you suspect fraud",
+      "list": [
+        "If your employees are suspicious about a card or a cardholder at any time during a transaction, tell them to call the Authorization Center and request a Code 10 authorization.",
+        "A Code 10 authorization request alerts the card issuer to suspicious activity \u2014 without alerting the customer. During a Code 10 call, your acquirer may ask for transaction details. Your call will be transferred to the card issuer's special operator who will provide instructions on any necessary action.",
+        "When the operator picks up, train your employees to say, \"I have a code 10 Authorization Request,\" and then follow these steps:",
+        "Stay calm to avoid alarming the person who presented the card.",
+        "Keep the card in question in hand to address any questions.",
+        "Answer the operator's questions in a normal tone, with a simple \"yes\" or \"no.\"",
+        "Follow the operator's instructions.",
+        "For your staff's safety, do not, under any circumstances, confront or try to apprehend the customer."
+      ]
+    },
+    {
+      "para": [
+        "Sometimes fraud happens even with strong preventive measures in place. Keep contact information for reporting fraud easily accessible, and make sure your employees know how to use it.\u00a0\u00a0\u00a0\n\n",
+        "If a fraudulent transaction occurs, contact the following\u00a0entities\u00a0for assistance:",
+        "\u00a0",
+        "\u00a0"
+      ],
+      "list": [
+        "Your bank or payment processor",
+        "Your legal counsel",
+        "Your local police department or U.S. Secret Service office"
+      ]
+    }
+  ]
+}
