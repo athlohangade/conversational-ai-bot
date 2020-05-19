@@ -53,7 +53,7 @@ class ActionGetSupport(Action):
 
         faq = OtherSupport.searchInFAQ(msg)
         for f in faq:
-            if type(f) == type(list()) :
+            if type(f) == list:
                 for individual in f :
                     print(individual)
                     dispatcher.utter_message(text=individual)

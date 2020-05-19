@@ -38,44 +38,55 @@ class TextProcessorAndSearch :
 
     ### To be done
     @classmethod
-    def __getPlainText(originalData) :
+    def __getPlainText(cls, originalData) :
         pass
 
     ### To be done
     @classmethod
     def getSummary(cls, searchData, originalData) :
-        if (type(originalData) == type(dict)) :
-            text = cls.__getPlainText(originalData)
-        #sentence_list = [ sentence for sentence in ]
-        pass
+        # make a set of words in searchData so that they can be searched in less
+        # than linear time 
+        if type(searchData) == list:
+            searchData = set(searchData)
 
+        # extract list of p tags from json data
+        if type(originalData) == dict:
+            text = cls.__getPlainText(originalData)
+        elif type(originalData) == list:
+            text = originalData
+    
+        # find number of occurences of words in searchData in each Description
+        c = mx = 0 
+        currentBest = None
+        for des in text:
+            for word in des.split():
+                if word in searchData:
+                    c += 1
+            if c >= mx:
+                mx = c
+                currentBest = des
+
+        return currentBest
+                    
     @classmethod
     def findAnswers(cls, msg, faq) :
-        question_list = []
         question_scores = {}
-
-        for f in faq :
-            question_list.append(f['Q'].lower())
+        question_list = [f['Q'].lower() for f in faq]
 
         for question in question_list :
             for word in msg :
                 if word in question :
-                    if question in question_scores.keys() :
-                        question_scores[question] += 1
-                    else :
-                        question_scores[question] = 1
+                    question_scores[question] = question_scores.get(question, 0)
 
         print(question_scores)
 
         sorted_questions = []
         sorted_scores = []
         answers = []
-        for question, score in sorted(question_scores.items(), key=lambda item: item[1]) :
+        for question, score in sorted(question_scores.items(), key=lambda item: item[1], reverse = True) :
             sorted_questions.append(question)
             sorted_scores.append(score)
 
-        sorted_scores.reverse()
-        sorted_questions.reverse()
         print(sorted_questions)
         print(sorted_scores)
 
