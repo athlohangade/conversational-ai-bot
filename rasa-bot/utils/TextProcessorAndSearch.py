@@ -76,16 +76,20 @@ class TextProcessorAndSearch :
                     
     @classmethod
     def findAnswers(cls, msg, faq) :
+
+        #   get all question in a list
         question_scores = {}
         question_list = [f['Q'].lower() for f in faq]
 
+        #   Calculate score for each question based on keywords presence
         for question in question_list :
             for word in msg :
                 if word in question :
-                    question_scores[question] = question_scores.get(question, 0)
+                    question_scores[question] += question_scores.get(question, 0)
 
         print(question_scores)
 
+        #   Sort the questions and answers in descending order 
         sorted_questions = []
         sorted_scores = []
         answers = []
@@ -96,6 +100,7 @@ class TextProcessorAndSearch :
         print(sorted_questions)
         print(sorted_scores)
 
+        #   get the answers
         for question in sorted_questions :
             for f in faq :
                 if f['Q'].lower() == question :

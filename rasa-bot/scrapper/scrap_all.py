@@ -76,7 +76,10 @@ with open('../lookup-files/keywords-urls.csv') as csv_file:
                         each_para['para'] = [para]
                         print(para)
                 except:
-                    pass
+                    para = d.find('p')
+                    if para:
+                        each_para['heading'] = para.text
+                        each_para['para'] = [heading]
                 if bool(each_para):
                     list_of_data.append(each_para)
 
