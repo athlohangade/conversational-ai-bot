@@ -44,8 +44,9 @@ class TextProcessorAndSearch :
         extracted = []
         if originalData:
             for i in originalData:
-                for para in i["para"]:
-                    extracted.append(para)
+                if "para" in i:
+                    for para in i["para"]:
+                        extracted.append(para)
         return extracted
 
     ### To be done
