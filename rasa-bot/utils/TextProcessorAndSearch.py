@@ -86,7 +86,7 @@ class TextProcessorAndSearch :
         for question in question_list :
             for word in msg :
                 if word in question :
-                    question_scores[question] += question_scores.get(question, 0)
+                    question_scores[question] = question_scores.get(question, 0) + 1
 
         print(question_scores)
 
