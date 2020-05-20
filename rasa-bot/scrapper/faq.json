@@ -55,7 +55,7 @@
     ]
   },
   {
-    "Q": "What other changes may impact BINs in the future?",
+    "Q": "Whom can I contact at Mastercard with questions related to the 2-series BINs?",
     "A": [
       "If you have a dedicated Mastercard representative, you may first contact that individual. Alternatively, you can send us an email."
     ]
@@ -67,7 +67,7 @@
     ]
   },
   {
-    "Q": "How do I apply for a Mastercard?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your question here."
     ]
@@ -119,7 +119,7 @@
     ]
   },
   {
-    "Q": "Can I use my prepaid card, gift card or credit card at an ATM?",
+    "Q": "How can I get a replacement for a lost or stolen ATM card?",
     "A": [
       "We'll help you replace your lost or stolen ATM card no matter where you are. Call the Mastercard Assistance Center with any card-related need from anywhere in the world.",
       "Get global contact numbers",
@@ -214,7 +214,7 @@
     ]
   },
   {
-    "Q": "What if I don't agree with a payment amount made on my Mastercard statement?",
+    "Q": "What are the benefits of bill payment using a Mastercard?",
     "A": [
       "Using your Mastercard is much faster and more convenient than writing checks. You can initiate payments at any time and from anywhere in the world. Charges will appear on your monthly statement, so it's an easy and efficient way to stay organized and keep track of your expenses. In addition, if you use automatic bill payment you won't have to worry about missed payments or late fees. Depending on the card you use, you may also be eligible to earn rewards."
     ]
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "Q": "How do I file a claim for card benefits?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your question here."
     ]
@@ -293,7 +293,7 @@
     ]
   },
   {
-    "Q": "What's the advantage of getting cash at purchase?",
+    "Q": "What's the maximum amount of cash I can get with my purchase?",
     "A": [
       "The amount of cash you can get may vary by merchant and be subject to availability of funds at the time of purchase. If you have questions about the availability of funds at a particular merchant, please contact the merchant directly. The amount you can take out is also subject to the availability of funds in the account linked to your debit card."
     ]
@@ -349,7 +349,7 @@
     ]
   },
   {
-    "Q": "How does the chip work?",
+    "Q": "How do I know if my chip card has Mastercard contactless?",
     "A": [
       "Cards that have contactless capabilities will have the word \"contactless\" and may also have a contactless symbol on the card. You can tap to pay at merchants that have the following symbol or contactless on the terminal:",
       "If a merchant doesn't have this capability, you'll need to insert your chip card into the terminal."
@@ -428,7 +428,7 @@
     ]
   },
   {
-    "Q": "How can I offer Click to Pay to my consumers?",
+    "Q": "How does Click to Pay help financial institutions?",
     "A": [
       "Click to Pay helps financial institutions better manage authentication and risk by leveraging EMV standards to make online payments more secure.",
       "Click to Pay also deepens consumer relationships by empowering your consumers to take control of their stored online payment credentials through your mobile banking app or website.",
@@ -539,7 +539,7 @@
     "A": []
   },
   {
-    "Q": "Visit mastercard.com/clicktopay, select View profile and delete your Mastercard Click to Pay profile.",
+    "Q": "You can delete your profile information from Mastercard Click to Pay by signing in to your profile at mastercard.com/clicktopay. In your profile, click on the menu in the top right-hand corner. Choose Settings and then choose Manage profile.",
     "A": [
       "If you change your mind, you will need to create a new ClicktoPay profile. To manage cards and profiles with other payment brands, visit their websites."
     ]
@@ -575,7 +575,7 @@
     ]
   },
   {
-    "Q": "How do I find an issuer for a co-brand alliance?",
+    "Q": "What role does Mastercard play in developing a co-brand program?",
     "A": [
       "That depends on the goals and budget of the partner company. However, Mastercard has a dedicated staff of highly experienced co-brand specialists who can help a company evaluate and establish a co-brand partnership that will meet the objectives of all parties involved."
     ]
@@ -669,7 +669,7 @@
     ]
   },
   {
-    "Q": "What do I do if my contactless card or device has been lost or stolen?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, click here to submit your question."
     ]
@@ -761,7 +761,7 @@
     ]
   },
   {
-    "Q": "What do I do if my contactless card or device has been lost or stolen?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your question here."
     ]
@@ -800,7 +800,7 @@
     ]
   },
   {
-    "Q": "Should I convert transactions into my home currency?",
+    "Q": "Should I tell my bank I'll be traveling abroad?",
     "A": [
       "Yes, be sure to tell your bank you'll be traveling cross-border and where you're going. Your bank might decline a transaction for your protection unless they know the card's been authorized for use in countries other than your home country.",
       "Many issuers allow you to register travel plans online in lieu of calling \u2013 check your issuer\u2019s website."
@@ -862,7 +862,7 @@
     ]
   },
   {
-    "Q": "Will I incur any cost to accept payments?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, submit your questionhere, or send us an email. You can also mail a letter to:",
       "Consumer Inquiries\nMastercard International Incoporated\n2000 Purchase Street\nPurchase, NY 10577"
@@ -902,7 +902,7 @@
     ]
   },
   {
-    "Q": "How can I get a replacement card?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372) or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your questionhere."
     ]
@@ -1019,7 +1019,7 @@
     ]
   },
   {
-    "Q": "How do I report a problem with a location?",
+    "Q": "Can I change my search radius?",
     "A": [
       "Yes, you can select a radius between 1 to 25 miles (or km) in the app Settings."
     ]
@@ -1068,7 +1068,7 @@
     ]
   },
   {
-    "Q": "Q: Can an issuer use Mastercard Send for a P2P program?",
+    "Q": "Q: How does Mastercard Send differ from MoneySend?",
     "A": [
       "A: Mastercard Send is the first-of-its-kind interoperable global platform that enables funds to be sent quickly and securely. In the U.S., it will enable disbursements and P2P payments to and from nearly any U.S. debit card account, including non-Mastercard debit cards. MoneySend is the Mastercard transaction type (Transaction Code 28) designed for real-time money transfers by issuers connected to the Mastercard network."
     ]
@@ -1176,7 +1176,7 @@
     ]
   },
   {
-    "Q": "How do I get my Mastercard Prepaid Card balance?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your questionhere."
     ]
@@ -1230,7 +1230,7 @@
     ]
   },
   {
-    "Q": "Who owns personal information?",
+    "Q": "How can individuals control how their data is being used?",
     "A": [
       "We provide individuals with privacy rights and choices. You can opt out of your personal information being used for marketing, data analyticsand web analyticsat any time and at no cost, using our online forms. Individuals also have the right to access, correct, modify or move their personal information via our online portal, which is currently available for all users located in the European Union and will shortly be accessible worldwide."
     ]
@@ -1280,7 +1280,7 @@
     ]
   },
   {
-    "Q": "My card was declined while trying to make a purchase. What should I do?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please contact usto submit your question."
     ]
@@ -1333,7 +1333,7 @@
     ]
   },
   {
-    "Q": "There was a breach on my account and I received a new card. How can I get more information?",
+    "Q": "How do I report potential fraud?",
     "A": [
       "If you possess contact information for someone who has committed fraud on a Mastercard\u00ae account, please contact your merchant service provider for assistance in reaching the financial institution that issued the Mastercard account."
     ]
@@ -1376,7 +1376,7 @@
     ]
   },
   {
-    "Q": "Can I reload any card at Mastercard rePower merchants?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll-free at 1-800-Mastercard (1-800-627-8372), or collect from outside the U.S. at 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your questionhere."
     ]
@@ -1401,7 +1401,7 @@
     ]
   },
   {
-    "Q": "How does Mastercard SecureCode work?",
+    "Q": "What should I do if I can't remember my SecureCode?",
     "A": [
       "If you forget your code, you may be prompted to reset it, or you can contact the customer service number for your financial institution, which is typically found on the back of your card."
     ]
@@ -1428,7 +1428,7 @@
     ]
   },
   {
-    "Q": "What if I identify vulnerabilities or issues outside of these areas?",
+    "Q": "What is the reward process for reported vulnerabilities?",
     "A": [
       "Monetary rewards are offered to external security researchers if they identify an issue on one of the in-scope platforms. Compensation depends on the severity and impact of the identified issue."
     ]
@@ -1456,7 +1456,7 @@
     ]
   },
   {
-    "Q": "What should I do if the merchant surcharge was higher than I expected?",
+    "Q": "I was charged a surcharge without my knowledge. What should I do?",
     "A": [
       "Merchants can charge an extra fee to all customers who pay with Mastercard\u00ae branded credit cards. These fees are not allowed on Debit Mastercard or Mastercard prepaid cards. These requirements can be found by visiting our merchant surcharge rules.",
       "Merchants must clearly disclose their surcharge policies at the register and clearly indicate the amount of the surcharge on the receipt.",
@@ -1495,7 +1495,7 @@
     ]
   },
   {
-    "Q": "How will a federal tax payment appear on my statement?",
+    "Q": "Where can I get information about IRS e-file?",
     "A": [
       "You can reach the IRS by calling 1-800-829-1040 or by visiting www.irs.gov."
     ]
@@ -1540,7 +1540,7 @@
     ]
   },
   {
-    "Q": "What do these new digital payments mean for me?",
+    "Q": "Will this affect the way I identify new or returning consumers?",
     "A": [
       "Merchants that use card numbers to identify customers will not be able to recognize returning customers if it's the first time they're using their token, since it appears as a new card number. However, when used again, merchants will be able to recognize the token associated with that consumer\u2019s device."
     ]
@@ -1585,7 +1585,7 @@
     ]
   },
   {
-    "Q": "What should I do if the financial institution that issued my Mastercard says that Mastercard denied my dispute?",
+    "Q": "What if my question isn't answered here?",
     "A": [
       "If your question isn't listed here, we recommend you contact the financial institution that issued your card. Look for a customer service number on the back of the card. You can also contact the Mastercard Assistance Center toll free at 1-800-627-8372 or 'Collect' by dialing 1-636-722-7111. If you believe your question can only be answered by Mastercard, please submit your question here."
     ]

@@ -2,6 +2,7 @@ import json
 import spacy
 
 from string import punctuation
+import re
 from spacy.lang.en.stop_words import STOP_WORDS
 from nltk.corpus import stopwords as STOP_WORDS_2
 from itertools import combinations
@@ -50,7 +51,8 @@ class TextProcessorAndSearch :
         extracted = []
         if originalData:
             for i in originalData:
-                extracted.append(i["para"])
+                for para in i["para"]:
+                    extracted.append(para)
         return extracted
 
     ### To be done
@@ -59,6 +61,7 @@ class TextProcessorAndSearch :
         # make a set of words in searchData so that they can be searched in less
         # than linear time 
         if type(searchData) == list:
+            searchDataList = searchData
             searchData = set(searchData)
 
         # extract list of p tags from json data
@@ -66,19 +69,39 @@ class TextProcessorAndSearch :
             text = cls.__getPlainText(originalData)
         elif type(originalData) == list:
             text = originalData
-    
-        # find number of occurences of words in searchData in each Description
-        c = mx = 0 
-        currentBest = None
-        for des in text:
-            for word in des.split():
-                if word in searchData:
-                    c += 1
-            if c >= mx:
-                mx = c
-                currentBest = des
+        
+        search = TextProcessorAndSearch.regex_search(searchDataList, text)
+        if search:
+            return search
+        
+        totalWords = len(searchDataList)
+        combinations = [searchDataList[i: i + j] for i in range(0, len(searchDataList)) for j in range(1, len(searchDataList) - i + 1) if j - i != totalWords]
+        combinations = sorted(combinations, key = len, reverse = True)
 
-        return currentBest
+        for wordlist in combinations:
+            search = TextProcessorAndSearch.regex_search(wordlist, text)
+            if search:
+                return search
+
+        return None
+
+    @staticmethod
+    def regex_search(wordlist, target, flags = re.IGNORECASE | re.UNICODE):
+        '''finds and returns the paragraph containing the given words in wordlist
+        in the order same in wordlist
+        if there is no such paragraph in the target list, then it returns None'''
+
+        # create n compile regular expression to find words in fixed order
+        pat = '.*'.join(word for word in wordlist)
+        pat = re.compile(pat, flags = flags)
+        
+        # find the relavant para from the given sequence in wordlist
+        for para in target:
+            for line in para.split('\n'):
+                if re.search(pat, line):
+                    return para
+
+        return None
                     
     @classmethod
     def __getAppropriateQuestions(cls, keywords, question_list) :
