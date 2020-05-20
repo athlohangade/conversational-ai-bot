@@ -38,7 +38,7 @@ for d in data:
             list_of_ques.append({"Q": prev_q, "A" : list_of_ans})
             list_of_ans = []
             que_complete = False
-    list_of_ques.append({"Q": prev_q, "A" : list_of_ans})
+    list_of_ques.append({"Q": curr_q, "A" : list_of_ans})
     list_of_ans = []
     que_complete = False
 
