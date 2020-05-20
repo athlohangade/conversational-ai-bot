@@ -63,13 +63,14 @@ class TextProcessorAndSearch :
         # find number of occurences of words in searchData in each Description
         c = mx = 0 
         currentBest = None
-        for des in text:
-            for word in des.split():
-                if word in searchData:
-                    c += 1
-            if c >= mx:
-                mx = c
-                currentBest = des
+        for ldes in text:
+            for des in ldes: 
+                for word in des.split():
+                    if word in searchData:
+                        c += 1
+                if c >= mx:
+                    mx = c
+                    currentBest = des
 
         return currentBest
                     
