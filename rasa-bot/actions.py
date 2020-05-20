@@ -44,22 +44,20 @@ class ActionGetSupport(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        msg = (tracker.latest_message)['text']
-        print(msg)
+        # msg = (tracker.latest_message)['text']
+        # print(msg)
 
         entities = tracker.latest_message['entities']
         print(entities)
         print("In support action")
 
-        # faq = OtherSupport.searchInFAQ(msg)
-        # for f in faq:
-        #     if type(f) == list:
-        #         for individual in f :
-        #             print(individual)
-        #             dispatcher.utter_message(text=individual)
-        #     else :
-        #         print(f)
-        #         dispatcher.utter_message(text=f)
+        msg = tracker.latest_message.get('text')
+        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+            answers = OtherSupport.searchInFAQ(msg)
+            answers = answers[0]
+            for answer in answers :
+                dispatcher.utter_message(text = answer) 
+            return [AllSlotsReset()]
 
         to_reset = False
 
@@ -192,6 +190,16 @@ class ActionDefaultAskAffirmation(Action):
 
         entities = tracker.latest_message['entities']
         print(entities)
+        print("In fallback function")
+
+        msg = tracker.latest_message.get('text')
+        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+            answers = OtherSupport.searchInFAQ(msg)
+            print('adadfa')
+            answers = answers[0]
+            for answer in answers :
+                dispatcher.utter_message(text = answer) 
+            return [AllSlotsReset()]
 
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']

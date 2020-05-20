@@ -55,3 +55,12 @@ class OtherSupport:
         answers = TextProcessorAndSearch.findAnswers(msg, faq)
 
         return answers
+
+    @staticmethod
+    def checkIfSentenceIsQuestion(msg) :
+
+        msg = msg.lower()
+        msg = TextProcessorAndSearch.tokenize(msg)
+        msg = TextProcessorAndSearch.removeStopWords(msg)
+
+        return (TextProcessorAndSearch.questionOrNot(msg))
