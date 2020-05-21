@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 
 #Add the path of webdriver on Chrome() if not globally installed
-driver = webdriver.Chrome()
+driver = webdriver.Chrome("../selenium-webdriver/chromedriver_win32/chromedriver")
 driver.get("https://www.mastercard.us/en-us/frequently-asked-questions.html")
 res = driver.execute_script("return document.documentElement.outerHTML")
 driver.quit()

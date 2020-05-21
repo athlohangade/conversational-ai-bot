@@ -20,7 +20,7 @@ class  ScrapAllWebpages:
                     # Open URL and get the source code
 
                     #Add the webdriver path in Chrome() if not installed globally
-                    driver = webdriver.Chrome()
+                    driver = webdriver.Chrome("selenium-webdriver/chromedriver_win32/chromedriver")
                     driver.get(url)
                     res = driver.execute_script("return document.documentElement.outerHTML")
                     driver.quit()

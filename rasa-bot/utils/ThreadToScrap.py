@@ -2,8 +2,6 @@ import threading
 import time
 from utils.ScrapAllWebpages import ScrapAllWebpages
 
-exitFlag = 0
-
 class ThreadToScrap (threading.Thread):
 
     def __init__(self, threadID, name):
