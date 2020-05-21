@@ -171,6 +171,7 @@
 - Can I pay my [billers]{"entity": "support_type", "value": "bill"} who accept Mastercard directly from this site?
 - What are the benefits of [bill](support_type) payment using a Mastercard?
 - I want to know about [bill](support_type) payment services at mastercard
+- How [billers]{"entity": "support_type", "value": "bill"} are benefited if I pay using mastercard ?
 
 - [authentication](support_type) services at mastercard
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}

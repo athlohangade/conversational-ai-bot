@@ -18,9 +18,13 @@ from rasa_sdk.events import FollowupAction
 from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
 from utils.TextProcessorAndSearch import TextProcessorAndSearch
+from utils.ThreadToScrap import ThreadToScrap
 
 import csv
 import json
+import datetime
+import _thread
+import time
 
 # class ActionHelloWorld(Action):
 #
@@ -50,6 +54,19 @@ class ActionGetSupport(Action):
         entities = tracker.latest_message['entities']
         print(entities)
         print("In support action")
+
+        ## For Periodic Scrapping
+        current_time = datetime.datetime.now()
+        if current_time.hour%24 == 0 and current_time.minute%60 == 0:
+            print("In thread create")
+            try:
+                # Create new threads
+                thread1 = ThreadToScrap(1, "Thread-1")
+
+                # Start new Threads
+                thread1.start()
+            except:
+                print("Thread not created")
 
         msg = tracker.latest_message.get('text')
         if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
