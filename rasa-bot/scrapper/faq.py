@@ -1,9 +1,13 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import json
+import os
 
 #Add the path of webdriver on Chrome() if not globally installed
-driver = webdriver.Chrome("../selenium-webdriver/chromedriver_win32/chromedriver")
+if os.name == 'posix':
+    driver = webdriver.Chrome("../selenium-webdriver/chromedriver_linux64/chromedriver")
+elif os.name == 'nt':
+    driver = webdriver.Chrome("../selenium-webdriver/chromedriver_win32/chromedriver")
 driver.get("https://www.mastercard.us/en-us/frequently-asked-questions.html")
 res = driver.execute_script("return document.documentElement.outerHTML")
 driver.quit()
@@ -43,6 +47,7 @@ for d in data:
     que_complete = False
 
 # the json file where the output must be stored  
-out_file = open("faq.json", "w")
-json.dump(list_of_ques, out_file, indent = 2)
-out_file.close()
+#out_file = open("faq.json", "w")
+import sys
+json.dump(list_of_ques, sys.stdout, indent = 2)
+#out_file.close()

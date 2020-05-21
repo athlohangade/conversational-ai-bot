@@ -2,6 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import csv
 import json
+import os
 
 class  ScrapAllWebpages:
     @classmethod
@@ -20,7 +21,10 @@ class  ScrapAllWebpages:
                     # Open URL and get the source code
 
                     #Add the webdriver path in Chrome() if not installed globally
-                    driver = webdriver.Chrome("selenium-webdriver/chromedriver_win32/chromedriver")
+                    if os.name == 'posix':
+                        driver = webdriver.Chrome("selenium-webdriver/chromedriver_linux64/chromedriver")
+                    elif os.name == 'nt':
+                        driver = webdriver.Chrome("selenium-webdriver/chromedriver_win32/chromedriver")
                     driver.get(url)
                     res = driver.execute_script("return document.documentElement.outerHTML")
                     driver.quit()
