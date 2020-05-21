@@ -40,6 +40,9 @@ import time
 #         return []
 
 class ActionGetSupport(Action):
+    
+    now = datetime.datetime.now()
+    prev_time = now.replace(hour=18, minute=0, second=0, microsecond=0)
 
     def name(self) -> Text:
         return "action_get_support"
@@ -57,7 +60,9 @@ class ActionGetSupport(Action):
 
         ## For Periodic Scrapping
         current_time = datetime.datetime.now()
-        if current_time.hour%24 == 0 and current_time.minute%60 == 0:
+        print(current_time)
+        if (current_time.date() > ActionGetSupport.prev_time.date()):
+            ActionGetSupport.prev_time = current_time
             print("In thread create")
             try:
                 # Create new threads
