@@ -104,6 +104,18 @@ class ActionGetSupport(Action):
             return []
             
         res = OtherSupport.getResponse(entities)
+
+        # adding the relevant paragraph from json file
+
+        #######################################################
+        # GET THE CORRECT JSON FILE TO OPEN SAY "abc.json" AND
+        # THEN ADD THIS CODE
+        # msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+        # with open('abc.json', 'r') as data:
+        #     additional_para = TextProcessorAndSearch(msglist, data)
+        # res[0] += '\n'
+        # res[0] += additional_para
+        #######################################################
         
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
