@@ -65,21 +65,21 @@ class TextProcessorAndSearch :
 
     @classmethod
     def getSummary(cls, searchData, originalData) :
-        '''returns most relevant paragrah from the scrapped originalData (json format or plain text list)
-        it finds most relevant paragrah by matching with maximum possible words in the searchData
-        in the same sequence
-        if not such paragraph found then it returns the paragraph with most matching words, ignoring sequence'''
+        '''returns most relevant paragrah from the scrapped originalData (json format or
+        plain text list) it finds most relevant paragrah by matching with maximum
+        possible words in the searchData in the same sequence if not such paragraph
+        found then it returns the paragraph with most matching words, ignoring sequence'''
 
         # make a set of words in searchData so that they can be searched in less
         # than linear time 
-        if type(searchData) == list:
+        if isinstance(searchData, list):
             searchDataList = searchData
             searchData = set(searchData)
 
         # extract list of p tags from json data
-        if type(originalData) == dict:
+        if isinstance(originalData, dict):
             text = cls.__getPlainText(originalData)
-        elif type(originalData) == list:
+        elif isinstance(originalData, list):
             text = originalData
         
         #search = TextProcessorAndSearch.regex_search(searchDataList, text)
@@ -105,9 +105,18 @@ class TextProcessorAndSearch :
             if search:
                 return min(search, key = len)
         
-        
-    
-        return None
+        # find number of occurences of words in searchData in each Description
+        c = mx = 0 
+        currentBest = None
+        for des in text:
+            for word in des.split():
+                if word in searchData:
+                    c += 1
+            if c >= mx:
+                mx = c
+                currentBest = des
+
+        return currentBest
 
     @staticmethod
     def make_all_combinations(keywords):
