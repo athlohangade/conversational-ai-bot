@@ -22,7 +22,7 @@ from utils.ThreadToScrap import ThreadToScrap
 
 import csv
 import json
-import datetime
+from datetime import datetime, timedelta
 import _thread
 import time
 
@@ -41,8 +41,9 @@ import time
 
 class ActionGetSupport(Action):
     
-    now = datetime.datetime.now()
-    prev_time = now.replace(hour=18, minute=0, second=0, microsecond=0)
+    now = datetime.now()
+    #prev_time = now - timedelta(days=1)
+    prev_time = now
 
     def name(self) -> Text:
         return "action_get_support"
@@ -51,15 +52,12 @@ class ActionGetSupport(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        # msg = (tracker.latest_message)['text']
-        # print(msg)
-
         entities = tracker.latest_message['entities']
         print(entities)
         print("In support action")
 
         ## For Periodic Scrapping
-        current_time = datetime.datetime.now()
+        current_time = datetime.now()
         print(current_time)
         if (current_time.date() > ActionGetSupport.prev_time.date()):
             ActionGetSupport.prev_time = current_time
