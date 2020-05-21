@@ -69,6 +69,7 @@ class TextProcessorAndSearch :
         it finds most relevant paragrah by matching with maximum possible words in the searchData
         in the same sequence
         if not such paragraph found then it returns the paragraph with most matching words, ignoring sequence'''
+
         # make a set of words in searchData so that they can be searched in less
         # than linear time 
         if type(searchData) == list:
@@ -97,12 +98,15 @@ class TextProcessorAndSearch :
         #    reverse = True
         #)
         totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList)
+        totalcombinations = list(filter(lambda x: len(x) > 1, totalcombinations))
 
         for wordlist in totalcombinations:
             search = list(TextProcessorAndSearch.regex_search(wordlist, text))
             if search:
                 return min(search, key = len)
-
+        
+        
+    
         return None
 
     @staticmethod
@@ -121,9 +125,9 @@ class TextProcessorAndSearch :
 
     @staticmethod
     def regex_search(wordlist, target, flags = re.IGNORECASE | re.UNICODE):
-        '''finds and returns the paragraph containing the given words in wordlist
+        '''finds and yields the paragraphs containing the given words in wordlist
         in the order same in wordlist
-        if there is no such paragraph in the target list, then it returns None'''
+        if there are no such paragraphs in the target list, then it yields nothing'''
 
         # create n compile regular expression to find words in fixed order
         pat = re.compile(
