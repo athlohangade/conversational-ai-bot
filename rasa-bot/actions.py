@@ -18,9 +18,13 @@ from rasa_sdk.events import FollowupAction
 from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
 from utils.TextProcessorAndSearch import TextProcessorAndSearch
+from utils.ThreadToScrap import ThreadToScrap
 
 import csv
 import json
+import datetime
+import _thread
+import time
 
 # class ActionHelloWorld(Action):
 #
@@ -44,22 +48,33 @@ class ActionGetSupport(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        msg = (tracker.latest_message)['text']
-        print(msg)
+        # msg = (tracker.latest_message)['text']
+        # print(msg)
 
         entities = tracker.latest_message['entities']
         print(entities)
         print("In support action")
 
-        # faq = OtherSupport.searchInFAQ(msg)
-        # for f in faq:
-        #     if type(f) == list:
-        #         for individual in f :
-        #             print(individual)
-        #             dispatcher.utter_message(text=individual)
-        #     else :
-        #         print(f)
-        #         dispatcher.utter_message(text=f)
+        ## For Periodic Scrapping
+        current_time = datetime.datetime.now()
+        if current_time.hour%24 == 0 and current_time.minute%60 == 0:
+            print("In thread create")
+            try:
+                # Create new threads
+                thread1 = ThreadToScrap(1, "Thread-1")
+
+                # Start new Threads
+                thread1.start()
+            except:
+                print("Thread not created")
+
+        msg = tracker.latest_message.get('text')
+        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+            answers = OtherSupport.searchInFAQ(msg)
+            answers = answers[0]
+            for answer in answers :
+                dispatcher.utter_message(text = answer) 
+            return [AllSlotsReset()]
 
         to_reset = False
 
@@ -192,6 +207,16 @@ class ActionDefaultAskAffirmation(Action):
 
         entities = tracker.latest_message['entities']
         print(entities)
+        print("In fallback function")
+
+        msg = tracker.latest_message.get('text')
+        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+            answers = OtherSupport.searchInFAQ(msg)
+            print('adadfa')
+            answers = answers[0]
+            for answer in answers :
+                dispatcher.utter_message(text = answer) 
+            return [AllSlotsReset()]
 
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']

@@ -118,15 +118,6 @@
 * thanks
     - utter_welcome
 
-## convert_story_2
-* greet
-    - utter_greet
-* get_support{"support_type": "convert"}
-    - action_get_support
-    - utter_did_that_help
-* deny
-    - utter_submit_query
-
 ## cashback_story_1
 * greet
     - utter_greet
