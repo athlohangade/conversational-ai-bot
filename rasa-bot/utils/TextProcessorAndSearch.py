@@ -5,7 +5,7 @@ from string import punctuation
 import re
 from spacy.lang.en.stop_words import STOP_WORDS
 from nltk.corpus import stopwords as STOP_WORDS_2
-from itertools import combinations
+from itertools import combinations, chain
 
 # print(STOP_WORDS)
 # print('I' in STOP_WORDS)
@@ -52,7 +52,6 @@ class TextProcessorAndSearch :
         print(data)
         return data
 
-    ### To be done
     @classmethod
     def __getPlainText(cls, originalData) :
         originalData = originalData.get("data")
@@ -64,9 +63,12 @@ class TextProcessorAndSearch :
                         extracted.append(para)
         return extracted
 
-    ### To be done
     @classmethod
     def getSummary(cls, searchData, originalData) :
+        '''returns most relevant paragrah from the scrapped originalData (json format or plain text list)
+        it finds most relevant paragrah by matching with maximum possible words in the searchData
+        in the same sequence
+        if not such paragraph found then it returns the paragraph with most matching words, ignoring sequence'''
         # make a set of words in searchData so that they can be searched in less
         # than linear time 
         if type(searchData) == list:
@@ -79,20 +81,43 @@ class TextProcessorAndSearch :
         elif type(originalData) == list:
             text = originalData
         
-        search = TextProcessorAndSearch.regex_search(searchDataList, text)
-        if search:
-            return search
+        #search = TextProcessorAndSearch.regex_search(searchDataList, text)
+        #if search:
+        #    return search
         
-        totalWords = len(searchDataList)
-        combinations = [searchDataList[i: i + j] for i in range(0, len(searchDataList)) for j in range(1, len(searchDataList) - i + 1) if j - i != totalWords]
-        combinations = sorted(combinations, key = len, reverse = True)
+        #totalWords = len(searchDataList)
+        #totalcombinations = sorted(
+        #    [
+        #        searchDataList[i: i + j]
+        #        for i in range(0, len(searchDataList))
+        #        for j in range(1, len(searchDataList) - i + 1)
+        #        if j - i != totalWords
+        #    ],
+        #    key = len,
+        #    reverse = True
+        #)
+        totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList)
 
-        for wordlist in combinations:
-            search = TextProcessorAndSearch.regex_search(wordlist, text)
+        for wordlist in totalcombinations:
+            search = list(TextProcessorAndSearch.regex_search(wordlist, text))
             if search:
-                return search
+                return min(search, key = len)
 
         return None
+
+    @staticmethod
+    def make_all_combinations(keywords):
+        '''returns the combinations of all lengths from the given parameter keywords'''
+        return sorted(
+            list(
+                chain.from_iterable(
+                    combinations(keywords, i)
+                    for i in range(1, len(keywords) + 1)
+                )
+            ),
+            key = len,
+            reverse = True
+        )
 
     @staticmethod
     def regex_search(wordlist, target, flags = re.IGNORECASE | re.UNICODE):
@@ -101,16 +126,18 @@ class TextProcessorAndSearch :
         if there is no such paragraph in the target list, then it returns None'''
 
         # create n compile regular expression to find words in fixed order
-        pat = '.*'.join(word for word in wordlist)
-        pat = re.compile(pat, flags = flags)
-        
+        pat = re.compile(
+            '.*'.join(
+                list(map(r'\b{}\b'.format, wordlist))
+            ),
+            flags = re.IGNORECASE
+        )
+
         # find the relavant para from the given sequence in wordlist
         for para in target:
             for line in para.split('\n'):
                 if re.search(pat, line):
-                    return para
-
-        return None
+                    yield para
                     
     @classmethod
     def __getAppropriateQuestions(cls, keywords, question_list) :
