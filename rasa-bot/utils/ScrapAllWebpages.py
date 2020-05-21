@@ -18,6 +18,8 @@ class  ScrapAllWebpages:
                     if entity == "theft":
                         continue
                     # Open URL and get the source code
+
+                    #Add the webdriver path in Chrome() if not installed globally
                     driver = webdriver.Chrome()
                     driver.get(url)
                     res = driver.execute_script("return document.documentElement.outerHTML")
@@ -55,8 +57,6 @@ class  ScrapAllWebpages:
                         try:
                             para = []
                             para = d.find('p', {'class': 'description'}).text
-                            print(heading)
-                            print(para)
                         except:
                             pass
                         if len(para):
@@ -73,11 +73,11 @@ class  ScrapAllWebpages:
                         heading = d.find('h3').text
                         try:
                             para = d.find('p', {'class': 'description'}).text
-                            print(heading)
+
                             if len(para):
                                 each_para['heading'] = heading
                                 each_para['para'] = [para]
-                                print(para)
+
                         except:
                             para = d.find('p')
                             if para:
@@ -95,7 +95,7 @@ class  ScrapAllWebpages:
                         try:
                             heading = d.find('h2').text
                             each_para['heading'] = heading
-                            print(heading)
+
                         except:
                             pass
                         # Get para
@@ -105,7 +105,7 @@ class  ScrapAllWebpages:
                             for p in para:
                                 if len(p.text):
                                     each_para['para'].append(p.text)
-                                    print(p.text)
+
                             if not bool(each_para['para']):
                                 del each_para['para']
                         # Get list if present
@@ -114,13 +114,11 @@ class  ScrapAllWebpages:
                             if li:
                                 each_para['list'] = []
                             for l in li:
-                                print(l.text)
                                 if len(l.text):
                                     each_para['list'].append(l.text)
                         except:
                             pass
                         if bool(each_para):
-                            print(each_para)
                             list_of_data.append(each_para)
 
                     all_data['data'] = list_of_data
