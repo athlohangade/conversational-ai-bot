@@ -27,7 +27,7 @@ class OtherSupport:
                         for e in entities:
                             if e['value'] == row[0]:
                                 link = row[1]
-                                message = row[2]
+                                message = "Please checkout following link. It might help you."
                                 used_entity = e['value']
                                 found = True
                                 break

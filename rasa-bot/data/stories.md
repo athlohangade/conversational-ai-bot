@@ -85,15 +85,6 @@
 * affirm
     - utter_happy
 
-## career_story_2
-* greet
-    - utter_greet
-* get_support{"support_type": "career"}
-    - action_get_support
-    - utter_did_that_help
-* deny
-    - utter_submit_query
-
 ## tax_story_1
 * greet
     - utter_greet

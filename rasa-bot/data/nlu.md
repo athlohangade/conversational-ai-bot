@@ -210,16 +210,16 @@
 - find a [card]{"entity": "support_type", "value": "cards"} that's best for me
 - I want [mastercard]{"entity": "support_type", "value": "cards"}
 - I am looking for [business](card_type) [cards](support_type)
-- I am looking for [personal](card_type) [cards](support_type)
+- I am looking for [debit](card_type) [cards](support_type)
 - i am looking for a [card]{"entity": "support_type", "value": "cards"} for me
 - i am looking for the perfect [mastercard]{"entity": "support_type", "value": "cards"} for me
-- Show me all [personal](card_type) [cards](support_type) that Mastercard provide
+- Show me all [credit](card_type) [cards](support_type) that Mastercard provide
 - I am in search of a [card]{"entity": "support_type", "value": "cards"} that's best for me. Can you help me?
 - Help me in choosing the best [card]{"entity": "support_type", "value": "cards"} for me
 - Show me all types of [cards](support_type) that Mastercard provide
-- Show me all [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
+- Show me all [prepaid](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 - Help me to get [mastercard]{"entity": "support_type", "value": "cards"}
-- Help me to get a [personal](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
+- Help me to get a [debit](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 - Apply for [mastercard]{"entity": "support_type", "value": "cards"}
 - How do I apply for [mastercard]{"entity": "support_type", "value": "cards"}
 
@@ -371,9 +371,12 @@
 
 ## synonym:tax
 - taxes
+- GST
 
 ## synonym:reload
 - reloading
+- topup
+- recharge
 
 ## synonym:support
 - help

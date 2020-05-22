@@ -71,14 +71,14 @@ responses:
   utter_ask_cardtype:
   - text: Select the type of card you are looking for
     buttons:
-      - title: "Personal"
-        payload: '/get_support{"card_type": "personal"}'
+      - title: "Credit"
+        payload: '/get_support{"card_type": "credit"}'
+      - title: "Debit"
+        payload: '/get_support{"card_type": "debit"}'
+      - title: "Prepaid"
+        payload: '/get_support{"card_type": "prepaid"}'
       - title: "Business"
         payload: '/get_support{"card_type": "business"}'
-
-  utter_submit_query:
-  - text: If you still need assistance, you can submit your question on the following link and we will get back to you soon.
-    attachment: "https://www.mastercard.us//en-us/personal/get-support/ask-mastercard-webform.html"
 
 session_config:
   carry_over_slots_to_new_session: true
@@ -98,5 +98,7 @@ slots:
   card_type:
     type: categorical
     values:
-      - personal
+      - credit
       - business
+      - debit
+      - prepaid

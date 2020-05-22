@@ -101,8 +101,7 @@ class ActionGetSupport(Action):
                 with open('scrapper/' + res[2] + '.json', 'r') as data:
                     additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
                 if additional_para:
-                    res[0] += '\n'
-                    res[0] += additional_para
+                    dispatcher.utter_message(text=additional_para)
             except:
                 print("File not found")
             
