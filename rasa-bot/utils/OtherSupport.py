@@ -15,6 +15,7 @@ class OtherSupport:
 
         link = None
         message = "Sorry, I didn't get that. What can I do for you?"
+        used_entity = None
         found = False
 
         if entities:

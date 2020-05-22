@@ -109,14 +109,14 @@ class ActionGetSupport(Action):
         res = OtherSupport.getResponse(entities)
 
         # adding the relevant paragraph from json file
-
-        msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-        with open('scrapper/' + res[2] + '.json', 'r') as data:
-            additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
-        if additional_para:
-            res[0] += '\n'
-            res[0] += additional_para
-        
+        if res[2]:
+            msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+            with open('scrapper/' + res[2] + '.json', 'r') as data:
+                additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
+            if additional_para:
+                res[0] += '\n'
+                res[0] += additional_para
+            
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
         if to_reset:
@@ -199,7 +199,7 @@ class ActionDefaultAskAffirmation(Action):
     def __init__(self):
         self.intent_mappings = {}
         # read the mapping from a csv and store it in a dictionary
-        with open('intent-fallback.csv') as file:
+        with open('lookup-files/intent-fallback.csv') as file:
             csv_reader = csv.reader(file, delimiter=',')
             for row in csv_reader:
                 self.intent_mappings[row[0]] = row[1]
