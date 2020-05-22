@@ -96,6 +96,15 @@ class  ScrapAllWebpages:
                     # Getting all other data
                     list_of_data = []
 
+                    # Get header text
+                    headertext = soup.find('p', {'class' : 'header-text'})
+                    each_para = {}
+                    try:
+                        each_para['para'] = [headertext.text]
+                        list_of_data.append(each_para)
+                    except:
+                        pass
+
                     # div with class "content-text-wrapper"
                     data = soup.find_all('div', {'class': 'content-text-wrapper'})
 

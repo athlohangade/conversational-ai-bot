@@ -3,6 +3,11 @@
   "description": "Find the foreign currency exchange rates used for cross border transactions for all major world currencies with Mastercard\u2019s online currency converter tool.",
   "data": [
     {
+      "para": [
+        "Every day, everywhere, we use our technology and expertise to make payments safe, simple and smart.This currency converter tool provides foreign exchange rates by MasterCard to convert from the transaction currency to your card's currency for cross border purchases and ATM transactions."
+      ]
+    },
+    {
       "heading": "",
       "para": [
         "Please Note: The foreign exchange rate and the converted FX amount are indicative only and inclusive of the bank fee you entered. Your bank may or may not use Mastercard foreign exchange rates to bill you and may impose additional fees in connection with foreign currency transactions. Foreign exchange rates are specific to the date and time Mastercard processes the transaction which may be different from the transaction date. If your transaction is converted by the merchant or ATM operator, Mastercard foreign exchange rates will not apply. This will usually occur when you select to pay in your card's currency as opposed to the currency of the merchant or ATM."
