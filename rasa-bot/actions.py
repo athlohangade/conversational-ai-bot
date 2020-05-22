@@ -199,7 +199,7 @@ class ActionDefaultAskAffirmation(Action):
     def __init__(self):
         self.intent_mappings = {}
         # read the mapping from a csv and store it in a dictionary
-        with open('intent-fallback.csv') as file:
+        with open('lookup-files/intent-fallback.csv') as file:
             csv_reader = csv.reader(file, delimiter=',')
             for row in csv_reader:
                 self.intent_mappings[row[0]] = row[1]
