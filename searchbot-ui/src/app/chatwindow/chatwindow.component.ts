@@ -75,12 +75,15 @@ export class ChatwindowComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		document.onblur = () => this.hasFocus = false;
+		document.onblur = () => {this.hasFocus = false; console.log("BLURRED");}
 		document.onfocus = () => this.hasFocus = true;
+		window.onblur = () => {this.hasFocus = false; console.log("BLURRED");}
+		window.onfocus = () => this.hasFocus = true;
 	}
 
 	ngAfterViewChecked(): void {
 		var num: number;
+		console.log("CHECKED");
 		if(!this.hide) {
 			this.scrollDown();
 			this.inputfield.nativeElement.focus();
@@ -88,6 +91,7 @@ export class ChatwindowComponent implements OnInit {
 		if(this.hasFocus) 
 			this.count = this.messages.totalMessages();
 		else {
+			console.log("PLAYING AUDIO");
 			num = this.messages.totalMessages();
 			if(this.count < num) 
 				this.notification.play();
