@@ -148,7 +148,7 @@ class TextProcessorAndSearch:
             return questions
 
         smallest_length = min([len(question) for question in questions])
-        return = [ result for result in questions if len(result) == smallest_length ]
+        return [ result for result in questions if len(result) == smallest_length ]
 
         # for i in range(len(keywords), 1, -1):
         #     combi = list(combinations(keywords, i))

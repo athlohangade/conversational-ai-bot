@@ -43,8 +43,8 @@ import time
 class ActionGetSupport(Action):
     
     now = datetime.now()
-    prev_time = now - timedelta(days=1)
-    #prev_time = now
+    #prev_time = now - timedelta(days=1)
+    prev_time = now
 
     def name(self) -> Text:
         return "action_get_support"
@@ -72,6 +72,8 @@ class ActionGetSupport(Action):
             except:
                 print("Thread not created")
 
+        # For handling the FAQ part (if intent is classified with above
+        # threshold confidence but question is asked)
         msg = tracker.latest_message.get('text')
         if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
             answers = OtherSupport.searchInFAQ(msg)
@@ -93,7 +95,7 @@ class ActionGetSupport(Action):
         elif OtherSupport.checkValue(entities, "report"):
             print("wrong path")
             dispatcher.utter_message(template="utter_ask_reporttype")
-            return []
+            return [FollowupAction('action_listen')]
 
         elif card_type:
             # Card_type is set
@@ -102,7 +104,7 @@ class ActionGetSupport(Action):
         elif OtherSupport.checkValue(entities, "cards"):
             print("wrong path card")
             dispatcher.utter_message(template="utter_ask_cardtype")
-            return []
+            return [FollowupAction('action_listen')]
             
         res = OtherSupport.getResponse(entities)
 
@@ -134,11 +136,13 @@ class ActionGetATMLocation(Action):
         entities = tracker.latest_message['entities']
         print(entities)
 
+        # get the location value from entities
         for element in entities :
             if element['entity'] == 'location' or element['entity'] == 'GPE' :
                 location = element['value']
                 return location
 
+        # get the location value from slots if not present in entity
         location = tracker.get_slot('location')
         if location is None : 
             location = tracker.get_slot('GPE') 
@@ -152,11 +156,12 @@ class ActionGetATMLocation(Action):
 
         addresses = []
         location = None
-        # toFind['location'] = None
 
         print(tracker.get_slot('location'))
         print(tracker.get_slot('GPE'))
 
+        # set the location variable to the values extracted from
+        # respective entity
         location = self.__setLocationValue(tracker)
         if location is None :
             message = "Location cannot be None"
@@ -164,6 +169,7 @@ class ActionGetATMLocation(Action):
             dispatcher.utter_message(text = message)
             return [AllSlotsReset()]
 
+        # Request the ATM data given the location
         locationsData = RetrieveLocation.requestData(location)
         if locationsData is None :
             message = "Location not found"
@@ -171,9 +177,11 @@ class ActionGetATMLocation(Action):
             dispatcher.utter_message(text = message)
             return [AllSlotsReset()]
 
+        # Parse the requested atm data and get addresses of locations
         locationsData = RetrieveLocation.parseXML(locationsData.text)
-
         addresses = RetrieveLocation.getAddress(locationsData)
+
+        # If no location is found, else output the address data
         if not addresses :
             dispatcher.utter_message(text = "Sorry, I didn't find any atm locations")
         else :
@@ -181,6 +189,7 @@ class ActionGetATMLocation(Action):
                 message = str(number) + ") " + ", ".join(address)
                 dispatcher.utter_message(text = message)
 
+        # Reset the slot for location and GPE entity
         return [AllSlotsReset()]
 
 class ActionDefaultAskAffirmation(Action):
@@ -202,6 +211,8 @@ class ActionDefaultAskAffirmation(Action):
         print(entities)
         print("In fallback function")
 
+        # For handling the FAQ part (if intent is classified with below 
+        # threshold confidence but question is asked)
         msg = tracker.latest_message.get('text')
         if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
             answers = OtherSupport.searchInFAQ(msg)
