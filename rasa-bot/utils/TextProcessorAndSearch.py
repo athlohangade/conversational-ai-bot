@@ -143,7 +143,7 @@ class TextProcessorAndSearch:
         question_with_lengths = {}
         result = []
 
-        combi = cls.make_all_combinations(keywords)
+        combi = cls.make_all_combinations(keywords, 0.3)
         print(combi)
         for individual_combi in combi :
             questions = list(TextProcessorAndSearch.regex_search(individual_combi, question_list))

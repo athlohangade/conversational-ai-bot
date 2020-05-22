@@ -160,6 +160,9 @@
 - [support](support_type)
 
 - [contactless](support_type)
+- How to accept mastercard [contactless](support_type)
+- Which merchants use [contactless](support_type)
+- How [tap & go]{"entity": "support_type", "value": "contactless"} payments work
 
 - [bill](support_type) payment service
 - Which cards can I use to pay [bills]{"entity": "support_type", "value": "bill"}?

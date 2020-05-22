@@ -5,8 +5,6 @@
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
 
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -27,19 +25,6 @@ from datetime import datetime, timedelta
 import _thread
 import time
 
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
 class ActionGetSupport(Action):
     
     now = datetime.now()
@@ -54,6 +39,7 @@ class ActionGetSupport(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
+        msg = tracker.latest_message.get('text')
         print(entities)
         print("In support action")
 
@@ -74,13 +60,13 @@ class ActionGetSupport(Action):
 
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
-        msg = tracker.latest_message.get('text')
-        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-            answers = OtherSupport.searchInFAQ(msg)
-            answers = answers[0]
-            for answer in answers :
-                dispatcher.utter_message(text = answer) 
-            return [AllSlotsReset()]
+        if not entities:
+            if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+                answers = OtherSupport.searchInFAQ(msg)
+                answers = answers[0]
+                for answer in answers :
+                    dispatcher.utter_message(text = answer)
+                return [FollowupAction('action_listen')]
 
         to_reset = False
 
@@ -110,12 +96,15 @@ class ActionGetSupport(Action):
 
         # adding the relevant paragraph from json file
         if res[2]:
-            msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-            with open('scrapper/' + res[2] + '.json', 'r') as data:
-                additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
-            if additional_para:
-                res[0] += '\n'
-                res[0] += additional_para
+            try:
+                msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+                with open('scrapper/' + res[2] + '.json', 'r') as data:
+                    additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
+                if additional_para:
+                    res[0] += '\n'
+                    res[0] += additional_para
+            except:
+                print("File not found")
             
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
@@ -219,7 +208,7 @@ class ActionDefaultAskAffirmation(Action):
             answers = answers[0]
             for answer in answers :
                 dispatcher.utter_message(text = answer) 
-            return [AllSlotsReset()]
+            return []
 
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']

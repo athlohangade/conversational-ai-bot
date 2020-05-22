@@ -46,10 +46,9 @@ class OtherSupport:
         
         msg = msg.lower()
         msg = TextProcessorAndSearch.tokenize(msg)
+        msg = TextProcessorAndSearch.removePunctuations(msg)
         msg = TextProcessorAndSearch.removeStopWords(msg)
-
         answers = TextProcessorAndSearch.findAnswers(msg, faq)
-
         return answers
 
     @staticmethod
