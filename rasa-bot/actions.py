@@ -61,12 +61,11 @@ class ActionGetSupport(Action):
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
         if not entities:
-            if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-                answers = OtherSupport.searchInFAQ(msg)
-                answers = answers[0]
-                for answer in answers :
-                    dispatcher.utter_message(text = answer)
-                return [FollowupAction('action_listen')]
+            # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+            answers = OtherSupport.searchInFAQ(msg)
+            for answer in answers :
+                dispatcher.utter_message(text = answer)
+            return [FollowupAction('action_listen')]
 
         to_reset = False
 
@@ -172,6 +171,8 @@ class ActionGetATMLocation(Action):
         if not addresses :
             dispatcher.utter_message(text = "Sorry, I didn't find any atm locations")
         else :
+            message = "Here are some ATMs found near {} :".format(location)
+            dispatcher.utter_message(text = message)
             for number, address in enumerate(addresses, 1) :
                 message = str(number) + ") " + ", ".join(address)
                 dispatcher.utter_message(text = message)
@@ -200,11 +201,10 @@ class ActionDefaultAskAffirmation(Action):
 
         # For handling the FAQ part (if intent is classified with below 
         # threshold confidence but question is asked)
-        msg = tracker.latest_message.get('text')
-        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+        if not entities:
+            msg = tracker.latest_message.get('text')
+            # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
             answers = OtherSupport.searchInFAQ(msg)
-            print('adadfa')
-            answers = answers[0]
             for answer in answers :
                 dispatcher.utter_message(text = answer) 
             return []
