@@ -136,53 +136,67 @@ class TextProcessorAndSearch:
 
         question_with_lengths = {}
         result = []
-        for i in range(len(keywords), 1, -1):
-            combi = list(combinations(keywords, i))
 
-            for individual_combi in combi:
-
-                for question in question_list:
-                    temp = question
-                    found = 1
-
-                    for j in individual_combi:
-                        if j in temp:
-                            index = temp.find(j)
-                            temp = temp[index + len(j):]
-                        else:
-                            found = 0
-                            break
-
-                    if found:
-                        question_with_lengths[question] = len(question)
-
-            if question_with_lengths:
+        combi = cls.make_all_combinations(keywords)
+        print(combi)
+        for individual_combi in combi :
+            questions = list(TextProcessorAndSearch.regex_search(individual_combi, question_list))
+            if (len(questions) > 0) :
                 break
 
-        if not question_with_lengths:
-            return result
+        if (len(questions) == 1) :
+            return questions
 
-        smallest_length = min(question_with_lengths.values())
-        for x, y in question_with_lengths.items():
-            if y == smallest_length:
-                result.append(x)
+        smallest_length = min([len(question) for question in questions])
+        return = [ result for result in questions if len(result) == smallest_length ]
 
-        if len(result) == 1:
-            return result
-        else:
-            question_with_ratio = {}
-            threshold = 0.4
-            for question in result:
-                question_keywords = cls.tokenize(question)
-                question_keywords = cls.removeStopWords(question_keywords)
-                ratio = len(keywords) / len(question_keywords)
-                if ratio >= threshold:
-                    question_with_ratio[ratio] = question
+        # for i in range(len(keywords), 1, -1):
+        #     combi = list(combinations(keywords, i))
 
-            highest_ratio = max(question_with_ratio.keys())
-            result.append(question_with_ratio[highest_ratio])
+        #     for individual_combi in combi:
 
-        return result
+        #         for question in question_list:
+        #             temp = question
+        #             found = 1
+
+        #             for j in individual_combi:
+        #                 if j in temp:
+        #                     index = temp.find(j)
+        #                     temp = temp[index + len(j):]
+        #                 else:
+        #                     found = 0
+        #                     break
+
+        #             if found:
+        #                 question_with_lengths[question] = len(question)
+
+        #     if question_with_lengths:
+        #         break
+
+        # if not question_with_lengths:
+        #     return result
+
+        # smallest_length = min(question_with_lengths.values())
+        # for x, y in question_with_lengths.items():
+        #     if y == smallest_length:
+        #         result.append(x)
+
+        # if len(result) == 1:
+        #     return result
+        # else:
+        #     question_with_ratio = {}
+        #     threshold = 0.4
+        #     for question in result:
+        #         question_keywords = cls.tokenize(question)
+        #         question_keywords = cls.removeStopWords(question_keywords)
+        #         ratio = len(keywords) / len(question_keywords)
+        #         if ratio >= threshold:
+        #             question_with_ratio[ratio] = question
+
+        #     highest_ratio = max(question_with_ratio.keys())
+        #     result.append(question_with_ratio[highest_ratio])
+
+        # return result
 
     @classmethod
     def findAnswers(cls, msg, faq):
