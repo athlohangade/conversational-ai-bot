@@ -1,12 +1,13 @@
 import json
-import spacy
 import re
+import spacy
 
 from string import punctuation
 from spacy.lang.en.stop_words import STOP_WORDS
 from nltk.corpus import stopwords as STOP_WORDS_2
 from itertools import combinations, chain
 from io import TextIOWrapper
+from math import floor
 
 STOP_WORDS_2 = STOP_WORDS_2.words('english')
 STOP_WORDS = list(STOP_WORDS)
@@ -82,7 +83,7 @@ class TextProcessorAndSearch:
         elif isinstance(originalData, TextIOWrapper):
             text = cls.__getPlainText(json.load(originalData))
 
-        totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList)
+        totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList, threshold = 0.3)
         totalcombinations = list(filter(lambda x: len(x) > 1, totalcombinations))
 
         for wordlist in totalcombinations:
@@ -95,13 +96,16 @@ class TextProcessorAndSearch:
         return None
 
     @staticmethod
-    def make_all_combinations(keywords):
+    def make_all_combinations(keywords, threshold = 0):
         '''returns the combinations of all lengths from the given parameter keywords'''
         return sorted(
             list(
                 chain.from_iterable(
                     combinations(keywords, i)
-                    for i in range(1, len(keywords) + 1)
+                    for i in range(
+                        floor(len(keywords) * threshold),
+                        len(keywords) + 1
+                    )
                 )
             ),
             key = len,
