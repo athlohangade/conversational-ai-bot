@@ -41,13 +41,17 @@ class OtherSupport:
     @classmethod
     def searchInFAQ(cls, msg):
 
+        # Open and load the faq file
         with open('scrapper/faq.json') as f:
             faq = json.load(f)
         
+        # Do required operations like tokenizing and all
         msg = msg.lower()
         msg = TextProcessorAndSearch.tokenize(msg)
         msg = TextProcessorAndSearch.removePunctuations(msg)
         msg = TextProcessorAndSearch.removeStopWords(msg)
+
+        # Get the answer for the question
         answers = TextProcessorAndSearch.findAnswers(msg, faq)
         return answers
 

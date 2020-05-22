@@ -9,12 +9,15 @@ from itertools import combinations, chain
 from io import TextIOWrapper
 from math import floor
 
+# Create a list of stop words such that wh-words are not considered
+# to be the stopwords
 STOP_WORDS_2 = STOP_WORDS_2.words('english')
 STOP_WORDS = list(STOP_WORDS)
 stop_words = list(set(STOP_WORDS + STOP_WORDS_2))
 whWords = list(filter(lambda x: x[0] == 'w' and x[1] == 'h', stop_words))
 whWords.append('how')
 stop_words = list(filter(lambda x: x not in whWords, stop_words))
+
 
 class TextProcessorAndSearch:
 
@@ -24,7 +27,7 @@ class TextProcessorAndSearch:
 
     @classmethod
     def tokenize(cls, data):
-
+        ''' Get word tokens from sentence '''
         tokens = []
         data = data.lower()
         document = cls.nlp(data)
@@ -35,6 +38,7 @@ class TextProcessorAndSearch:
 
     @staticmethod
     def removePunctuations(data):
+        ''' Remove punctuations '''
 
         for token in data:
             if token in punctuation:
@@ -44,6 +48,7 @@ class TextProcessorAndSearch:
 
     @classmethod
     def removeStopWords(cls, data):
+        ''' Remove unnecessary words (Eg : helping verbs) '''
 
         data = list(filter(lambda x: x not in cls.stopWords, data))
         return data
@@ -139,20 +144,28 @@ class TextProcessorAndSearch:
 
     @classmethod
     def __getAppropriateQuestions(cls, keywords, question_list):
+        '''Do various combinations of the keywords, do searching and return
+        appropriate matched question. If more than one questions are extracted
+        then return the question with the smallest length'''
 
         question_with_lengths = {}
         result = []
 
+        # Do combinations
         combi = cls.make_all_combinations(keywords, 0.3)
         print(combi)
+
+        # Search the individual combination
         for individual_combi in combi :
             questions = list(TextProcessorAndSearch.regex_search(individual_combi, question_list))
             if (len(questions) > 0) :
                 break
 
+        # If only one question is extracted return it
         if (len(questions) == 1) :
             return questions
 
+        # If more than one, return the question with smallest length
         smallest_length = min([len(question) for question in questions])
         return [ result for result in questions if len(result) == smallest_length ]
 
@@ -206,6 +219,9 @@ class TextProcessorAndSearch:
 
     @classmethod
     def findAnswers(cls, msg, faq):
+        '''return the appropriate answers given the query and dict of 
+        possible faqs. Most of the time only one question is extracted
+        but there might be case that more than one question in extracted'''
 
         #   get all question in a list
         question_scores = {}
@@ -213,6 +229,7 @@ class TextProcessorAndSearch:
 
         questions = cls.__getAppropriateQuestions(msg, question_list)
 
+        # Find answers to the extracted questions and return
         answers = []
         for question in questions:
             for f in faq:
@@ -224,6 +241,8 @@ class TextProcessorAndSearch:
 
     @classmethod
     def questionOrNot(cls, msg):
+        '''returns whether the sentence is question by checking
+        whether sentence containes wh-type question or "?"'''
 
         for keyword in msg:
             if keyword in cls.whWords:
