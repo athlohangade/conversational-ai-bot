@@ -43,8 +43,8 @@ import time
 class ActionGetSupport(Action):
     
     now = datetime.now()
-    prev_time = now - timedelta(days=1)
-    #prev_time = now
+    #prev_time = now - timedelta(days=1)
+    prev_time = now
 
     def name(self) -> Text:
         return "action_get_support"
@@ -93,7 +93,7 @@ class ActionGetSupport(Action):
         elif OtherSupport.checkValue(entities, "report"):
             print("wrong path")
             dispatcher.utter_message(template="utter_ask_reporttype")
-            return []
+            return [FollowupAction('action_listen')]
 
         elif card_type:
             # Card_type is set
@@ -102,7 +102,7 @@ class ActionGetSupport(Action):
         elif OtherSupport.checkValue(entities, "cards"):
             print("wrong path card")
             dispatcher.utter_message(template="utter_ask_cardtype")
-            return []
+            return [FollowupAction('action_listen')]
             
         res = OtherSupport.getResponse(entities)
 
