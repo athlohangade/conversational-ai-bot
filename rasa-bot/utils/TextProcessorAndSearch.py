@@ -67,7 +67,7 @@ class TextProcessorAndSearch:
         '''returns most relevant paragrah from the scrapped originalData (json format or
         plain text list) it finds most relevant paragrah by matching with maximum
         possible words in the searchData in the same sequence if not such paragraph
-        found then it returns the paragraph with most matching words, ignoring sequence'''
+        found then it returns None'''
 
         # make a set of words in searchData so that they can be searched in less
         # than linear time
@@ -97,7 +97,9 @@ class TextProcessorAndSearch:
 
     @staticmethod
     def make_all_combinations(keywords, threshold = 0):
-        '''returns the combinations of all lengths from the given parameter keywords'''
+        '''returns the combinations of all lengths from the given parameter keywords
+        if threshold value is provided, then it returns all combinations with number of
+        words greater than or equal to the (threshold value * length of keywords)'''
         return sorted(
             list(
                 chain.from_iterable(
