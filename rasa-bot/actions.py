@@ -116,7 +116,7 @@ class ActionGetSupport(Action):
             if additional_para:
                 res[0] += '\n'
                 res[0] += additional_para
-        
+            
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
         if to_reset:

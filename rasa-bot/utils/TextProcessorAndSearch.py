@@ -1,12 +1,13 @@
 import json
-import spacy
 import re
+import spacy
 
 from string import punctuation
 from spacy.lang.en.stop_words import STOP_WORDS
 from nltk.corpus import stopwords as STOP_WORDS_2
 from itertools import combinations, chain
 from io import TextIOWrapper
+from math import floor
 
 STOP_WORDS_2 = STOP_WORDS_2.words('english')
 STOP_WORDS = list(STOP_WORDS)
@@ -66,7 +67,7 @@ class TextProcessorAndSearch:
         '''returns most relevant paragrah from the scrapped originalData (json format or
         plain text list) it finds most relevant paragrah by matching with maximum
         possible words in the searchData in the same sequence if not such paragraph
-        found then it returns the paragraph with most matching words, ignoring sequence'''
+        found then it returns None'''
 
         # make a set of words in searchData so that they can be searched in less
         # than linear time
@@ -82,7 +83,7 @@ class TextProcessorAndSearch:
         elif isinstance(originalData, TextIOWrapper):
             text = cls.__getPlainText(json.load(originalData))
 
-        totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList)
+        totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList, threshold = 0.3)
         totalcombinations = list(filter(lambda x: len(x) > 1, totalcombinations))
 
         for wordlist in totalcombinations:
@@ -95,13 +96,18 @@ class TextProcessorAndSearch:
         return None
 
     @staticmethod
-    def make_all_combinations(keywords):
-        '''returns the combinations of all lengths from the given parameter keywords'''
+    def make_all_combinations(keywords, threshold = 0):
+        '''returns the combinations of all lengths from the given parameter keywords
+        if threshold value is provided, then it returns all combinations with number of
+        words greater than or equal to the (threshold value * length of keywords)'''
         return sorted(
             list(
                 chain.from_iterable(
                     combinations(keywords, i)
-                    for i in range(1, len(keywords) + 1)
+                    for i in range(
+                        floor(len(keywords) * threshold),
+                        len(keywords) + 1
+                    )
                 )
             ),
             key = len,
