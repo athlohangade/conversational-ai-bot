@@ -15,6 +15,7 @@ class OtherSupport:
 
         link = None
         message = "Sorry, I didn't get that. What can I do for you?"
+        used_entity = None
         found = False
 
         if entities:
@@ -40,7 +41,7 @@ class OtherSupport:
     @classmethod
     def searchInFAQ(cls, msg):
 
-        with open('../scrapper/faq.json') as f:
+        with open('scrapper/faq.json') as f:
             faq = json.load(f)
         
         msg = msg.lower()
