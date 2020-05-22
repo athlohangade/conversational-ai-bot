@@ -19,6 +19,7 @@ from utils.RetrieveLocation import RetrieveLocation
 from utils.OtherSupport import OtherSupport
 from utils.TextProcessorAndSearch import TextProcessorAndSearch
 from utils.ThreadToScrap import ThreadToScrap
+from MastercardConfig import MastercardConfig
 
 import csv
 import json
@@ -42,8 +43,8 @@ import time
 class ActionGetSupport(Action):
     
     now = datetime.now()
-    #prev_time = now - timedelta(days=1)
-    prev_time = now
+    prev_time = now - timedelta(days=1)
+    #prev_time = now
 
     def name(self) -> Text:
         return "action_get_support"
@@ -59,7 +60,7 @@ class ActionGetSupport(Action):
         ## For Periodic Scrapping
         current_time = datetime.now()
         print(current_time)
-        if (current_time.date() > ActionGetSupport.prev_time.date()):
+        if (current_time > (ActionGetSupport.prev_time + timedelta(hours=MastercardConfig.hours))):
             ActionGetSupport.prev_time = current_time
             print("In thread create")
             try:
