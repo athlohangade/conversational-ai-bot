@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 from difflib import get_close_matches
 from geopy.geocoders import Nominatim
 
+## Important parameters for retrieving atm locations
 ATM_URL = "https://www.mastercard.us/locator/NearestLocationsService/"
 ATM_PARAM = {
     "latitude" : "",
@@ -10,9 +11,10 @@ ATM_PARAM = {
     "radius" : "5",
     "distanceUnit" : "",
     "locationType" : "atm",
-    "maxLocations" : "100"
+    "maxLocations" : "10"
 }
 
+## Important parameters for latitude-longitude values
 GEOCODE_URL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
 GEOCODE_PARAM = {
     "input" : "",
@@ -20,7 +22,6 @@ GEOCODE_PARAM = {
     "fields" : "geometry",
     "key" : "AIzaSyCjAeKZrarKj4-EX5fR0iYEo-aOzU-AiGk"
 }
-
 
 class RetrieveLocation :
 
@@ -50,6 +51,7 @@ class RetrieveLocation :
     @staticmethod
     def __store_values(location) :
 
+        # Get the address sub-values from the parsed xml and store in dictionary
         address = {}
         address['name'] = location.find('name').text if location.find('name') is not None else None
         address['postalCode'] = location.find('address/postalCode').text if location.find('address/postalCode') is not None else None
@@ -63,7 +65,9 @@ class RetrieveLocation :
     @classmethod
     def requestData(cls, location) :
 
+        # Find and set the lat-long values in the parameter of geocoding api url
         if (cls.__setLatitudeAndLongitude(location)) :
+            # Request the atm data
             return requests.request("GET", cls.atm_url, params = cls.atm_param)
         else :
             return None
@@ -71,6 +75,7 @@ class RetrieveLocation :
     @classmethod
     def parseXML(cls, string) :
 
+        # parse the string into xml
         return ET.fromstring(string)
 
     @classmethod
