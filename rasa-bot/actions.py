@@ -107,38 +107,15 @@ class ActionGetSupport(Action):
 
         # adding the relevant paragraph from json file
 
-        #######################################################
-        # GET THE CORRECT JSON FILE TO OPEN SAY "abc.json" AND
-        # THEN ADD THIS CODE
+        ############################################################
         # msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-        # with open('abc.json', 'r') as data:
-        #     additional_para = TextProcessorAndSearch(msglist, data)
+        # with open('scrapper/' + res[2] + '.json', 'r') as data:
+        #    additional_para = TextProcessorAndSearch.getSummary(msglist, data)
         # res[0] += '\n'
         # res[0] += additional_para
-        #######################################################
+        #############################################################
         
         dispatcher.utter_message(text=res[0], attachment=res[1])
-
-#################### TO BE DONE, NOT COMPLETED YET #########################
-
-        # userInput = tracker.latest_message.get('text')
-        # print(userInput)
-        # userInput = userInput.lower()
-
-        # userInput = TextProcessorAndSearch.tokenize(userInput)
-        # userInput = TextProcessorAndSearch.removeStopWords(userInput)
-
-        # ## This condition is just for testing purpose, change it as required
-        # if card_type :
-        #     with open('./scrapper/' + card_type + ".json", 'r') as file :
-        #         data = json.load(file)
-        #     print(data)
-        # TextProcessorAndSearch.getSummary(userInput, data)
-       
-
-#############################################
-
-        # Checking in faq
 
         if to_reset:
             return [AllSlotsReset(),FollowupAction('action_listen')]
