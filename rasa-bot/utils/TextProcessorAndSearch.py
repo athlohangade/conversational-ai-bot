@@ -6,6 +6,7 @@ from string import punctuation
 from spacy.lang.en.stop_words import STOP_WORDS
 from nltk.corpus import stopwords as STOP_WORDS_2
 from itertools import combinations, chain
+from io import TextIOWrapper
 
 STOP_WORDS_2 = STOP_WORDS_2.words('english')
 STOP_WORDS = list(STOP_WORDS)
@@ -78,6 +79,8 @@ class TextProcessorAndSearch:
             text = cls.__getPlainText(originalData)
         elif isinstance(originalData, list):
             text = originalData
+        elif isinstance(originalData, TextIOWrapper):
+            text = cls.__getPlainText(json.load(originalData))
 
         totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList)
         totalcombinations = list(filter(lambda x: len(x) > 1, totalcombinations))

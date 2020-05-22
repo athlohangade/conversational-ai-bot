@@ -43,8 +43,8 @@ import time
 class ActionGetSupport(Action):
     
     now = datetime.now()
-    prev_time = now - timedelta(days=1)
-    #prev_time = now
+    #prev_time = now - timedelta(days=1)
+    prev_time = now
 
     def name(self) -> Text:
         return "action_get_support"
@@ -95,7 +95,7 @@ class ActionGetSupport(Action):
         elif OtherSupport.checkValue(entities, "report"):
             print("wrong path")
             dispatcher.utter_message(template="utter_ask_reporttype")
-            return []
+            return [FollowupAction('action_listen')]
 
         elif card_type:
             # Card_type is set
@@ -104,19 +104,18 @@ class ActionGetSupport(Action):
         elif OtherSupport.checkValue(entities, "cards"):
             print("wrong path card")
             dispatcher.utter_message(template="utter_ask_cardtype")
-            return []
+            return [FollowupAction('action_listen')]
             
         res = OtherSupport.getResponse(entities)
 
         # adding the relevant paragraph from json file
 
-        ############################################################
-        # msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-        # with open('scrapper/' + res[2] + '.json', 'r') as data:
-        #    additional_para = TextProcessorAndSearch.getSummary(msglist, data)
-        # res[0] += '\n'
-        # res[0] += additional_para
-        #############################################################
+        msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+        with open('scrapper/' + res[2] + '.json', 'r') as data:
+            additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
+        if additional_para:
+            res[0] += '\n'
+            res[0] += additional_para
         
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
