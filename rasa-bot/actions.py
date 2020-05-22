@@ -108,13 +108,14 @@ class ActionGetSupport(Action):
 
         # adding the relevant paragraph from json file
 
-        msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-        with open('scrapper/' + res[2] + '.json', 'r') as data:
-            additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
-        if additional_para:
-            res[0] += '\n'
-            res[0] += additional_para
-        
+        if res[2]:
+            msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+            with open('scrapper/' + res[2] + '.json', 'r') as data:
+                additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
+            if additional_para:
+                res[0] += '\n'
+                res[0] += additional_para
+            
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
         if to_reset:
