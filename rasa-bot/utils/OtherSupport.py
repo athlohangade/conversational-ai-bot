@@ -27,13 +27,14 @@ class OtherSupport:
                             if e['value'] == row[0]:
                                 link = row[1]
                                 message = row[2]
+                                used_entity = e['value']
                                 found = True
                                 break
                         if found:
                             break
                     line_count += 1
 
-        res = [message, link]
+        res = [message, link, used_entity]
         return res
 
     @classmethod

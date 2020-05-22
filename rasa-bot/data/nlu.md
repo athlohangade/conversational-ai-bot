@@ -159,10 +159,7 @@
 
 - [support](support_type)
 
-- [ways to pay](support_type)
-- [payment methods]{"entity": "support_type", "value": "ways to pay"}
-- [business overview](support_type)
-- [start accepting]{"entity": "support_type", "value": "business overview"}
+- [contactless](support_type)
 
 - [bill](support_type) payment service
 - Which cards can I use to pay [bills]{"entity": "support_type", "value": "bill"}?

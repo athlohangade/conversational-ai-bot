@@ -1,8 +1,6 @@
 cash
 support
 cards
-ways to pay
-business overview
 bill
 authentication
 locations
@@ -12,3 +10,4 @@ report
 convert
 reload
 surcharge
+contactless
