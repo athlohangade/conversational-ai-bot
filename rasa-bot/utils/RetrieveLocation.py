@@ -11,7 +11,7 @@ ATM_PARAM = {
     "radius" : "5",
     "distanceUnit" : "",
     "locationType" : "atm",
-    "maxLocations" : "10"
+    "maxLocations" : "20"
 }
 
 ## Important parameters for latitude-longitude values
@@ -32,8 +32,7 @@ class RetrieveLocation :
 
     @classmethod
     def __setLatitudeAndLongitude(cls, location) :
-        ''' Sets the lat-long values in the atm locations url by retrieving
-        them through geocoding api'''
+        ''' Sets the lat-long values in the atm locations url by retrieving them through geocoding api'''
 
         try :
             # geolocator = Nominatim(user_agent = 'RasaChatBot')
@@ -52,6 +51,7 @@ class RetrieveLocation :
 
     @staticmethod
     def __store_values(location) :
+        ''' Store the address values from the parsed xml to the dictionary (key-value pair) '''
 
         # Get the address sub-values from the parsed xml and store in dictionary
         address = {}
@@ -66,6 +66,7 @@ class RetrieveLocation :
 
     @classmethod
     def requestData(cls, location) :
+        ''' Set the location's lat-lng and request the atm data '''
 
         # Find and set the lat-long values in the parameter of geocoding api url
         if (cls.__setLatitudeAndLongitude(location)) :
@@ -76,12 +77,13 @@ class RetrieveLocation :
 
     @classmethod
     def parseXML(cls, string) :
+        ''' Parse the string into xml tree ''' 
 
-        # parse the string into xml
         return ET.fromstring(string)
 
     @classmethod
     def getAddress(cls, data) :
+        ''' Get the address of atm locations '''
 
         allAddress = []
         # Return all locations retrieved

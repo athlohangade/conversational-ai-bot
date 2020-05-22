@@ -101,18 +101,17 @@ class TextProcessorAndSearch:
         return None
 
     @staticmethod
-    def make_all_combinations(keywords, threshold = 0):
+    def make_all_combinations(keywords, threshold = 0, lower_bound = 2):
         '''returns the combinations of all lengths from the given parameter keywords
         if threshold value is provided, then it returns all combinations with number of
         words greater than or equal to the (threshold value * length of keywords)'''
+
+        lower_bound = max(lower_bound, floor(len(keywords) * threshold))
         return sorted(
             list(
                 chain.from_iterable(
                     combinations(keywords, i)
-                    for i in range(
-                        floor(len(keywords) * threshold),
-                        len(keywords) + 1
-                    )
+                    for i in range(lower_bound, len(keywords) + 1)
                 )
             ),
             key = len,
@@ -148,11 +147,12 @@ class TextProcessorAndSearch:
         appropriate matched question. If more than one questions are extracted
         then return the question with the smallest length'''
 
-        question_with_lengths = {}
+        # question_with_lengths = {}
         result = []
+        questions = []
 
-        # Do combinations
-        combi = cls.make_all_combinations(keywords, 0.3)
+        # Do combinations with given threshold and lower_bound
+        combi = cls.make_all_combinations(keywords, 0.3, 3)
         print(combi)
 
         # Search the individual combination
@@ -161,8 +161,8 @@ class TextProcessorAndSearch:
             if (len(questions) > 0) :
                 break
 
-        # If only one question is extracted return it
-        if (len(questions) == 1) :
+        # If no question or only one question is extracted return it
+        if (len(questions) <= 1) :
             return questions
 
         # If more than one, return the question with smallest length
@@ -227,7 +227,7 @@ class TextProcessorAndSearch:
         question_scores = {}
         question_list = [f['Q'].lower() for f in faq]
 
-        questions = cls.__getAppropriateQuestions(msg, question_list)
+        questions = set(cls.__getAppropriateQuestions(msg, question_list))
 
         # Find answers to the extracted questions and return
         answers = []
@@ -237,12 +237,14 @@ class TextProcessorAndSearch:
                     answers.append(f['A'])
                     break
 
+        answers = list(chain(*answers))
+        print(answers)
         return answers
 
     @classmethod
     def questionOrNot(cls, msg):
         '''returns whether the sentence is question by checking
-        whether sentence containes wh-type question or "?"'''
+        whether sentence contains wh-type word or "?"'''
 
         for keyword in msg:
             if keyword in cls.whWords:

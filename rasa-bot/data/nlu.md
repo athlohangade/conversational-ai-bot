@@ -242,6 +242,7 @@
 - [Katraj](location)
 - It is [Kanpur](location)
 - [Viman Nagar](location)
+- Location is [Kharagpur](location)
 - [Akurdi](location)
 - My location is [Wardha](location)
 - [Chandigarh](location) it is
@@ -250,6 +251,7 @@
 - [Sydney](location)
 - My location is [London](location)
 - It is [Colombo](location)
+- The location is [Yerwada](location)
 
 ## intent:get_atm_location
 - atm location
@@ -296,6 +298,7 @@
 - ATMs in [Dhule](location) please
 - Is there any atm [Lonavala](location)
 - Find atms in [Jaipur](location)
+- I want to know locations of atm in [Beijing](location)
 
 ## synonym:business cards
 - business debit

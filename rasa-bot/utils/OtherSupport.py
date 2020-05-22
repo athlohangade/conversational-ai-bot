@@ -40,6 +40,7 @@ class OtherSupport:
 
     @classmethod
     def searchInFAQ(cls, msg):
+        ''' Load the faq data and find answers for the question asked using that data '''
 
         # Open and load the faq file
         with open('scrapper/faq.json') as f:
@@ -53,10 +54,15 @@ class OtherSupport:
 
         # Get the answer for the question
         answers = TextProcessorAndSearch.findAnswers(msg, faq)
+        if not answers :
+            answers.append("Sorry, we couldn't find any answer to your question")
+            return answers
+
         return answers
 
     @staticmethod
     def checkIfSentenceIsQuestion(msg) :
+        ''' Check whether the sentence is question '''
 
         msg = msg.lower()
         msg = TextProcessorAndSearch.tokenize(msg)
