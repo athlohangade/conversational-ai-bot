@@ -32,6 +32,8 @@ class RetrieveLocation :
 
     @classmethod
     def __setLatitudeAndLongitude(cls, location) :
+        ''' Sets the lat-long values in the atm locations url by retrieving
+        them through geocoding api'''
 
         try :
             # geolocator = Nominatim(user_agent = 'RasaChatBot')
@@ -82,7 +84,6 @@ class RetrieveLocation :
     def getAddress(cls, data) :
 
         allAddress = []
-
         # Return all locations retrieved
         for location in data :
             address = cls.__store_values(location)
