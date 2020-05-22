@@ -80,7 +80,7 @@ class ActionGetSupport(Action):
             answers = answers[0]
             for answer in answers :
                 dispatcher.utter_message(text = answer) 
-            return [AllSlotsReset()]
+            return []
 
         to_reset = False
 
@@ -219,7 +219,7 @@ class ActionDefaultAskAffirmation(Action):
             answers = answers[0]
             for answer in answers :
                 dispatcher.utter_message(text = answer) 
-            return [AllSlotsReset()]
+            return []
 
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']
