@@ -39,12 +39,6 @@ class OtherSupport:
 
     @classmethod
     def searchInFAQ(cls, msg):
-        # with open('scrapper/faq.json') as f:
-        #     faq = json.load(f)
-
-        # for f in faq:
-        #     if f['Q'].lower().find(msg.lower()) != -1:
-        #         return f['A']
 
         with open('../scrapper/faq.json') as f:
             faq = json.load(f)
