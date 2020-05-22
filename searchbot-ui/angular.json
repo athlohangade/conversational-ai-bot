@@ -25,12 +25,12 @@
             ],
             "styles": [
               "src/styles.css",
-			  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-			"scripts": [
-				"node_modules/bootstrap/dist/js/bootstrap.min.js",
-				"node_modules/jquery/dist/jquery.min.js"
-			]
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -71,7 +71,7 @@
           "configurations": {
             "production": {
               "browserTarget": "searchbot-ui:build:production",
-			  "proxyConfig": "proxy.conf.json"
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },
@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "searchbot-ui"
+    }
+  },
+  "defaultProject": "searchbot-ui",
+  "cli": {
+    "analytics": "ce006507-4dca-4d96-8cc7-11214b6c6c64"
+  }
 }

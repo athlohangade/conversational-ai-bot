@@ -3,49 +3,48 @@
 	font-weight: 500;
 	font-size: large;
 	font-family: sans-serif;
-	border: 2px solid black;
-	padding: 0px;
-	margin: 4px;
+	margin: 10px;
+	transition: all 0.5s ease-in-out;
 }
 
 /* message received from bot */
 .botmessage {
-	background-color: rgb(243, 95, 95);	
+	background-color: rgb(224, 215, 215);	
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	text-align: left;
+	padding: 3px;
 }
 
 /* message sent by user */
 .usermessage {
-	background-color: #f8bc17;
+	background-color: #4284da;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	text-align: right;
-}
-
-.botmessage:hover {
-	background-color: #dd0505;
+	padding: 3px;
+	padding-right: 20px;
 }
 
 .usermessage:hover {
-	background-color: rgb(245, 150, 7);
+	background-color: #3279ca;
 }
 
-.botmessage img {
+.botmessage:hover {
+	background-color: rgb(194, 191, 186);
+}
+
+.botimage {
 	float: left;
-	max-width: 60px;
+	max-width: 40px;
+	max-height: 40px;
 	margin-right: 20px;
+	margin-left: 10px;
+	margin-top: 3px;
 	border-radius: 50%;
-}
-
-.usermessage img {
-	float: right;
-	max-width: 60px;
-	margin-left: 20px;
-	border-radius: 50px;
+	border: 1px solid black;
 }
 
 a {
