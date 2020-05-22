@@ -39,6 +39,7 @@ class ActionGetSupport(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
+        msg = tracker.latest_message.get('text')
         print(entities)
         print("In support action")
 
@@ -59,13 +60,13 @@ class ActionGetSupport(Action):
 
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
-        msg = tracker.latest_message.get('text')
-        if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-            answers = OtherSupport.searchInFAQ(msg)
-            answers = answers[0]
-            for answer in answers :
-                dispatcher.utter_message(text = answer)
-            return [FollowupAction('action_listen')]
+        if not entities:
+            if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
+                answers = OtherSupport.searchInFAQ(msg)
+                answers = answers[0]
+                for answer in answers :
+                    dispatcher.utter_message(text = answer)
+                return [FollowupAction('action_listen')]
 
         to_reset = False
 
@@ -95,12 +96,15 @@ class ActionGetSupport(Action):
 
         # adding the relevant paragraph from json file
         if res[2]:
-            msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-            with open('scrapper/' + res[2] + '.json', 'r') as data:
-                additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
-            if additional_para:
-                res[0] += '\n'
-                res[0] += additional_para
+            try:
+                msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+                with open('scrapper/' + res[2] + '.json', 'r') as data:
+                    additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
+                if additional_para:
+                    res[0] += '\n'
+                    res[0] += additional_para
+            except:
+                print("File not found")
             
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
