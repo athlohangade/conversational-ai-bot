@@ -15,6 +15,7 @@
 	border-bottom-right-radius: 20px;
 	text-align: left;
 	padding: 3px;
+	column-span: all;
 }
 
 /* message sent by user */
@@ -23,7 +24,6 @@
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	text-align: right;
 	padding: 3px;
 	padding-right: 20px;
 }
@@ -40,7 +40,7 @@
 	float: left;
 	max-width: 40px;
 	max-height: 40px;
-	margin-right: 20px;
+	margin-right: 10px;
 	margin-left: 10px;
 	margin-top: 3px;
 	border-radius: 50%;
@@ -49,4 +49,18 @@
 
 a {
 	color: darkblue;
+}
+
+p {
+	margin: inherit;
+}
+
+.user-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.bot-container {
+	display: flex;
+	justify-content: flex-start;
 }
