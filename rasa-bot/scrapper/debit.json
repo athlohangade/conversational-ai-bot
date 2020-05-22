@@ -3,6 +3,24 @@
   "description": "Compare different types of credit, debit and prepaid cards and choose the best card suited to your needs. Browse through the card offers & benefits.",
   "data": [
     {
+      "heading": "CREDIT CARDS",
+      "para": [
+        "Get the financial freedom you deserve. Credit cards offer exceptional benefits, rewards, services and spending power that can help make your financial and personal dreams come true."
+      ]
+    },
+    {
+      "heading": "DEBIT CARDS",
+      "para": [
+        "Enjoy the ultimate in convenience and financial control by combining the worldwide acceptance and benefits of Mastercard cards with direct deduction of funds from your checking account."
+      ]
+    },
+    {
+      "heading": "PREPAID CARDS",
+      "para": [
+        "Mastercard Prepaid Gift Cards are great for holidays, birthdays, graduations and anything in between. Simple, convenient and always well-received."
+      ]
+    },
+    {
       "heading": "STANDARD MASTERCARD",
       "para": [
         "For everyday purchases and beyond"

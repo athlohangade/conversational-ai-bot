@@ -3,9 +3,57 @@
   "description": "With Mastercard Contactless payments, allow your customers to make purchases by simply tapping or waving their enabled card or with their phones using mobile NFC.\n",
   "data": [
     {
+      "heading": "Quick checkout, happy customers",
+      "para": [
+        "Mastercard\u00ae contactless helps you serve more customers in less time, which means a boost in sales, customer loyalty and cross-sell opportunities. \n"
+      ]
+    },
+    {
+      "heading": "Safer alternative",
+      "para": [
+        "According to a recent Mastercard survey 79% of respondents worldwide say they are now using contactless payments, citing safety and cleanliness as\u00a0key drivers.1\n"
+      ]
+    },
+    {
+      "heading": "Increased transaction amounts",
+      "para": [
+        "Mastercard accounts that can make contactless purchases spend more on average than non-contactless accounts.\n"
+      ]
+    },
+    {
+      "heading": "Enhance payment security at the point of sale",
+      "para": [
+        "Tap & Go payments use the same Mastercard network that processes billions of magnetic strip and chip transactions each year.\n"
+      ]
+    },
+    {
+      "heading": "Improved business operations",
+      "para": [
+        "Lower the risks and the costs associated with handling and transporting cash.\n"
+      ]
+    },
+    {
+      "heading": "Added convenience",
+      "para": [
+        "Tap & Go transactions are as easy as they sound \u2013 no receipts required and no cardholder verification on transactions under $50.\n"
+      ]
+    },
+    {
       "heading": "How to accept Mastercard contactless",
       "para": [
         "To accept contactless payments, merchants can choose to implement a plug-in peripheral reader or a fully integrated system.\nContact your acquirer or payment processor to learn how to begin accepting Mastercard contactless payments."
+      ]
+    },
+    {
+      "heading": "Contactless locator",
+      "para": [
+        "Find out which merchants already use contactless.\n"
+      ]
+    },
+    {
+      "heading": "Mastercard Nearby App",
+      "para": [
+        "Find places where Mastercard is accepted.\n"
       ]
     },
     {

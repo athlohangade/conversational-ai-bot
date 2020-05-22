@@ -105,6 +105,23 @@ class  ScrapAllWebpages:
                     except:
                         pass
 
+                    # Specifically for find-a-card page
+                    data = soup.find_all('div', {'class': 'tab-title'})
+
+                    try:
+                        for d in enumerate(data):
+                            each_para = {}
+                            content = soup.find_all('div', {'class': 'text-article'})
+                            for c in enumerate(content):
+                                if d[0] == c[0]:
+                                    para = c[1].find('h4')
+                                    each_para['heading'] = d[1].text
+                                    each_para['para'] = [para.text]
+                                    list_of_data.append(each_para)
+                                    break
+                    except:
+                        pass
+
                     # div with class "content-text-wrapper"
                     data = soup.find_all('div', {'class': 'content-text-wrapper'})
 
