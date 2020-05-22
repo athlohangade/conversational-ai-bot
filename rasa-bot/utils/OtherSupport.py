@@ -1,6 +1,6 @@
 import csv
 import json
-from TextProcessorAndSearch import TextProcessorAndSearch
+from utils.TextProcessorAndSearch import TextProcessorAndSearch
 
 class OtherSupport:
     @classmethod
