@@ -47,7 +47,6 @@ for d in data:
     que_complete = False
 
 # the json file where the output must be stored  
-#out_file = open("faq.json", "w")
-import sys
-json.dump(list_of_ques, sys.stdout, indent = 2)
-#out_file.close()
+out_file = open("faq.json", "w")
+json.dump(list_of_ques, out_file, indent = 2)
+out_file.close()
