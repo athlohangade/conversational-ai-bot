@@ -51,6 +51,7 @@ class TextProcessorAndSearch:
     @classmethod
     def tokenize(cls, data):
         ''' Get word tokens from sentence '''
+
         tokens = []
         data = data.lower()
         document = cls.nlp(data)
@@ -96,6 +97,8 @@ class TextProcessorAndSearch:
         plain text list) it finds most relevant paragrah by matching with maximum
         possible words in the searchData in the same sequence if not such paragraph
         found then it returns None'''
+        
+        print("Keywords:", searchData)
 
         # make a set of words in searchData so that they can be searched in less
         # than linear time
@@ -160,7 +163,16 @@ class TextProcessorAndSearch:
         # create n compile regular expression to find words in fixed order
         pat = re.compile(
             '.*'.join(
-                list(map(r'\b{}\b'.format, wordlist))
+                map(
+                    r'\b{}e?s?\b'.format,
+                    map(
+                        lambda word:
+                            word[:-2] if word.endswith('es')
+                            else word[:-1] if word.endswith('s')
+                            else word,
+                        wordlist
+                    )
+                )
             ),
             flags = re.IGNORECASE
         )
