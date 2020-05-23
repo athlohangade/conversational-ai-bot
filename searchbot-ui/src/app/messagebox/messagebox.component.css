@@ -2,8 +2,11 @@
 .message {
 	font-weight: 500;
 	font-family: sans-serif;
-	margin: 10px;
+	margin: 5px;
+	padding: 5px;
 	transition: all 0.5s ease-in-out;
+	word-wrap: break-word;
+	overflow-x: auto;
 }
 
 /* message received from bot */
@@ -13,7 +16,6 @@
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	text-align: left;
-	padding: 3px;
 	column-span: all;
 }
 
@@ -23,7 +25,6 @@
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	padding: 3px;
 	padding-right: 20px;
 }
 

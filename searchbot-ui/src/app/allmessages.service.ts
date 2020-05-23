@@ -13,7 +13,7 @@ export class AllmessagesService {
 
 	messages: MessageClass[] = [];
 	
-	private addMessageByBot(b: any[]): void {
+	public addMessageByBot(b: any[]): void {
 		for(let data of b) 
 			if(data.hasOwnProperty('buttons')) {
 				this.btnManagerService.activateButton(data.buttons);

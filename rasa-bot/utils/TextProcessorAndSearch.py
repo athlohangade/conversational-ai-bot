@@ -98,8 +98,6 @@ class TextProcessorAndSearch:
         possible words in the searchData in the same sequence if not such paragraph
         found then it returns None'''
         
-        print("Keywords:", searchData)
-
         # make a set of words in searchData so that they can be searched in less
         # than linear time
         if isinstance(searchData, list):

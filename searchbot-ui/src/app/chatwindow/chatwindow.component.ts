@@ -79,6 +79,7 @@ export class ChatwindowComponent implements OnInit {
 		document.onfocus = () => this.hasFocus = true;
 		window.onblur = () => {this.hasFocus = false; console.log("BLURRED");}
 		window.onfocus = () => this.hasFocus = true;
+		this.messages.addMessageByBot([{"text": "Hello! I am a bot here to assist you..."}, {"text": "How can I help you?"}]);
 	}
 
 	ngAfterViewChecked(): void {

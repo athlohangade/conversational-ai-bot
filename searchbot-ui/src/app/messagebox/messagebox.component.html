@@ -1,13 +1,11 @@
-<div class="bot-container">
+<div *ngFor="let data of body" class="bot-container">
 	<div *ngIf="isbot">
 		<div class="container">
 			<img class="botimage" [src]="botDisplayPicture">
-			<p class="botmessage message">
-				<ng-container *ngFor="let data of body">
-						<p *ngIf='data.hasOwnProperty("text")'> {{data.text}} </p>
-						<a *ngIf='data.hasOwnProperty("attachment")' target="_blank" href="{{data.attachment}}"> {{data.attachment}} </a>
-				</ng-container>
-			</p>
+			<div class="botmessage message">
+					<p *ngIf='data.hasOwnProperty("text")'> {{data.text}} </p>
+					<a *ngIf='data.hasOwnProperty("attachment")' target="_blank" href="{{data.attachment}}"> {{data.attachment}} </a>
+			</div>
 		</div>
 	</div>
 </div>
