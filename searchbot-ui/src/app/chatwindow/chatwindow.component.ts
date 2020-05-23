@@ -34,7 +34,7 @@ export class ChatwindowComponent implements OnInit {
 		this.chatheight = this.height - 50;
 		this.chatwidth = this.width - 35;
 		this.textboxwidth = this.width - 40;
-		this.notification = new Audio('assets/sounds/notificationsound.mp3');
+		this.notification = new Audio('assets/sounds/definite.mp3');
 	}
 
 	/* only use when testing, shows some messages at the start
