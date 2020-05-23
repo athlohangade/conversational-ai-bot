@@ -1,7 +1,6 @@
 /* all messages */
 .message {
 	font-weight: 500;
-	font-size: large;
 	font-family: sans-serif;
 	margin: 10px;
 	transition: all 0.5s ease-in-out;
@@ -41,7 +40,6 @@
 	max-width: 40px;
 	max-height: 40px;
 	margin-right: 10px;
-	margin-left: 10px;
 	margin-top: 3px;
 	border-radius: 50%;
 	border: 1px solid black;
