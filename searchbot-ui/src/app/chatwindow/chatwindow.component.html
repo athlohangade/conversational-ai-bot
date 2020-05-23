@@ -15,7 +15,7 @@
 		<div style="width: {{width}}px; max-width: {{width}}px" class="sendbox">
 			<table>
 				<tr>
-					<td width="{{width}}px"> <input type="text" #inputfield [(ngModel)]="textboxval" (keydown.enter)="sendMessageInTextArea()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield form-control" placeholder="ask me something..."> </td>
+					<td width="{{width}}px"> <input type="text" #inputfield [(ngModel)]="textboxval" (keydown.enter)="sendMessageInTextArea()" (keyup.enter)="resetTextArea(); scrollDown();" class="inputfield form-control" placeholder="Ask me something"> </td>
 					<td> <button [style.height.px]="50" class="btn btn-primary mybtn" (click)="sendMessageInTextArea()"> Send </button> </td> 
 				</tr>
 			</table>

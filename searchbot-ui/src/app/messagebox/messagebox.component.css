@@ -39,7 +39,7 @@
 	float: left;
 	max-width: 40px;
 	max-height: 40px;
-	margin-right: 10px;
+	margin-right: 5px;
 	margin-top: 3px;
 	border-radius: 50%;
 	border: 1px solid black;
@@ -61,4 +61,8 @@ p {
 .bot-container {
 	display: flex;
 	justify-content: flex-start;
+}
+
+.container {
+	padding-left: 8px;
 }
