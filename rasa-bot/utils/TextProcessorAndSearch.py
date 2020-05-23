@@ -18,10 +18,33 @@ whWords = list(filter(lambda x: x[0] == 'w' and x[1] == 'h', stop_words))
 whWords.append('how')
 stop_words = list(filter(lambda x: x not in whWords, stop_words))
 
+class HTMLParsed:
+
+    def __init__(self, l = None):
+        if not l:
+            self.parsed = []
+        else:
+            self.parsed = l
+        self.d = {}
+
+    def addParsed(self, para, heading = None):
+        if heading:
+            self.d[heading] = para
+        for i in para:
+            self.parsed.append(i)
+
+    def getParagraphForheading(self, heading):
+        return self.d.get(heading, None)
+
+    def getheadings(self):
+        return self.d.keys()
+
+    def getparagraphs(self):
+        return self.parsed
 
 class TextProcessorAndSearch:
 
-    nlp = spacy.load('en')
+    #nlp = spacy.load('en')
     stopWords = stop_words
     whWords = whWords
 
@@ -59,12 +82,12 @@ class TextProcessorAndSearch:
         parsed from the json data'''
 
         originalData = originalData.get("data")
-        extracted = []
+        extracted = HTMLParsed()
         if originalData:
             for i in originalData:
                 if "para" in i:
-                    for para in i["para"]:
-                        extracted.append(para)
+                    heading = i.get("heading")
+                    extracted.addParsed(i["para"], heading)
         return extracted
 
     @classmethod
@@ -84,15 +107,21 @@ class TextProcessorAndSearch:
         if isinstance(originalData, dict):
             text = cls.__getPlainText(originalData)
         elif isinstance(originalData, list):
-            text = originalData
+            text = HTMLParsed(originalData)
         elif isinstance(originalData, TextIOWrapper):
             text = cls.__getPlainText(json.load(originalData))
 
         totalcombinations = TextProcessorAndSearch.make_all_combinations(searchDataList, threshold = 0.3)
-        totalcombinations = list(filter(lambda x: len(x) > 1, totalcombinations))
+        l = floor(len(searchDataList) / 2)
+        combinationsforheading = list(filter(lambda x: len(x) > l, totalcombinations))
+
+        for wordlist in combinationsforheading:
+            search = list(TextProcessorAndSearch.regex_search(wordlist, text.getheadings()))
+            if search:
+                return '\n'.join(text.getParagraphForheading(min(search, key = min)))
 
         for wordlist in totalcombinations:
-            search = TextProcessorAndSearch.regex_search(wordlist, text)
+            search = TextProcessorAndSearch.regex_search(wordlist, text.getparagraphs())
             try:
                 return next(search)
             except StopIteration:
@@ -106,12 +135,16 @@ class TextProcessorAndSearch:
         if threshold value is provided, then it returns all combinations with number of
         words greater than or equal to the (threshold value * length of keywords)'''
 
-        lower_bound = max(lower_bound, floor(len(keywords) * threshold))
         return sorted(
             list(
                 chain.from_iterable(
                     combinations(keywords, i)
-                    for i in range(lower_bound, len(keywords) + 1)
+                    for i in range(
+                        max(
+                            lower_bound,
+                            floor(len(keywords) * threshold)
+                        ), 
+                        len(keywords) + 1)
                 )
             ),
             key = len,
