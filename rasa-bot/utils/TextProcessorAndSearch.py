@@ -44,7 +44,7 @@ class HTMLParsed:
 
 class TextProcessorAndSearch:
 
-    #nlp = spacy.load('en')
+    nlp = spacy.load('en')
     stopWords = stop_words
     whWords = whWords
 
