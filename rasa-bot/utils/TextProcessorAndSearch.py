@@ -8,6 +8,7 @@ from nltk.corpus import stopwords as STOP_WORDS_2
 from itertools import combinations, chain
 from io import TextIOWrapper
 from math import floor
+from utils.HTMLParsed import HTMLParsed
 
 # Create a list of stop words such that wh-words are not considered
 # to be the stopwords
@@ -17,30 +18,6 @@ stop_words = list(set(STOP_WORDS + STOP_WORDS_2))
 whWords = list(filter(lambda x: x[0] == 'w' and x[1] == 'h', stop_words))
 whWords.append('how')
 stop_words = list(filter(lambda x: x not in whWords, stop_words))
-
-class HTMLParsed:
-
-    def __init__(self, l = None):
-        if not l:
-            self.parsed = []
-        else:
-            self.parsed = l
-        self.d = {}
-
-    def addParsed(self, para, heading = None):
-        if heading:
-            self.d[heading] = para
-        for i in para:
-            self.parsed.append(i)
-
-    def getParagraphForheading(self, heading):
-        return self.d.get(heading, None)
-
-    def getheadings(self):
-        return self.d.keys()
-
-    def getparagraphs(self):
-        return self.parsed
 
 class TextProcessorAndSearch:
 
