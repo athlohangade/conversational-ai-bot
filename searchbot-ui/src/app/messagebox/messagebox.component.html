@@ -1,6 +1,6 @@
 <div *ngFor="let data of body" class="bot-container">
 	<div *ngIf="isbot">
-		<div class="container">
+		<div *ngIf='data.hasOwnProperty("text") || data.hasOwnProperty("attachment")' class="container">
 			<img class="botimage" [src]="botDisplayPicture">
 			<div class="botmessage message">
 					<p *ngIf='data.hasOwnProperty("text")'> {{data.text}} </p>
@@ -8,6 +8,7 @@
 			</div>
 		</div>
 	</div>
+	<app-location-card *ngIf='data.hasOwnProperty("cards")' [cards]="data.cards"></app-location-card>
 </div>
 <div class="user-container">
 	<div *ngIf="!isbot" class="usermessage message">

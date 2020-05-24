@@ -9,6 +9,7 @@ import { ChatwindowComponent } from './chatwindow/chatwindow.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MessageboxComponent } from './messagebox/messagebox.component';
 import { ButtonRepliesComponent } from './button-replies/button-replies.component';
+import { LocationCardComponent } from './location-card/location-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ButtonRepliesComponent } from './button-replies/button-replies.componen
     ChatwindowComponent,
     WelcomeComponent,
     MessageboxComponent,
-    ButtonRepliesComponent
+    ButtonRepliesComponent,
+    LocationCardComponent
   ],
   imports: [
     BrowserModule,

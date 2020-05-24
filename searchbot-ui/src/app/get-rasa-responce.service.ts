@@ -15,7 +15,6 @@ export class GetRasaResponceService {
 		var randomNum: number = Math.round(Math.random() * 1000);
 		var name: string = `user#${randomNum}:${d.getUTCHours()}:${d.getUTCMinutes()}:${d.getUTCSeconds()}:${d.getUTCMilliseconds()}`;
 		this.USERNAME = name;
-		console.log(`username: ${this.USERNAME}`);
 	}
 
 	sendMessage(message: string): Observable<any> {

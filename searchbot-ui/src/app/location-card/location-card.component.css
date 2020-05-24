@@ -1,0 +1,13 @@
+ul {
+	overflow-x: scroll;
+}
+
+ul::-webkit-scrollbar {
+	display: none;
+}
+
+.horizontallist {
+	list-style: none;
+	margin-left: 10px;
+	margin-right: 10px;
+}

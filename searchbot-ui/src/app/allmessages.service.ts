@@ -37,7 +37,6 @@ export class AllmessagesService {
 		)
 		.subscribe(
 			(data: any) => {
-				console.log(data);
 				this.addMessageByBot(data);
 			}
 		);
@@ -50,7 +49,7 @@ export class AllmessagesService {
 		this.rasaResponceService.sendMessage(b).pipe(
 			catchError(
 				(error: HttpErrorResponse) => {
-					console.log("Upps:", error);
+					console.log(error);
 					this.addMessageByBot([{text: "Sorry, I can not reach to server right now. Please check your internet connectivity and try again :("}]);
 					return EMPTY;
 				}
@@ -58,7 +57,6 @@ export class AllmessagesService {
 		)
 		.subscribe(
 			(data: any) => {
-				console.log(data);
 				this.addMessageByBot(data);
 			}
 		);
