@@ -21,9 +21,6 @@
 - hi can you speak?
 - hi friend
 - hola
-- wassup
-- whats up
-- Hello
 
 ## intent:goodbye
 - bye
@@ -103,10 +100,30 @@
 - not yet
 - oh no
 
-## intent: chitchat/ask_use
+## intent: chitchat/ask_whats_possible
 - what can you do?
 - How can you help me
 - tell me what can you do
+
+## intent: chitchat/ask_how_are_you
+- How are you?
+- How you doing
+- tell me what can you do
+- What's going on?
+- wassup
+- whats up
+- howdy
+- How do you do?
+- How are you feeling?
+- What’s sizzling?
+
+## intent: chitchat/insult
+- stupid bot
+- you are stupid
+- idiot
+- you are waste of time
+- useless bot
+- you are dumb
 
 ## intent: chitchat/ask_weather
 - how's weather?
@@ -142,6 +159,7 @@
 - [convert](support_type) currency
 - I want to [convert](support_type) my currency
 - Open mastercard currency [converter]{"entity": "support_type", "value": "convert"}
+- Help me in [converting]{"entity": "support_type", "value": "convert"} my currency
 
 - How to pay [taxes]{"entity": "support_type", "value": "tax"}
 - How to pay [tax](support_type)
@@ -383,6 +401,8 @@
 - convert
 - currency
 - converter
+- converting
+- converted
 
 ## synonym:cards
 - mastercard
