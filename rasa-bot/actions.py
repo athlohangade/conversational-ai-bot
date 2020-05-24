@@ -104,6 +104,7 @@ class ActionGetSupport(Action):
                     additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
                 if additional_para:
                     dispatcher.utter_message(text=additional_para)
+                    res[0] = "To know more, please checkout following link."
             except:
                 print("File not found")
             
