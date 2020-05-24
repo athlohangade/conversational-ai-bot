@@ -6,10 +6,13 @@
 	float: right;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: xx-large;
+	color: white;
 	margin-top: 20px;
 	padding: 15px 30px;
+	border: none;
 	border-radius: 50%;
 	background-color: black;
+	transition: all 0.3s ease-in-out;
 }
 
 .round:hover {
@@ -28,6 +31,8 @@
 	color: white;
 	border: solid black;
 	transition: all 0.5s ease-in-out;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
 .heading:hover {
@@ -60,7 +65,7 @@
 	padding: 5px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 12px;
 }
 
 .inputfield {

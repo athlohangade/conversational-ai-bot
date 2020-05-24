@@ -1,5 +1,9 @@
-<ul class="list-group list-group-horizontal">
-    <li *ngFor="let card of cards" class="horizontallist container">
-        <p *ngFor="let addressline of card"> {{addressline}} </p>
-    </li>
-</ul>
+<div>
+	<ul class="list-group list-group-horizontal">
+		<li *ngFor="let card of cards" class="horizontallist">
+			<div>
+				<ng-container *ngFor="let addressline of card"> {{addressline}} </ng-container>
+			</div>
+		</li>
+	</ul>
+</div>

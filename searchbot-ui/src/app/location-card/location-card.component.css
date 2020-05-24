@@ -1,13 +1,32 @@
 ul {
+	display: flex;
+	max-width: 400px;
 	overflow-x: scroll;
+	margin-left: 30px;
 }
 
 ul::-webkit-scrollbar {
 	display: none;
 }
 
-.horizontallist {
-	list-style: none;
-	margin-left: 10px;
-	margin-right: 10px;
+ul li {
+	display: inline;
 }
+
+.horizontallist {
+	margin: 10px;
+	width: 200px;
+	height: 200px;
+	max-height: 200px;
+}
+
+.horizontallist:hover {
+	font-weight: bold;
+}
+
+.address {
+	background-color: #ff5f00;
+	border: 2px medium #ff5f00;
+	overflow-y: unset;
+}
+
