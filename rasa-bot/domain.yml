@@ -8,9 +8,9 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_happy
-- utter_iamabot
 - utter_welcome
 - utter_ask_reporttype
+- respond_chitchat
 
 entities:
 - location
@@ -23,14 +23,13 @@ intents:
 - thanks
 - greet
 - get_atm_location
-- stop
 - affirm
 - get_support
 - goodbye
 - deny
-- bot_challenge
 - get_location
 - out_of_scope
+- chitchat
 
 responses:
   utter_ask_location:
@@ -47,8 +46,6 @@ responses:
   - text: Hello, How can I help you?
   utter_happy:
   - text: Great, carry on!
-  utter_iamabot:
-  - text: I am a bot, I can help you with your query. What do you want to know about?
   utter_welcome:
   - text: You are welcome
   utter_default:
@@ -64,7 +61,7 @@ responses:
     buttons:
       - title: "Fraud"
         payload: '/get_support{"report_type": "fraud"}'
-      - title: "Merchant"
+      - title: "Merchant or Shopping"
         payload: '/get_support{"report_type": "merchant"}'
       - title: "Theft"
         payload: '/get_support{"report_type": "theft"}'

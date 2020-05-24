@@ -2,9 +2,11 @@
 * goodbye
   - utter_goodbye
 
-## bot challenge
-* bot_challenge
-  - utter_iamabot
+## chitchat
+* greet
+  - utter_greet
+* chitchat
+   - respond_chitchat
 
 ## support path
 * get_support
@@ -49,25 +51,6 @@
   - utter_did_that_help
 * deny
   - utter_try_again
-
-## interactive_story_1
-* greet
-    - utter_greet
-* get_support{"support_type": "support"}
-    - action_get_support
-* thanks
-    - utter_did_that_help
-* stop
-    - utter_goodbye
-
-## business_overview_story
-* greet
-    - utter_greet
-* get_support{"support_type":"business overview"}
-    - action_get_support
-    - utter_did_that_help
-* thanks
-    - utter_welcome
 
 ## card_story_1
 * greet

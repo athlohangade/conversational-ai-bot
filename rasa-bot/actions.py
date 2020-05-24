@@ -41,6 +41,7 @@ class ActionGetSupport(Action):
         entities = tracker.latest_message['entities']
         msg = tracker.latest_message.get('text')
         print(entities)
+        print(msg)
         print("In support action")
 
         ## For Periodic Scrapping
@@ -76,6 +77,7 @@ class ActionGetSupport(Action):
         if report_type:
             # Report_type is set
             entities = [{'entity':'report_type', 'value': report_type}]
+            msg = "report " + report_type
             to_reset = True
         elif OtherSupport.checkValue(entities, "report"):
             print("wrong path")
@@ -85,6 +87,7 @@ class ActionGetSupport(Action):
         elif card_type:
             # Card_type is set
             entities = [{'entity':'card_type', 'value': card_type}]
+            msg = card_type + " cards"
             to_reset = True
         elif OtherSupport.checkValue(entities, "cards"):
             print("wrong path card")
@@ -173,9 +176,8 @@ class ActionGetATMLocation(Action):
         else :
             message = "Here are some ATMs found near {} :".format(location)
             dispatcher.utter_message(text = message)
-            for number, address in enumerate(addresses, 1) :
-                message = str(number) + ") " + ", ".join(address)
-                dispatcher.utter_message(text = message)
+            for address in addresses:
+                dispatcher.utter_message(json_message=address)
 
         # Reset the slot for location and GPE entity
         return [AllSlotsReset()]

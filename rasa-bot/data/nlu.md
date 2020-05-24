@@ -103,7 +103,19 @@
 - not yet
 - oh no
 
-## intent:bot_challenge
+## intent: chitchat/ask_use
+- what can you do?
+- How can you help me
+- tell me what can you do
+
+## intent: chitchat/ask_weather
+- how's weather?
+- is it sunny where you are?
+
+## intent: chitchat/bot_challenge
+- what's your name
+- who are you?
+- what are you called?
 - are you a bot?
 - are you a human?
 - am I talking to a bot?
@@ -222,6 +234,10 @@
 - Help me to get a [debit](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 - Apply for [mastercard]{"entity": "support_type", "value": "cards"}
 - How do I apply for [mastercard]{"entity": "support_type", "value": "cards"}
+- [debit](card_type) [cards](support_type)
+- [credit](card_type) [cards](support_type)
+- [prepaid](card_type) [cards](support_type)
+- [business](card_type) [cards](support_type)
 
 ## intent:thanks
 - thank you
