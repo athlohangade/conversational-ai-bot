@@ -9,26 +9,33 @@
 	margin-top: 20px;
 	padding: 15px 30px;
 	border-radius: 50%;
+	background-color: black;
+}
+
+.round:hover {
+	background-color: #ff5f00;
+	border-color: #ff5f00;
 }
 
 .cross:hover {
-	background-color: rgb(168, 129, 57);
+	background-color: #e44d01;
 }
 
 .heading {
 	font-size: x-large;
-	background-color: rgb(218, 153, 13);
+	background-color: black;
 	height: 60px;
 	color: white;
-	border: solid rgb(218, 153, 13);
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
+	border: solid black;
 	transition: all 0.5s ease-in-out;
 }
 
 .heading:hover {
-	background-color: rgb(230, 44, 38);
-	border: solid rgb(230, 44, 38);
+	color: #ff5f00;
+}
+
+.titleofheading:hover {
+	color: #ff5f00;
 }
 
 .titleofheading {
@@ -40,7 +47,7 @@
 }
 
 .topdiv {
-	background-color: rgb(241, 235, 235);
+	background-color: #f8f7f5;
 	overflow-y: scroll;
 }
 
@@ -82,4 +89,9 @@ table tr td {
 	border-bottom-right-radius: 10px;
 	border: 1px solid black;
 	border-left: none;
+	background-color: black;
+}
+
+.mybtn:hover {
+	background-color: #ff5f00;
 }

@@ -11,3 +11,15 @@ ul::-webkit-scrollbar {
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+.btn-info {
+	background-color: transparent;
+	border-color: #ff5f00;
+	color: #ff5f00;
+	border-width: medium;
+}
+
+.btn-info:hover {
+	background-color: #ff5f00;
+	color: white;
+}

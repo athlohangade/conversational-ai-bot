@@ -11,7 +11,7 @@
 
 /* message received from bot */
 .botmessage {
-	background-color: rgb(224, 215, 215);	
+	background-color: #d6d3ce;	
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
@@ -21,19 +21,12 @@
 
 /* message sent by user */
 .usermessage {
-	background-color: #4284da;
+	background-color: #ff5f00;
+	color: white;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 	padding-right: 20px;
-}
-
-.usermessage:hover {
-	background-color: #3279ca;
-}
-
-.botmessage:hover {
-	background-color: rgb(194, 191, 186);
 }
 
 .botimage {
