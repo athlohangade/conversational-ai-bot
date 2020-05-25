@@ -74,6 +74,8 @@ export class ChatwindowComponent implements OnInit {
 	}
 
 	hideChat(): void {
+		if(this.fullscreen)
+			this.changeWindowSize();
 		this.hide = !this.hide;
 		if(this.hide)
 			this.btnsign = "O";
@@ -102,11 +104,14 @@ export class ChatwindowComponent implements OnInit {
 		this.messages.addMessageByBot([{"text": "Hello! I am a bot here to assist you..."}, {"text": "How can I help you?"}]);
 	}
 
+	focusOnInput(): void {
+		this.inputfield.nativeElement.focus();
+	}
+
 	ngAfterViewChecked(): void {
 		var num: number;
 		if(!this.hide) {
 			this.scrollDown();
-			this.inputfield.nativeElement.focus();
 		}
 		if(this.hasFocus) 
 			this.count = this.messages.totalMessages();

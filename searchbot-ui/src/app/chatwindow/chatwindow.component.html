@@ -3,7 +3,7 @@
 	[ngStyle]="{
 		'max-width': actwidth
 	}">
-	<div class="mainwindow">
+	<div (click)="focusOnInput()" class="mainwindow">
 		<div *ngIf="!hide">
 			<div  
 				(click)="changeWindowSize()" 
