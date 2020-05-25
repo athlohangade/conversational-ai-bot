@@ -1,10 +1,7 @@
 <div class="alldiv">
 	<div class="mainwindow">
 		<div *ngIf="!hide">
-			<div 
-				[ngStyle]="{
-					'width': actwidth
-				}" 
+			<div  
 				(click)="changeWindowSize()" 
 				class="heading">
 				<span class="titleofheading"> Bot is online! </span>
@@ -12,10 +9,8 @@
 			<div 
 				#mainchatscreen 
 				[ngStyle]="{
-					'height': actheight, 
-					'width': actwidth, 
-					'max-height': actheight, 
-					'max-width': actwidth
+					'height': actheight,
+					'max-height': actheight
 				}"
 				class="topdiv">
 				<app-messagebox 
@@ -31,10 +26,7 @@
 				</app-button-replies>
 			</div>
 			<div 
-				[ngStyle]="{
-					'width': actwidth, 
-					'max-width': actwidth
-				}" 
+				
 				class="sendbox">
 				<table>
 					<tr>

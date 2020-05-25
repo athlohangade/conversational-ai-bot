@@ -1,8 +1,8 @@
 .mycontainer {
 	border-radius: 1em;
-	margin: 5px 40px;
-	max-width: 300px;
-	border: 5px outset black;
+	border: solid #ff5f00;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 p {
