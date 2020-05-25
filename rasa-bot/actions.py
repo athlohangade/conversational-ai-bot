@@ -62,8 +62,9 @@ class ActionGetSupport(Action):
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
         if not entities:
+            print("Entities not present")
             # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-            answers = OtherSupport.searchInFAQ(msg)
+            answers = OtherSupport.searchInFAQ(msg,flag = 1)
             for answer in answers :
                 dispatcher.utter_message(text = answer)
             return [FollowupAction('action_listen')]
@@ -207,10 +208,11 @@ class ActionDefaultAskAffirmation(Action):
         if not entities:
             msg = tracker.latest_message.get('text')
             # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-            answers = OtherSupport.searchInFAQ(msg)
-            for answer in answers :
-                dispatcher.utter_message(text = answer) 
-            return []
+            answers = OtherSupport.searchInFAQ(msg,flag = 0)
+            if answers:
+                for answer in answers :
+                    dispatcher.utter_message(text = answer) 
+                return []
 
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']
