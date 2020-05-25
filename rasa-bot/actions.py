@@ -22,6 +22,7 @@ from MastercardConfig import MastercardConfig
 import csv
 import json
 from datetime import datetime, timedelta
+import re
 import _thread
 import time
 
@@ -39,6 +40,8 @@ class ActionGetSupport(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
+        for entity in entities :
+            entity['value'] = re.sub(r'[^\w\s]', '', entity['value'])
         msg = tracker.latest_message.get('text')
         print(entities)
         print(msg)
@@ -62,8 +65,9 @@ class ActionGetSupport(Action):
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
         if not entities:
+            print("Entities not present")
             # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-            answers = OtherSupport.searchInFAQ(msg)
+            answers = OtherSupport.searchInFAQ(msg,flag = 1)
             for answer in answers :
                 dispatcher.utter_message(text = answer)
             return [FollowupAction('action_listen')]
@@ -207,10 +211,11 @@ class ActionDefaultAskAffirmation(Action):
         if not entities:
             msg = tracker.latest_message.get('text')
             # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
-            answers = OtherSupport.searchInFAQ(msg)
-            for answer in answers :
-                dispatcher.utter_message(text = answer) 
-            return []
+            answers = OtherSupport.searchInFAQ(msg,flag = 0)
+            if answers:
+                for answer in answers :
+                    dispatcher.utter_message(text = answer) 
+                return []
 
         # get the most likely intent
         last_intent_name = tracker.latest_message['intent']['name']

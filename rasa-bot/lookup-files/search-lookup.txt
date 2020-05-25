@@ -1,5 +1,4 @@
 cash
-support
 cards
 bill
 authentication

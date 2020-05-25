@@ -105,6 +105,34 @@
 - How can you help me
 - tell me what can you do
 
+## intent: chitchat/mood_happy
+- I am good
+- perfect
+- very good
+- great
+- amazing
+- wonderful
+- I am feeling very good
+- I am great
+- I'm good
+- fantastic
+- I am on cloud nine
+- extremely happy
+
+## intent: chitchat/mood_unhappy
+- I am bored
+- sad
+- very sad
+- unhappy
+- bad
+- very bad
+- awful
+- terrible
+- not very good
+- extremely sad
+- so sad
+- angry
+
 ## intent: chitchat/ask_how_are_you
 - How are you?
 - How you doing
@@ -154,17 +182,21 @@
 - Help me to [reload](support_type) a prepaid card
 - Help me to [reload](support_type) my prepaid card
 - [reload](support_type) a prepaid card
+- Find the nearest [rePower]{"entity": "support_type", "value": "reload"} location
+- I want to [repower]{"entity": "support_type", "value": "reload"} my mastercard
 
 - How to [convert](support_type) currency
 - [convert](support_type) currency
 - I want to [convert](support_type) my currency
 - Open mastercard currency [converter]{"entity": "support_type", "value": "convert"}
 - Help me in [converting]{"entity": "support_type", "value": "convert"} my currency
+- is currency [conversion]{"entity": "support_type", "value": "convert"} possible here?
 
-- How to pay [taxes]{"entity": "support_type", "value": "tax"}
-- How to pay [tax](support_type)
+- How to pay [taxes]{"entity": "support_type", "value": "tax"}?
+- How to pay [tax](support_type)?
 - I want to pay [tax](support_type)
 - pay [tax](support_type)
+- Can I pay [tax](support_type) using mastercard?
 
 - [cash] back store locator(support_type)
 - Get access to my [cash](support_type)
@@ -179,6 +211,11 @@
 - How to [report](support_type) a problem
 - I want to [report](support_type) [merchant](report_type)
 - I have a [problem]{"entity": "support_type", "value": "report"} with [merchant](report_type)
+- [Merchant](report_type) refused to accept mastercard. What should I do?
+- I am not able to [buy]{"entity": "report_type", "value": "merchant"} things using mastercard
+- The [merchant](report_type) is not ready to accept mastercard for transactions
+- I am facing a [problem]{"entity": "support_type", "value": "report"} while [buying]{"entity": "report_type", "value": "merchant"} using mastercard
+- I want to [report](support_type) the [merchant](report_type) who is not accepting mastercard transactions
 - Someone called to offer a lower rate on my Mastercard but it seems to be a [scam]{"entity": "report_type", "value": "fraud"}. What should I do?
 - I believe [fraudulent]{"entity": "report_type", "value": "fraud"} purchases were made on my Mastercard. How do I [report](support_type) it?
 - I know who committed [fraud](report_type) on my Mastercard credit or debit card. How do I [report](support_type) it?
@@ -187,12 +224,11 @@
 - someone has [stolen]{"entity": "report_type", "value": "theft"} my card
 - I want to [report](support_type) [theft](report_type)
 
-- [support](support_type)
-
 - [contactless](support_type)
 - How to accept mastercard [contactless](support_type)
 - Which merchants use [contactless](support_type)
 - How [tap & go]{"entity": "support_type", "value": "contactless"} payments work
+- Why [cashless]{"entity": "support_type", "value": "contactless"} payment is safer than cash?
 
 - [bill](support_type) payment service
 - Which cards can I use to pay [bills]{"entity": "support_type", "value": "bill"}?
@@ -233,6 +269,7 @@
 
 - A merchant wanted to charge a [surcharge](support_type) or fee to use my Mastercard. What should I do?
 - What should I do if the merchant [surcharge](support_type) was higher than I expected?
+- What are the types of permissible [surcharges]{"entity": "support_type", "value": "surcharge"}?
 
 - find [card]{"entity": "support_type", "value": "cards"}
 - How many [cards](support_type) does Mastercard provide ?
@@ -296,6 +333,8 @@
 - I need an atm
 - I need an ATM
 - ATMs please
+- ATM
+- can you tell me the nearest atm?
 - ATM locations please
 - Need some atm locations
 - Would like to know atm locations
@@ -360,9 +399,16 @@
 - fraudulent
 - scam
 
+## synonym:surcharge
+- surcharges
+
 ## synonym:theft
 - stolen
 - lost
+
+## synonym:contactless
+- cashless
+- tap & go
 
 ## synonym:locations
 - located
@@ -403,6 +449,7 @@
 - converter
 - converting
 - converted
+- conversion
 
 ## synonym:cards
 - mastercard
@@ -416,9 +463,13 @@
 - reloading
 - topup
 - recharge
+- repower
 
-## synonym:support
-- help
+## synonym:merchant
+- buy
+- shopping
+- buy
+- buying
 
 ## synonym:ways to pay
 - payment methods
