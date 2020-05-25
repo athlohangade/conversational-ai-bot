@@ -10,6 +10,14 @@
 	margin-left: 30px;
 }
 
+.alldivfullscreen {
+	position: absolute;
+	top: 20px;
+	bottom:20px;
+	right: 20px;
+	left: 20px;
+}
+
 .round {
 	float: right;
 	font-family: Arial, Helvetica, sans-serif;
@@ -30,10 +38,10 @@
 
 .heading {
 	font-size: x-large;
-	background-color: black;
+	background-color: #1e1e1f;
 	height: 60px;
 	color: white;
-	border: solid black;
+	border: solid #1e1e1f;
 	transition: all 0.5s ease-in-out;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;

@@ -1,4 +1,4 @@
-<div class="alldiv">
+<div [ngClass]="(fullscreen == true) ? 'alldivfullscreen' : 'alldiv'">
 	<div class="mainwindow">
 		<div *ngIf="!hide">
 			<div  
@@ -30,7 +30,9 @@
 				class="sendbox">
 				<table>
 					<tr>
-						<td width="{{actwidth}}"> 
+						<td [ngStyle]="{
+							'width': actwidth
+						}"> 
 							<input 
 								type="text" 
 								#inputfield 
@@ -53,6 +55,6 @@
 			</div>
 		</div>
 	</div>
-	<button *ngIf="!fullscreen" class="round" (click)="hideChat()"> {{btnsign}} </button>
+	<button class="round" (click)="hideChat()"> {{btnsign}} </button>
 </div>
 	

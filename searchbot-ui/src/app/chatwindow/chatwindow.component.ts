@@ -42,8 +42,14 @@ export class ChatwindowComponent implements OnInit {
 	}
 
 	private setHeightWidth() {
-		this.actheight = `${this.height}px`;
-		this.actwidth = `${this.width}px`;
+		if(!this.fullscreen) {
+			this.actheight = `${this.height}px`;
+			this.actwidth = `${this.width}px`;
+		}
+		else {
+			this.actheight = `70vh`;
+			this.actwidth = `100vw`;
+		}
 	}
 
 	/* only use when testing, shows some messages at the start
@@ -84,6 +90,8 @@ export class ChatwindowComponent implements OnInit {
 	}
 
 	changeWindowSize(): void {
+		this.fullscreen = !this.fullscreen;
+		this.setHeightWidth();
 	}
 
 	ngOnInit(): void {
