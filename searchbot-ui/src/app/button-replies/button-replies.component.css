@@ -1,5 +1,6 @@
 ul {
 	overflow-x: scroll;
+	margin-left: 20px;
 }
 
 ul::-webkit-scrollbar {

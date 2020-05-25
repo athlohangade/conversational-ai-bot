@@ -1,5 +1,12 @@
-.alldiv {
+.mainwindow {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+	border-radius:10px;
+}
+
+.alldiv {
+	position: absolute;
+	bottom: 20px;
+	right: 40px;
 }
 
 .round {
@@ -20,10 +27,6 @@
 	border-color: #ff5f00;
 }
 
-.cross:hover {
-	background-color: #e44d01;
-}
-
 .heading {
 	font-size: x-large;
 	background-color: black;
@@ -36,11 +39,12 @@
 }
 
 .heading:hover {
-	color: #ff5f00;
+	background-color: #ff5f00;
+	border: solid #ff5f00;
 }
 
 .titleofheading:hover {
-	color: #ff5f00;
+	color: #df0707;
 }
 
 .titleofheading {

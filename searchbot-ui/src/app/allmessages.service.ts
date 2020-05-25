@@ -46,20 +46,22 @@ export class AllmessagesService {
 		if(this.btnManagerService.hasButtons())
 			this.btnManagerService.deactivateButton();
 		this.messages.push({isbot: false, body: toShow});
-		this.rasaResponceService.sendMessage(b).pipe(
-			catchError(
-				(error: HttpErrorResponse) => {
-					console.log(error);
-					this.addMessageByBot([{text: "Sorry, I can not reach to server right now. Please check your internet connectivity and try again :("}]);
-					return EMPTY;
-				}
+		if(b != null) {
+			this.rasaResponceService.sendMessage(b).pipe(
+				catchError(
+					(error: HttpErrorResponse) => {
+						console.log(error);
+						this.addMessageByBot([{text: "Sorry, I can not reach to server right now. Please check your internet connectivity and try again :("}]);
+						return EMPTY;
+					}
+				)
 			)
-		)
-		.subscribe(
-			(data: any) => {
-				this.addMessageByBot(data);
-			}
-		);
+			.subscribe(
+				(data: any) => {
+					this.addMessageByBot(data);
+				}
+			);
+		}
 	}
 
 	public totalMessages(): number {

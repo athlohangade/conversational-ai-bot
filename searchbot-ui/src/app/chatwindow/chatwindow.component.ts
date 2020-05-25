@@ -11,8 +11,8 @@ import { ButtonRepliesComponent } from '../button-replies/button-replies.compone
 })
 export class ChatwindowComponent implements OnInit {
 
-	@Input() height: number = 800;
-	@Input() width: number = 500;
+	@Input() height: number = 400;
+	@Input() width: number = 450;
 
 	@ViewChild('mainchatscreen') private mainchatscreen: ElementRef;
 	@ViewChild('inputfield') private inputfield: ElementRef;
@@ -20,8 +20,11 @@ export class ChatwindowComponent implements OnInit {
 	public chatheight: number;
 	public chatwidth: number;
 	public textboxwidth: number;
+	public actwidth: string;
+	public actheight: string;
 
 	public hide: boolean = false;
+	public fullscreen: boolean = false;
 	public btnsign: string = "X";
 
 	private hasFocus: boolean = true;
@@ -35,6 +38,12 @@ export class ChatwindowComponent implements OnInit {
 		this.chatwidth = this.width - 35;
 		this.textboxwidth = this.width - 40;
 		this.notification = new Audio('assets/sounds/definite.mp3');
+		this.setHeightWidth();
+	}
+
+	private setHeightWidth() {
+		this.actheight = `${this.height}px`;
+		this.actwidth = `${this.width}px`;
 	}
 
 	/* only use when testing, shows some messages at the start
@@ -70,8 +79,11 @@ export class ChatwindowComponent implements OnInit {
 		this.mainchatscreen.nativeElement.scrollTop = this.mainchatscreen.nativeElement.scrollHeight;
 	}
 
-	resetTextArea():void {
+	resetTextArea(): void {
 		this.textboxval = "";
+	}
+
+	changeWindowSize(): void {
 	}
 
 	ngOnInit(): void {

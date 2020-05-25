@@ -9,11 +9,18 @@ import { AllmessagesService } from '../allmessages.service';
 export class ButtonRepliesComponent implements OnInit {
 
 	@Input() btn: object;
+	@Input() viewmore: boolean = false;
 
 	constructor(private messages: AllmessagesService) { }
 
 	sendMessage(message: string, mockMessage: string): void {
 		this.messages.addMockMessageByUser(message, mockMessage);
+		if(this.viewmore)
+			this.showMoreATMCards();
+	}
+
+	showMoreATMCards(): void {
+
 	}
 
 	ngOnInit(): void {
