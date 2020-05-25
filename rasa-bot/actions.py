@@ -29,8 +29,8 @@ import time
 class ActionGetSupport(Action):
     
     now = datetime.now()
-    prev_time = now - timedelta(days=1)
-    #prev_time = now
+    #prev_time = now - timedelta(days=1)
+    prev_time = now
 
     def name(self) -> Text:
         return "action_get_support"
