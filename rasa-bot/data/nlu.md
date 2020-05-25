@@ -242,6 +242,12 @@
 - How [billers]{"entity": "support_type", "value": "bill"} are benefited if I pay using mastercard ?
 
 - [authentication](support_type) services at mastercard
+- what [authentication](support_type) services does mastercard provide
+- what are different types of [authetication](support_type) techniques
+- I would like to know different [authentication](support_type) solutions. 
+- I want to understand [authentication](support_type) steps in mastercard
+- [authentication](support_type) for security purposes.
+- Provide info of [authentication](support_type) steps followed for secure work.
 - how does mastercard [authenticate]{"entity": "support_type", "value": "authentication"}
 
 - global [locations](support_type)
@@ -278,6 +284,7 @@
 - I am looking for a best suitable [card]{"entity": "support_type", "value": "cards"} for me
 - find a [card]{"entity": "support_type", "value": "cards"} that's best for me
 - I want [mastercard]{"entity": "support_type", "value": "cards"}
+- I want a [mastercard]{"entity": "support_type", "value": "cards"}
 - I am looking for [business](card_type) [cards](support_type)
 - I am looking for [debit](card_type) [cards](support_type)
 - i am looking for a [card]{"entity": "support_type", "value": "cards"} for me
@@ -291,6 +298,8 @@
 - Help me to get a [debit](card_type) [mastercard]{"entity": "support_type", "value": "cards"}
 - Apply for [mastercard]{"entity": "support_type", "value": "cards"}
 - How do I apply for [mastercard]{"entity": "support_type", "value": "cards"}
+- I want [prepaid](card_type) [card]{"entity": "support_type", "value": "cards"}
+- I want a [prepaid](card_type) [card]{"entity": "support_type", "value": "cards"}
 - [debit](card_type) [cards](support_type)
 - [credit](card_type) [cards](support_type)
 - [prepaid](card_type) [cards](support_type)
@@ -478,6 +487,10 @@
 - pay your way
 - pay
 - pay MTA
+
+## synonym:authentication
+- authentications
+- authenticate
 
 ## lookup:support_type
 lookup-files/search-lookup.txt
