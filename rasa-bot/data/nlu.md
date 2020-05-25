@@ -182,6 +182,8 @@
 - Help me to [reload](support_type) a prepaid card
 - Help me to [reload](support_type) my prepaid card
 - [reload](support_type) a prepaid card
+- Find the nearest [rePower]{"entity": "support_type", "value": "reload"} location
+- I want to [repower]{"entity": "support_type", "value": "reload"} my mastercard
 
 - How to [convert](support_type) currency
 - [convert](support_type) currency
@@ -190,11 +192,11 @@
 - Help me in [converting]{"entity": "support_type", "value": "convert"} my currency
 - is currency [conversion]{"entity": "support_type", "value": "convert"} possible here?
 
-- How to pay [taxes]{"entity": "support_type", "value": "tax"}
-- How to pay [tax](support_type)
+- How to pay [taxes]{"entity": "support_type", "value": "tax"}?
 - How to pay [tax](support_type)?
 - I want to pay [tax](support_type)
 - pay [tax](support_type)
+- Can I pay [tax](support_type) using mastercard?
 
 - [cash] back store locator(support_type)
 - Get access to my [cash](support_type)
@@ -221,8 +223,6 @@
 - i [lost]{"entity": "report_type", "value": "theft"} my card
 - someone has [stolen]{"entity": "report_type", "value": "theft"} my card
 - I want to [report](support_type) [theft](report_type)
-
-- [support](support_type)
 
 - [contactless](support_type)
 - How to accept mastercard [contactless](support_type)
@@ -333,6 +333,8 @@
 - I need an atm
 - I need an ATM
 - ATMs please
+- ATM
+- can you tell me the nearest atm?
 - ATM locations please
 - Need some atm locations
 - Would like to know atm locations
@@ -461,9 +463,7 @@
 - reloading
 - topup
 - recharge
-
-## synonym:support
-- help
+- repower
 
 ## synonym:merchant
 - buy

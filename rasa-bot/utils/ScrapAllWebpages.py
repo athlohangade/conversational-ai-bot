@@ -63,8 +63,6 @@ class  ScrapAllWebpages:
                     url = row[1]
                     print(entity, url)
 
-                    if entity == "theft":
-                        continue
                     # Open URL and get the source code
 
                     #Add the webdriver path in Chrome() if not installed globally
