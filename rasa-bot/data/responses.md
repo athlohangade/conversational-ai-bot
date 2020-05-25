@@ -18,3 +18,12 @@
 ## respond to how are you
 * chitchat/ask_how_are_you
     - I am well, and you?
+    - I'm great! Thanks for asking.
+
+## respond to happy mood
+* chitchat/mood_happy
+    - Great, carry on!
+
+## respond to unhappy mood
+* chitchat/mood_unhappy
+    - Ohh.. that's not good. Please cheer up.

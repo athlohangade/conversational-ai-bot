@@ -105,6 +105,34 @@
 - How can you help me
 - tell me what can you do
 
+## intent: chitchat/mood_happy
+- I am good
+- perfect
+- very good
+- great
+- amazing
+- wonderful
+- I am feeling very good
+- I am great
+- I'm good
+- fantastic
+- I am on cloud nine
+- extremely happy
+
+## intent: chitchat/mood_unhappy
+- I am bored
+- sad
+- very sad
+- unhappy
+- bad
+- very bad
+- awful
+- terrible
+- not very good
+- extremely sad
+- so sad
+- angry
+
 ## intent: chitchat/ask_how_are_you
 - How are you?
 - How you doing
