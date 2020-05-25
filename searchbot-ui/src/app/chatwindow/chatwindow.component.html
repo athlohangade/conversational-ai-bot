@@ -1,4 +1,8 @@
-<div [ngClass]="(fullscreen == true) ? 'alldivfullscreen' : 'alldiv'">
+<div 
+	[ngClass]="(fullscreen == true) ? 'alldivfullscreen' : 'alldiv'"
+	[ngStyle]="{
+		'max-width': actwidth
+	}">
 	<div class="mainwindow">
 		<div *ngIf="!hide">
 			<div  
