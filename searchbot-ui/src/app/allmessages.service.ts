@@ -21,14 +21,15 @@ export class AllmessagesService {
 		for(let data of b) {
 			if(data.hasOwnProperty('buttons')) {
 				this.btnManagerService.activateButton(data.buttons, false);
-				break;	
+				copy.push(data);
+				continue;
 			}
 			if(data.hasOwnProperty('custom')) {
 				this.atmLocationCardService.pushLocation(data.custom);
 				locationsPresent = true;
+				continue;
 			}
-			else
-				copy.push(data);
+			copy.push(data);
 		}
 		this.messages.push({isbot: true, body: copy});
 		if(locationsPresent)

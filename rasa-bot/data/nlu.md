@@ -132,6 +132,7 @@
 - extremely sad
 - so sad
 - angry
+- irritated
 
 ## intent: chitchat/ask_how_are_you
 - How are you?
@@ -226,6 +227,7 @@
 
 - [contactless](support_type)
 - How to accept mastercard [contactless](support_type)
+- how [contactless](support_type) payment improves business operations?
 - Which merchants use [contactless](support_type)
 - How [tap & go]{"entity": "support_type", "value": "contactless"} payments work
 - Why [cashless]{"entity": "support_type", "value": "contactless"} payment is safer than cash?

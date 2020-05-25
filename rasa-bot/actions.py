@@ -35,6 +35,33 @@ class ActionGetSupport(Action):
     def name(self) -> Text:
         return "action_get_support"
 
+    def __periodicSraping(self):
+        current_time = datetime.now()
+        if (current_time > (ActionGetSupport.prev_time + timedelta(hours=MastercardConfig.hours))):
+            ActionGetSupport.prev_time = current_time
+            print("In thread create")
+            try:
+                # Create new threads
+                thread1 = ThreadToScrap(1, "Thread-1")
+
+                # Start new Threads
+                thread1.start()
+            except:
+                print("Thread not created")
+        return
+
+    def __getRelevantPara(self, res, msg):
+        if res[2]:
+            try:
+                msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
+                with open('scrapper/' + res[2] + '.json', 'r') as data:
+                    additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
+            except:
+                additional_para = None
+                print("File not found")
+        
+        return additional_para
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
@@ -48,19 +75,7 @@ class ActionGetSupport(Action):
         print("In support action")
 
         ## For Periodic Scrapping
-        current_time = datetime.now()
-        print(current_time)
-        if (current_time > (ActionGetSupport.prev_time + timedelta(hours=MastercardConfig.hours))):
-            ActionGetSupport.prev_time = current_time
-            print("In thread create")
-            try:
-                # Create new threads
-                thread1 = ThreadToScrap(1, "Thread-1")
-
-                # Start new Threads
-                thread1.start()
-            except:
-                print("Thread not created")
+        self.__periodicSraping()
 
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
@@ -98,19 +113,15 @@ class ActionGetSupport(Action):
             dispatcher.utter_message(template="utter_ask_cardtype")
             return [FollowupAction('action_listen')]
             
+        # Get link of correct webpage
         res = OtherSupport.getResponse(entities)
 
         # adding the relevant paragraph from json file
-        if res[2]:
-            try:
-                msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
-                with open('scrapper/' + res[2] + '.json', 'r') as data:
-                    additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
-                if additional_para:
-                    dispatcher.utter_message(text=additional_para)
-                    res[0] = "To know more, please checkout following link."
-            except:
-                print("File not found")
+        additional_para = self.__getRelevantPara(res, msg)
+        if additional_para:
+                dispatcher.utter_message(text=additional_para)
+                res[0] = "To know more, please checkout following link."
+
             
         dispatcher.utter_message(text=res[0], attachment=res[1])
 
