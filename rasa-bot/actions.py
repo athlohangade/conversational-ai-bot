@@ -22,6 +22,7 @@ from MastercardConfig import MastercardConfig
 import csv
 import json
 from datetime import datetime, timedelta
+import re
 import _thread
 import time
 
@@ -39,6 +40,8 @@ class ActionGetSupport(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         entities = tracker.latest_message['entities']
+        for entity in entities :
+            entity['value'] = re.sub(r'[^\w\s]', '', entity['value'])
         msg = tracker.latest_message.get('text')
         print(entities)
         print(msg)
