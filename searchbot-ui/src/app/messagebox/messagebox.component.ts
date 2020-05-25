@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { LocationCardComponent } from '../location-card/location-card.component';
-import { range } from 'rxjs';
 
 @Component({
   selector: 'app-messagebox',

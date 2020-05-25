@@ -26,7 +26,8 @@
 				<app-button-replies 
 					*ngIf="btnManagerService.hasButtons()" 
 					style="bottom: 0;" 
-					[btn]="btnManagerService.btn">
+					[btn]="btnManagerService.btn"
+					[viewmore]="btnManagerService.isCustomButton()">
 				</app-button-replies>
 			</div>
 			<div 

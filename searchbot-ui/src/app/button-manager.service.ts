@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ButtonManagerService {
 
 	private isButtonActivated: boolean = false;
+	private customButton: boolean = false;
 
 	btn: any[] = null;
 
@@ -13,9 +14,14 @@ export class ButtonManagerService {
 		return this.isButtonActivated;
 	}
 
-	public activateButton(btn: any[]): void {
+	public isCustomButton(): boolean {
+		return this.customButton;
+	}
+
+	public activateButton(btn: any[], customButton: boolean): void {
 		this.isButtonActivated = true;
 		this.btn = btn;
+		this.customButton = customButton;
 	}
 
 	public deactivateButton(): void {

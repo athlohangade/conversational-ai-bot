@@ -5,6 +5,7 @@ import { GetRasaResponceService } from './get-rasa-responce.service';
 import { catchError } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http'; 
 import { EMPTY } from 'rxjs';
+import { AtmLocationCardsService } from './atm-location-cards.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +15,57 @@ export class AllmessagesService {
 	messages: MessageClass[] = [];
 	
 	public addMessageByBot(b: any[]): void {
-		for(let data of b) 
+		console.log(b);
+		var copy: any[] = [];
+		var locationsPresent: boolean = false;
+		for(let data of b) {
 			if(data.hasOwnProperty('buttons')) {
-				this.btnManagerService.activateButton(data.buttons);
+				this.btnManagerService.activateButton(data.buttons, false);
 				break;	
 			}
-		this.messages.push({isbot: true, body: b});
+			if(data.hasOwnProperty('custom')) {
+				this.atmLocationCardService.pushLocation(data.custom);
+				locationsPresent = true;
+			}
+			else
+				copy.push(data);
+		}
+		this.messages.push({isbot: true, body: copy});
+		if(locationsPresent)
+            this.show4();
+	}
+
+	public show4(): void {
+		var cards = this.atmLocationCardService.pop4();
+		var cardobject: any[] = [];
+		for(let card of cards)
+			cardobject.push({'custom': card});
+		console.log("cards are", cards);
+		this.messages.push({isbot: true, body: cardobject});
+		if(this.atmLocationCardService.hasLocationsLeft())
+			this.btnManagerService.activateButton(
+				[{
+					'payload': null,
+					'title': 'see more'
+				}],
+				true
+			);
 	}
 
 	public addMessageByUser(b: string):void {
 		if(this.btnManagerService.hasButtons())
 			this.btnManagerService.deactivateButton();
+		this.atmLocationCardService.emptyLocations();
 		this.messages.push({isbot: false, body: b});
 		this.rasaResponceService.sendMessage(b).pipe(
 			catchError(
 				(error: HttpErrorResponse) => {
 					console.log(error);
-					this.addMessageByBot([{text: "Sorry, I can not reach to server right now. Please check your internet connectivity and try again :("}]);
+					this.addMessageByBot(
+						[{text: "Sorry, I can not reach to server right now. \
+								Please check your internet connectivity and try again :("
+						}]
+					);
 					return EMPTY;
 				}
 			)
@@ -51,7 +86,11 @@ export class AllmessagesService {
 				catchError(
 					(error: HttpErrorResponse) => {
 						console.log(error);
-						this.addMessageByBot([{text: "Sorry, I can not reach to server right now. Please check your internet connectivity and try again :("}]);
+						this.addMessageByBot(
+							[{text: "Sorry, I can not reach to server right now. \
+									Please check your internet connectivity and try again :("
+							}]
+						);
 						return EMPTY;
 					}
 				)
@@ -68,5 +107,9 @@ export class AllmessagesService {
 		return this.messages.length;
 	}
 
-	constructor(private rasaResponceService: GetRasaResponceService, private btnManagerService: ButtonManagerService) { }
+	constructor(
+		private rasaResponceService: GetRasaResponceService, 
+		private btnManagerService: ButtonManagerService,
+		private atmLocationCardService: AtmLocationCardsService
+		) { }
 }
