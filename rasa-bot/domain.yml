@@ -4,7 +4,6 @@ actions:
 - action_default_ask_affirmation
 - action_default_ask_rephrase
 - utter_ask_location
-- utter_did_that_help
 - utter_goodbye
 - utter_greet
 - utter_happy
@@ -30,12 +29,11 @@ intents:
 - get_location
 - out_of_scope
 - chitchat
+- i_can_do
 
 responses:
   utter_ask_location:
   - text: What's your location?
-  utter_did_that_help:
-  - text: Did that help you?
   utter_goodbye:
   - text: Bye
   - text: See you soon
@@ -48,6 +46,8 @@ responses:
   - text: Great, carry on!
   utter_welcome:
   - text: You are welcome
+  utter_i_can_do:
+  - text: I can help you to find the nearest atm and answer any questions you have about Mastercard.
   utter_default:
   - text: I did not get that.
   utter_ask_rephrase:
