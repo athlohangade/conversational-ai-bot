@@ -51,13 +51,13 @@ class ActionGetSupport(Action):
         return
 
     def __getRelevantPara(self, res, msg):
+        additional_para = None
         if res[2]:
             try:
                 msglist = TextProcessorAndSearch.removeStopWords(TextProcessorAndSearch.removePunctuations(TextProcessorAndSearch.tokenize(msg)))
                 with open('scrapper/' + res[2] + '.json', 'r') as data:
                     additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
             except:
-                additional_para = None
                 print("File not found")
         
         return additional_para
