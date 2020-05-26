@@ -113,10 +113,10 @@ export class ChatwindowComponent implements OnInit {
 		if(!this.hide) {
 			this.scrollDown();
 		}
+		num = this.messages.totalMessages();
 		if(this.hasFocus) 
-			this.count = this.messages.totalMessages();
+			this.count = num;
 		else {
-			num = this.messages.totalMessages();
 			if(this.count < num) 
 				this.notification.play();
 		}

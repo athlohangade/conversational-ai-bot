@@ -12,7 +12,9 @@ import { AtmLocationCardsService } from './atm-location-cards.service';
 })
 export class AllmessagesService {
 
-	messages: MessageClass[] = [];
+	public messages: MessageClass[] = [];
+
+	public botPendingMessages: number = 1;
 	
 	public addMessageByBot(b: any[]): void {
 		console.log(b);
@@ -33,10 +35,15 @@ export class AllmessagesService {
 		}
 		this.messages.push({isbot: true, body: copy});
 		if(locationsPresent)
-            this.show4();
+			this.show4();
+		if(this.botPendingMessages > 0)
+			this.botPendingMessages--;
+		console.log("minux", this.botPendingMessages);
 	}
 
 	public show4(): void {
+		if(this.botPendingMessages > 0)
+			this.botPendingMessages--;
 		var cards = this.atmLocationCardService.pop4();
 		var cardobject: any[] = [];
 		for(let card of cards)
@@ -58,49 +65,31 @@ export class AllmessagesService {
 			this.btnManagerService.deactivateButton();
 		this.atmLocationCardService.emptyLocations();
 		this.messages.push({isbot: false, body: b});
-		this.rasaResponceService.sendMessage(b).pipe(
-			catchError(
-				(error: HttpErrorResponse) => {
-					console.log(error);
-					this.addMessageByBot(
-						[{text: "Sorry, I can not reach to server right now. \
-								Please check your internet connectivity and try again :("
-						}]
-					);
-					return EMPTY;
-				}
-			)
-		)
-		.subscribe(
-			(data: any) => {
-				this.addMessageByBot(data);
-			}
-		);
+		this.GetRasaResponseFor(b);
 	}
 
 	public addMockMessageByUser(b: string, toShow: string): void {
 		if(this.btnManagerService.hasButtons())
 			this.btnManagerService.deactivateButton();
 		this.messages.push({isbot: false, body: toShow});
-		if(b != null) {
-			this.rasaResponceService.sendMessage(b).pipe(
-				catchError(
-					(error: HttpErrorResponse) => {
-						console.log(error);
-						this.addMessageByBot(
-							[{text: "Sorry, I can not reach to server right now. \
-									Please check your internet connectivity and try again :("
-							}]
-						);
-						return EMPTY;
-					}
-				)
-			)
-			.subscribe(
-				(data: any) => {
-					this.addMessageByBot(data);
-				}
-			);
+		this.GetRasaResponseFor(b);
+	}
+
+	private GetRasaResponseFor(b: string) {
+		this.botPendingMessages++;
+		if (b != null) {
+			this.rasaResponceService.sendMessage(b)
+			.pipe(catchError((error: HttpErrorResponse) => {
+				console.log(error);
+				this.addMessageByBot([{
+					text: "Sorry, I can not reach to server right now. \
+						Please check your internet connectivity and try again :("
+				}]);
+				return EMPTY;
+			}))
+			.subscribe((data: any) => {
+				this.addMessageByBot(data);
+			});
 		}
 	}
 

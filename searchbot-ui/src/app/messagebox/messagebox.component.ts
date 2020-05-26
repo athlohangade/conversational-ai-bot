@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { LocationCardComponent } from '../location-card/location-card.component';
+import { ElementFinder } from 'protractor';
 
 @Component({
   selector: 'app-messagebox',
@@ -20,7 +21,7 @@ export class MessageboxComponent implements OnInit {
 	ngOnInit(): void {
 		var data2: any[] = [];
 		var atmcards: any[] = [];
-		if(this.isbot) {
+		if(this.isbot && this.body != null) {
 			for(let data of this.body) {
 				if(data.hasOwnProperty("custom"))
 					atmcards.push(data.custom);

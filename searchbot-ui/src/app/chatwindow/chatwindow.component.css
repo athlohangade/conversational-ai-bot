@@ -27,7 +27,7 @@
 	padding: 15px 30px;
 	border: none;
 	border-radius: 50%;
-	background-color: black;
+	background-color: #1e1e1f;
 	transition: all 0.3s ease-in-out;
 }
 
@@ -105,9 +105,9 @@ table tr td {
 	border-bottom-left-radius: 0px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
-	border: 1px solid black;
+	border: 1px solid #1e1e1f;
 	border-left: none;
-	background-color: black;
+	background-color: #1e1e1f;
 }
 
 .mybtn:hover {

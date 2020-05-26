@@ -22,6 +22,11 @@
 					[isbot]="message.isbot" 
 					[body]="message.body">
 				</app-messagebox>
+				<app-messagebox
+					*ngIf="messages.botPendingMessages > 0"
+					[isbot]="true"
+					[body]="null">
+				</app-messagebox>
 				<app-button-replies 
 					*ngIf="btnManagerService.hasButtons()" 
 					style="bottom: 0;" 
