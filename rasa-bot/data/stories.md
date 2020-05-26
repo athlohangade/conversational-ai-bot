@@ -19,38 +19,14 @@
   - utter_ask_location
 * get_location{"location" : "Pune"}
   - action_get_atm_location
-  - utter_did_that_help
-* affirm
-  - utter_happy
-
-## locate atm given no data sad 
-* greet
-  - utter_greet
-* get_atm_location
-  - utter_ask_location
-* get_location{"location" : "Pune"}
-  - action_get_atm_location
-  - utter_did_that_help
-* deny
-  - utter_try_again
 
 ## locate atm given location happy
 * greet
   - utter_greet
 * get_atm_location{"location" : "Pune" }
   - action_get_atm_location
-  - utter_did_that_help
-* affirm
-  - utter_happy
-
-## locate atm given location sad
-* greet
-  - utter_greet
-* get_atm_location{"location" : "Pune" }
-  - action_get_atm_location
-  - utter_did_that_help
-* deny
-  - utter_try_again
+* thanks
+  - utter_welcome
 
 ## card_story_1
 * greet
@@ -64,9 +40,8 @@
     - utter_greet
 * get_support{"support_type": "career"}
     - action_get_support
-    - utter_did_that_help
-* affirm
-    - utter_happy
+* thanks
+  - utter_welcome
 
 ## tax_story_1
 * greet
@@ -113,16 +88,12 @@
     - utter_greet
 * get_support{"support_type": "locations"}
     - action_get_support
-    - utter_did_that_help
-* thanks
-    - utter_welcome
 
 ## support_story_1
 * greet
     - utter_greet
 * get_support{"support_type": "support"}
     - action_get_support
-    - utter_did_that_help
 * thanks
     - utter_welcome
 
@@ -131,7 +102,6 @@
     - utter_greet
 * get_support{"support_type": "surcharge"}
     - action_get_support
-    - utter_did_that_help
 * thanks
     - utter_welcome
 

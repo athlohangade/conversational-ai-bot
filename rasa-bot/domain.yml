@@ -4,7 +4,6 @@ actions:
 - action_default_ask_affirmation
 - action_default_ask_rephrase
 - utter_ask_location
-- utter_did_that_help
 - utter_goodbye
 - utter_greet
 - utter_happy
@@ -34,8 +33,6 @@ intents:
 responses:
   utter_ask_location:
   - text: What's your location?
-  utter_did_that_help:
-  - text: Did that help you?
   utter_goodbye:
   - text: Bye
   - text: See you soon
