@@ -7,6 +7,12 @@
   - utter_greet
 * chitchat
    - respond_chitchat
+   
+## chitchat 2
+* greet
+  - utter_greet
+* i_can_do
+  - utter_i_can_do
 
 ## support path
 * get_support

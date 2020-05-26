@@ -216,11 +216,10 @@ class ActionDefaultAskAffirmation(Action):
         entities = tracker.latest_message['entities']
         print(entities)
         print("In fallback function")
-
+        msg = tracker.latest_message.get('text')
         # For handling the FAQ part (if intent is classified with below 
         # threshold confidence but question is asked)
         if not entities:
-            msg = tracker.latest_message.get('text')
             # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
             answers = OtherSupport.searchInFAQ(msg,flag = 0)
             if answers:
@@ -235,8 +234,22 @@ class ActionDefaultAskAffirmation(Action):
         intent_prompt = self.intent_mappings[last_intent_name]
 
         # Create the affirmation message and add two buttons to it.
-        # Use '/<intent_name>' as payload to directly trigger '<intent_name>'
-        # when the button is clicked.
+        if last_intent_name == "chitchat":
+            message = "Did you mean '{}'?".format(intent_prompt)
+            buttons = [{'title': 'Yes',
+                   'payload': '/i_can_do'},
+                  {'title': 'No',
+                   'payload': '/out_of_scope'}]
+            dispatcher.utter_button_message(message, buttons=buttons)
+            return [UserUtteranceReverted()]
+        if last_intent_name == "get_atm_location":
+            message = "Did you mean '{}'?".format(intent_prompt)
+            buttons = [{'title': 'Yes',
+                   'payload': '/get_atm_location{"location": msg}'},
+                  {'title': 'No',
+                   'payload': '/out_of_scope'}]
+            dispatcher.utter_button_message(message, buttons=buttons)
+            return [UserUtteranceReverted()]
         message = "Did you mean '{}'?".format(intent_prompt)
         buttons = [{'title': 'Yes',
                'payload': '/{}'.format(last_intent_name)},
