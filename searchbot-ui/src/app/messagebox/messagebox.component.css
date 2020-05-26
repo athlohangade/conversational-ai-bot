@@ -60,6 +60,10 @@ p {
 	padding-left: 8px;
 }
 
+.dotholder {
+	height: 30px;
+}
+
 .smalldot {
 	display: inline-block;
 	background-color: darkslategrey;
@@ -67,14 +71,27 @@ p {
 	height: 12px;
 	width: 12px;
 	margin: 7px 3px;
+	animation: typing 1.5s infinite;
 }
 
 .smalldot:nth-of-type(1) {
 	margin-left: 5px;
+	animation-delay: 0s;
+}
+
+.smalldot:nth-of-type(2) {
+	animation-delay: 0.2s;
 }
 
 .smalldot:nth-of-type(3) {
 	margin-right: 5px;
+	animation-delay: 0.4s;
 }
 
-
+@keyframes typing {
+	0% {margin-bottom: 10px;}
+	50% {margin-bottom: 20px;}
+	100% {margin-bottom: 10px;}
+	/*75% {margin-bottom: 0px;}
+	100% {margin-bottom: 10px;}*/
+}
