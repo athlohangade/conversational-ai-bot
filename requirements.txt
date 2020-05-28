@@ -1,0 +1,6 @@
+rasa
+Rasa_nlu[spacy]
+geopy
+selenium
+lxml
+BeautifulSoup4

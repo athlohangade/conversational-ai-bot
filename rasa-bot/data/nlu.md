@@ -118,6 +118,7 @@
 - fantastic
 - I am on cloud nine
 - extremely happy
+- awesome
 
 ## intent: chitchat/mood_unhappy
 - I am bored
@@ -212,7 +213,7 @@
 - How to [report](support_type) a problem
 - I want to [report](support_type) [merchant](report_type)
 - I have a [problem]{"entity": "support_type", "value": "report"} with [merchant](report_type)
-- [Merchant](report_type) refused to accept mastercard. What should I do?
+- [Merchant]{"entity": "report_type", "value": "merchant"} refused to accept mastercard. What should I do?
 - I am not able to [buy]{"entity": "report_type", "value": "merchant"} things using mastercard
 - The [merchant](report_type) is not ready to accept mastercard for transactions
 - I am facing a [problem]{"entity": "support_type", "value": "report"} while [buying]{"entity": "report_type", "value": "merchant"} using mastercard

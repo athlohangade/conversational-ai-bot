@@ -52,10 +52,6 @@
 	border: solid #ff5f00;
 }
 
-.titleofheading:hover {
-	color: #df0707;
-}
-
 .titleofheading {
 	padding-left: 20px;
 	margin-top: 5px;
