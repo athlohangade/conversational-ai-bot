@@ -48,10 +48,10 @@ This requires python version 3.6 or 3.7.
 4.  Install the required libraries :
 
     >   pip3 install -r requirements.txt
-    >   python -m spacy download en_core_web_md
-    >   python -m spacy link en_core_web_md en
 
----
+    >   python -m spacy download en_core_web_md
+
+    >   python -m spacy link en_core_web_md en
 
 ## How to run
 
@@ -68,15 +68,15 @@ This requires python version 3.6 or 3.7.
 5.  Now change directory to *searchbot-ui* and run the Angular framework.
 
     >   npm start
+
     or
+
     >   ng serve --proxy-config proxy.conf.json
 6.  Open localhost:4200 in browser and you can chat with the bot.
 
 ### Windows
 
 ....write here...
-
----
 
 ## Solution Overview
 
@@ -86,6 +86,7 @@ The project is divided into 3 parts :
 1.  **Rasa** :  Rasa is an open source AI framework for building contextual assistants. Rasa is the main component that is responsible for handling live conversation with the user. Rasa include :
     -   Rasa NLU : Determine what user wants and captures key contextual information.
     -   Rasa Core : Selects the next best response or action based on context of current conversation.
+    For more info about Rasa, [click here](https://rasa.com/docs/rasa/)
 2.  **Actions server** :  For handling custom actions. Custom actions include doing some computation, getting data from database, making request for data to the web API and retrieving it from web, searching, handling requests from rasa server, etc.
 3.  **Angular** : Angular allows to develop attractive and user-friendly UI. Other usage is sending HTTP request to the backend server and getting response from it.
 
