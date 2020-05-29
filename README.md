@@ -86,6 +86,7 @@ The project is divided into 3 parts :
 1.  **Rasa** :  Rasa is an open source AI framework for building contextual assistants. Rasa is the main component that is responsible for handling live conversation with the user. Rasa include :
     -   Rasa NLU : Determine what user wants and captures key contextual information.
     -   Rasa Core : Selects the next best response or action based on context of current conversation.
+
     For more info about Rasa, [click here](https://rasa.com/docs/rasa/)
 2.  **Actions server** :  For handling custom actions. Custom actions include doing some computation, getting data from database, making request for data to the web API and retrieving it from web, searching, handling requests from rasa server, etc.
 3.  **Angular** : Angular allows to develop attractive and user-friendly UI. Other usage is sending HTTP request to the backend server and getting response from it.
