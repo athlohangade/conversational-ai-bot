@@ -1,7 +1,5 @@
 # Conversation AI text-based ChatBot
 
----
-
 ## Project Description
 
 The project has the following objectives :
@@ -18,8 +16,6 @@ Following are the requirements of this project :
 -   Effectively handle multiple users online.
 -   Ability to handle all valid use cases as well as unknown messages
 
----
-
 ## Install Guide:
 
 ### Ubuntu
@@ -35,7 +31,9 @@ This requires python version 3.6 or 3.7.
 4.  Install the required libraries :
 
     >   python3 -m pip install -r requirements
+
     >   python3 -m spacy download en_core_web_md
+
     >   python3 -m spacy link en_core_web_md en
 
 ### Windows
@@ -76,7 +74,7 @@ This requires python version 3.6 or 3.7.
 
 ### Windows
 
-    (write here)
+....write here...
 
 ---
 
@@ -90,8 +88,6 @@ The project is divided into 3 parts :
     -   Rasa Core : Selects the next best response or action based on context of current conversation.
 2.  **Actions server** :  For handling custom actions. Custom actions include doing some computation, getting data from database, making request for data to the web API and retrieving it from web, searching, handling requests from rasa server, etc.
 3.  **Angular** : Angular allows to develop attractive and user-friendly UI. Other usage is sending HTTP request to the backend server and getting response from it.
-
----
 
 ## ATM locator Use Case
 
