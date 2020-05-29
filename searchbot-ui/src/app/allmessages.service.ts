@@ -17,7 +17,6 @@ export class AllmessagesService {
 	public botPendingMessages: number = 1;
 	
 	public addMessageByBot(b: any[]): void {
-		console.log(b);
 		var copy: any[] = [];
 		var locationsPresent: boolean = false;
 		for(let data of b) {
@@ -38,7 +37,6 @@ export class AllmessagesService {
 			this.show4();
 		if(this.botPendingMessages > 0)
 			this.botPendingMessages--;
-		console.log("minux", this.botPendingMessages);
 	}
 
 	public show4(): void {
@@ -48,7 +46,6 @@ export class AllmessagesService {
 		var cardobject: any[] = [];
 		for(let card of cards)
 			cardobject.push({'custom': card});
-		console.log("cards are", cards);
 		this.messages.push({isbot: true, body: cardobject});
 		if(this.atmLocationCardService.hasLocationsLeft())
 			this.btnManagerService.activateButton(

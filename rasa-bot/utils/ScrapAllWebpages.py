@@ -27,7 +27,6 @@ class  ScrapAllWebpages:
             for f in faq:
                 que = f.find('strong')
                 if que:
-                    #print("Q " + f.text)
                     if first_q:
                         prev_q = f.text.replace("\u00ae", "")
                         first_q = False
@@ -36,7 +35,6 @@ class  ScrapAllWebpages:
                         que_complete = True
                     curr_q = f.text
                 else:
-                    #print("A " + f.text)
                     list_of_ans.append(f.text.replace("\u00a0", ""))
                 if que_complete:
                     list_of_ques.append({"Q": prev_q, "A" : list_of_ans})
@@ -61,7 +59,6 @@ class  ScrapAllWebpages:
                 if line_count != 0:
                     entity = row[0]
                     url = row[1]
-                    print(entity, url)
 
                     # Open URL and get the source code
 

@@ -39,7 +39,6 @@ class ActionGetSupport(Action):
         current_time = datetime.now()
         if (current_time > (ActionGetSupport.prev_time + timedelta(hours=MastercardConfig.hours))):
             ActionGetSupport.prev_time = current_time
-            print("In thread create")
             try:
                 # Create new threads
                 thread1 = ThreadToScrap(1, "Thread-1")
@@ -47,7 +46,7 @@ class ActionGetSupport(Action):
                 # Start new Threads
                 thread1.start()
             except:
-                print("Thread not created")
+                pass
         return
 
     def __getRelevantPara(self, res, msg):
@@ -58,7 +57,7 @@ class ActionGetSupport(Action):
                 with open('scrapper/' + res[2] + '.json', 'r') as data:
                     additional_para = TextProcessorAndSearch.getSummary(msglist, json.load(data))
             except:
-                print("File not found")
+                pass
         
         return additional_para
 
@@ -70,9 +69,6 @@ class ActionGetSupport(Action):
         for entity in entities :
             entity['value'] = re.sub(r'[^\w\s]', '', entity['value'])
         msg = tracker.latest_message.get('text')
-        print(entities)
-        print(msg)
-        print("In support action")
 
         ## For Periodic Scrapping
         self.__periodicSraping()
@@ -80,7 +76,6 @@ class ActionGetSupport(Action):
         # For handling the FAQ part (if intent is classified with above
         # threshold confidence but question is asked)
         if not entities:
-            print("Entities not present")
             # if (OtherSupport.checkIfSentenceIsQuestion(msg)) :
             answers = OtherSupport.searchInFAQ(msg,flag = 1)
             for answer in answers :
@@ -91,7 +86,6 @@ class ActionGetSupport(Action):
 
         report_type = tracker.get_slot('report_type')
         card_type = tracker.get_slot('card_type')
-        print(report_type, card_type)
 
         if report_type:
             # Report_type is set
@@ -99,7 +93,6 @@ class ActionGetSupport(Action):
             msg = "report " + report_type
             to_reset = True
         elif OtherSupport.checkValue(entities, "report"):
-            print("wrong path")
             dispatcher.utter_message(template="utter_ask_reporttype")
             return [FollowupAction('action_listen')]
 
@@ -109,7 +102,6 @@ class ActionGetSupport(Action):
             msg = card_type + " cards"
             to_reset = True
         elif OtherSupport.checkValue(entities, "cards"):
-            print("wrong path card")
             dispatcher.utter_message(template="utter_ask_cardtype")
             return [FollowupAction('action_listen')]
             
@@ -139,7 +131,6 @@ class ActionGetATMLocation(Action):
 
         location = None
         entities = tracker.latest_message['entities']
-        print(entities)
 
         # get the location value from entities
         for element in entities :
@@ -151,7 +142,6 @@ class ActionGetATMLocation(Action):
         location = tracker.get_slot('location')
         if location is None : 
             location = tracker.get_slot('GPE') 
-            print(location)
 
         return location
 
@@ -162,15 +152,11 @@ class ActionGetATMLocation(Action):
         addresses = []
         location = None
 
-        print(tracker.get_slot('location'))
-        print(tracker.get_slot('GPE'))
-
         # set the location variable to the values extracted from
         # respective entity
         location = self.__setLocationValue(tracker)
         if location is None :
             message = "Location cannot be None"
-            print(message)
             dispatcher.utter_message(text = message)
             return [AllSlotsReset()]
 
@@ -178,7 +164,6 @@ class ActionGetATMLocation(Action):
         locationsData = RetrieveLocation.requestData(location)
         if locationsData is None :
             message = "Location not found"
-            print(message)
             dispatcher.utter_message(text = message)
             return [AllSlotsReset()]
 
@@ -214,8 +199,6 @@ class ActionDefaultAskAffirmation(Action):
     def run(self, dispatcher, tracker, domain):
 
         entities = tracker.latest_message['entities']
-        print(entities)
-        print("In fallback function")
         msg = tracker.latest_message.get('text')
         # For handling the FAQ part (if intent is classified with below 
         # threshold confidence but question is asked)

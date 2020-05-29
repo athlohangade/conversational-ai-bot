@@ -174,7 +174,6 @@ class TextProcessorAndSearch:
 
         # Do combinations with given threshold and lower_bound
         combi = cls.make_all_combinations(keywords, 0.3, 3)
-        print(combi)
 
         # Search the individual combination
         for individual_combi in combi :
@@ -259,7 +258,6 @@ class TextProcessorAndSearch:
                     break
 
         answers = list(chain(*answers))
-        print(answers)
         return answers
 
     @classmethod

@@ -10,9 +10,7 @@ class ThreadToScrap (threading.Thread):
         self.name = name
 
     def run(self):
-        print ("Starting " + self.name)
         ScrapAllWebpages.scrap_all()
-        print ("Exiting " + self.name)
 
         
 
