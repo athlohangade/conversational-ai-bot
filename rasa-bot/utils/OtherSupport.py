@@ -55,7 +55,6 @@ class OtherSupport:
         # Get the answer for the question
         answers = TextProcessorAndSearch.findAnswers(msg, faq)
         if not answers and flag == 1:
-            print("no answers")
             answers.append("Sorry, we couldn't find any answer to your question")
             return answers
 
