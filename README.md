@@ -9,14 +9,14 @@ The project has the following objectives :
 -   Webpage finder to redirect user to correct mastercard webpage.
 -   ATM locator to locate ATMs of specified locations.
 -   Machine learning to enhance productivity rather than using static integrations.
--   NLP to provide highly engaging user experience
+-   NLP to provide highly engaging user experience.
 
 Following are the requirements of this project :
 -   User friendly messenger UI.
 -   Appropriate response to the user’s query.
 -   Respond with simple and understandable language.
 -   Effectively handle multiple users online.
--   Ability to handle all valid use cases as well as unknown messages
+-   Ability to handle all valid use cases as well as unknown messages or chitchat.
 
 ## Installation Guide:
 
@@ -133,3 +133,22 @@ The project is divided into 3 parts :
 -   The custom action fetches the URL of the webpage associated with keyword *tax* from the [database](rasa-bot/lookup-files/keywords-urls.csv).
 -   The searching algorithm looks for the appropriate paragraph depending on the user's query from the scrapped-data of the webpage that is stored in the file *rasa-bot/scrapper/[keyword].json*.
 -   The retrieved paragraph and the URL of the webpage are then send back to display on the bot window.
+
+## FAQ Use Case
+
+![Information Flow in FAQ use case](diagrams/FAQ-usecase.png)
+
+-   The user interact with the UI and pass a query.
+-   This query is passed to NLU component where intent gets classified correctly but entities are not extracted then support actions checks FAQ page.
+-   FAQ page is scraped in json format and the question is searched using searching technique.
+-   If the question is found in FAQ page then bot returns respective answer in output otherwise it asks user to reframe the query.
+-   The output is then send back frontend to display it on the bot window.
+
+## Fallback Case
+
+![Information Flow in Fallback case](diagrams/fallback.png)
+
+-   User types some random message not related to our use cases then fallback action gets called.
+-   As none of the intents gets classified and confidence is below threshold, fallback action once again checks for FAQ in scraped FAQ page. If answer is matched, it returns answer.
+-   If none of the FAQs is matched then the intent with maximum confidence among the lower ones gets called, and it returns appropriate intent message or asks to reframe the sentence.
+-   In this way, chat bot handles corner cases also.
