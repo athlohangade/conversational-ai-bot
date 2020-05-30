@@ -1,5 +1,7 @@
 # Conversation AI text-based ChatBot
 
+Please checkout the demo of our bot [here](https://drive.google.com/file/d/1bwMM5NbtLLO4iFElThYW8zcxyAeyj3ea/view?usp=sharing).
+
 ## Project Description
 
 The project has the following objectives :
@@ -16,7 +18,7 @@ Following are the requirements of this project :
 -   Effectively handle multiple users online.
 -   Ability to handle all valid use cases as well as unknown messages
 
-## Install Guide:
+## Installation Guide:
 
 ### Ubuntu
 
@@ -76,7 +78,25 @@ This requires python version 3.6 or 3.7.
 
 ### Windows
 
-....write here...
+1.  To run this project, we need to run Rasa server, Actions server and Angular Framework.
+2.  Activate the virtual environment:
+
+    >   .\venv\Scripts\activate  
+3.  Change your working directory to *rasa-bot*.
+4.  Enter the following command. This will run the Rasa server.
+
+    >   rasa run --enable-api
+5.  Next run the Actions server in another terminal.
+
+    >   rasa run actions
+6.  Now change directory to *searchbot-ui* and run the Angular framework.
+
+    >   npm start
+
+    or
+
+    >   ng serve --proxy-config proxy.conf.json
+7.  Open localhost:4200 in browser and you can chat with the bot.
 
 ## Solution Overview
 
@@ -101,3 +121,15 @@ The project is divided into 3 parts :
 -   Now this info is passed to the core component that decides further what is to be done, that is in this case call the custom action to collect the addresses.
 -   The Mastercard ATMs API requires latitude-longitude values for accurate results. So Google’s Geocoding API is used for converting the location value into geo-coordinates. These geo-coordinates are used for retrieving ATM data from the Web API.
 -   The retrieved data is then send back frontend to display it on the bot window.
+
+## Webpage Finder Use Case
+
+![Information Flow in Webpage finder use case](diagrams/Webpage-finder.png)
+
+-   The user interact with the UI and pass a query.
+-   This query is passed to NLU component which recognize what is the intent or purpose of the message. Here, RASA NLU classifies the intent as webpage finder.
+-   Then, the important keyword/entity is extracted from user's query. In this example, the important keyword is *tax*.
+-   Now this info is passed to the core component that decides further what is to be done, that is in this case call the custom action.
+-   The custom action fetches the URL of the webpage associated with keyword *tax* from the [database](rasa-bot/lookup-files/keywords-urls.csv).
+-   The searching algorithm looks for the appropriate paragraph depending on the user's query from the scrapped-data of the webpage that is stored in the file *rasa-bot/scrapper/[keyword].json*.
+-   The retrieved paragraph and the URL of the webpage are then send back to display on the bot window.
